@@ -19,7 +19,12 @@
 <acme:menu-bar code="master.menu.home">
 	<acme:menu-left>
 		<acme:menu-option code="master.menu.anonymous" access="isAnonymous()">
-			<acme:menu-suboption code="master.menu.anonymous.favourite-link" action="http://www.example.com/"/>
+			<acme:menu-suboption code="master.menu.anonymous.link.alvgomnie" action="http://www.github.com/"/>
+			<acme:menu-suboption code="master.menu.anonymous.link.juacasalb" action="https://es.wikipedia.org/wiki/Shiba_Inu"/>
+			<acme:menu-suboption code="master.menu.anonymous.link.fraprapra1" action="https://elpais.com/"/>
+			<acme:menu-suboption code="master.menu.anonymous.link.miggavmar" action="https://okdiario.com/"/>
+			<acme:menu-suboption code="master.menu.anonymous.link.vicgrabru" action="https://www.lavanguardia.com/"/>
+			<acme:menu-suboption code="master.menu.anonymous.link.juacasben" action="https://www.elmundo.es/"/>
 		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.administrator" access="hasRole('Administrator')">

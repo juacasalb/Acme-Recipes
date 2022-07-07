@@ -18,7 +18,12 @@ master.menu.sign-out = Sign out
 # master.menu.anonymous #######################################################
 
 master.menu.anonymous = Anonymous
-master.menu.anonymous.favourite-link = Favourite link
+master.menu.anonymous.link.alvgomnie = 48191666L: Gómez Nieto, Álvaro
+master.menu.anonymous.link.juacasalb = 20604279M: Castro Albertos, Juan
+master.menu.anonymous.link.fraprapra1 = 30267713N: de la Prada Prados, Francisco Javier
+master.menu.anonymous.link.miggavmar = 09215199L: Gaviro Martínez, Miguel
+master.menu.anonymous.link.vicgrabru = 32081538B: Gravan Bru, Victor
+master.menu.anonymous.link.juacasben = 28844948G: Casamitjana Benítez, Juan José
 
 # master.menu.administrator ###################################################
 

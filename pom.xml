@@ -18,12 +18,12 @@
 
 	<modelVersion>4.0.0</modelVersion>
 	
-	<name>Hello-World</name>
-	<description>This is a Hello-World project for the students of Design &amp; Testing.</description>
+	<name>Acme-Recipes</name>
+	<description>This is a Acme-Recipes project for the students of Design &amp; Testing.</description>
 
 	<groupId>Acme</groupId>	
-	<artifactId>Hello-World-22.7</artifactId>
-	<version>22.7</version>
+	<artifactId>Acme-Recipes-22.8</artifactId>
+	<version>22.8</version>
 	<packaging>war</packaging>
 
 	<parent>

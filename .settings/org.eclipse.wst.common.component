@@ -33,7 +33,7 @@
     
     
     
-    <wb-module deploy-name="Hello-World-22.7-22.7">
+    <wb-module deploy-name="Acme-Recipes-22.8-22.8">
                                                                                                                                                                                                                                                                                         
         
         
@@ -225,8 +225,8 @@
         
         
         
-        <property name="java-output-path" value="/Hello-World-22.0/target/classes"/>
-        <property name="context-root" value="Hello-World-22.7"/>
+        <property name="java-output-path" value="/Acme-Recipes-22.8/target/classes"/>
+        <property name="context-root" value="Acme-Recipes-22.7"/>
                                                                                                                                                                                                                                                                                     
     
     
