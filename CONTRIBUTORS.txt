@@ -9,3 +9,9 @@
 # they accept any liabilities with respect to them.
 
 - Rafael Corchuelo (corchu@us.es)
+- Álvaro Gómez Nieto (alvgomnie@alum.us.es)
+- Juan Castro Albertos (juacasalb@alum.us.es)
+- Francisco Javier de la Prada Prados (fraprapra1@alum.us.es)
+- Miguel Gaviro Martínez (miggavmar@alum.us.es)
+- Víctor Gravan Bru (vicgrabru@alum.us.es)
+- Juan José Casamitjana Benítez (juacasben@alum.us.es)
