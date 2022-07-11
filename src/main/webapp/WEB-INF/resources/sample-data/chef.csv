@@ -1,0 +1,6 @@
+key,key:userAccount,organisation,assertion
+chef-01,user-account-chef-01,"Organistaion DP II","This is a chef assertion"
+chef-02,user-account-chef-02,"Organistaion DP II","This is a chef assertion"
+chef-03,user-account-chef-03,"Organistaion IA","This is a chef assertion"
+chef-04,user-account-chef-04,"Organistaion ASR","This is a chef assertion"
+chef-05,user-account-chef-05,"Organistaion IA","This is a chef assertion"
