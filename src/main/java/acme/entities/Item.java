@@ -30,6 +30,9 @@ public class Item extends AbstractEntity{
 	@NotNull
 	protected ItemType type;
 	
+	@Length(min = 1, max = 15)
+	protected String unit;
+	
 	@NotBlank
 	@Column(unique=true)
 	@Pattern(regexp="^([A-Z]{2}:)?[A-Z]{3}-[0-9]{3}$")
