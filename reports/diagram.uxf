@@ -7,13 +7,14 @@
       <x>138</x>
       <y>750</y>
       <w>276</w>
-      <h>102</h>
+      <h>108</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Entity&gt;&gt;
 Item
 --
 + name: String {NotBlank, Length(0,100)}
 + type: ItemType {NotNull}
++ unit: String {Lenght(0,15)}
 + code: String {Unique, Pattern(“^([A-Z]{2}:)?[A-Z]{3}-[0-9]{3}$”),)}
 + description: String {NotBlank, Length(0, 255)}
 + retailPrice: double {NotBlank, Positive}
@@ -212,7 +213,7 @@ Memorandum
       <w>114</w>
       <h>42</h>
     </coordinates>
-    <panel_attributes>A toolkit may have several 
+    <panel_attributes>A recipe may have several 
 instances of the same 
 kitchen utensil.
 bg=blue</panel_attributes>
@@ -223,11 +224,13 @@ bg=blue</panel_attributes>
     <coordinates>
       <x>798</x>
       <y>882</y>
-      <w>90</w>
+      <w>96</w>
       <h>42</h>
     </coordinates>
     <panel_attributes>Only one instance 
-of a given ingredient.
+of a given ingredient,
+whose unit must be set
+unlike kitchen utensils.
 bg=blue</panel_attributes>
     <additional_attributes/>
   </element>
@@ -579,9 +582,9 @@ bg=green
       <h>432</h>
     </coordinates>
     <panel_attributes>lt=&lt;-x
-m1=1
+m1=1..*
 m2=0..*
-Invented by &gt;</panel_attributes>
+Used by &gt;</panel_attributes>
     <additional_attributes>410.0;20.0;10.0;20.0;10.0;700.0</additional_attributes>
   </element>
   <element>
