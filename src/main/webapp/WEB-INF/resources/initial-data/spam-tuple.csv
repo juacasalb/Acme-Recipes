@@ -1,0 +1,14 @@
+key,spam-word,threshold
+spam-tuple-01,"_default_",0.10
+spam-tuple-02,"viagra",0.10
+spam-tuple-03,"cialis",0.10
+spam-tuple-04,"hard core",0.10
+spam-tuple-05,"sexy",0.05
+spam-tuple-06,"sexo",0.10
+spam-tuple-07,"nigeria",0.05
+spam-tuple-08,"has ganado",0.05
+spam-tuple-09,"un millón",0.05
+spam-tuple-10,"sex",0.10
+spam-tuple-11,"you have won",0.05
+spam-tuple-12,"you've won",0.05
+spam-tuple-13,"one million",0.05
