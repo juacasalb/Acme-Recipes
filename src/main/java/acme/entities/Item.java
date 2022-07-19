@@ -50,6 +50,9 @@ public class Item extends AbstractEntity{
 	protected String link;
 	
 	@NotNull
+	protected Boolean published;
+	
+	@NotNull
 	@Valid
 	@ManyToOne(optional=true)
 	protected Recipe recipe;

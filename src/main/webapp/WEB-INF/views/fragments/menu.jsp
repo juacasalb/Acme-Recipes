@@ -26,6 +26,12 @@
 			<acme:menu-suboption code="master.menu.anonymous.link.vicgrabru" action="https://www.lavanguardia.com/"/>
 			<acme:menu-suboption code="master.menu.anonymous.link.juacasben" action="https://www.elmundo.es/"/>
 		</acme:menu-option>
+		
+		<acme:menu-option code="master.menu.any.items">
+			<acme:menu-suboption code="master.menu.any.items.kitchenutensils" action="/any/item/list?type=kitchenutensil"/>
+			<acme:menu-separator/>
+			<acme:menu-suboption code="master.menu.any.items.ingredients" action="/any/item/list?type=ingredient"/>
+		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.administrator" access="hasRole('Administrator')">
 			<acme:menu-suboption code="master.menu.administrator.user-accounts" action="/administrator/user-account/list"/>
