@@ -41,6 +41,12 @@ master.menu.administrator.populate-initial = Poblar BD (inicial)
 master.menu.administrator.populate-sample = Poblar BD (ejemplos)
 master.menu.administrator.shut-down = Parar el sistema
 
+# master.menu.chef ############################################################
+
+master.menu.chef = Chef
+master.menu.chef.kitchenutensils-link = Mis Utensilios de Cocina
+master.menu.chef.ingredients-link = Mis Ingredientes 
+
 # master.menu.provider ########################################################
 
 master.menu.provider = Proveedor

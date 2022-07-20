@@ -41,6 +41,12 @@ master.menu.administrator.populate-initial = Populate DB (initial)
 master.menu.administrator.populate-sample = Populate DB (samples)
 master.menu.administrator.shut-down = Shut down
 
+# master.menu.chef ############################################################
+
+master.menu.chef = Chef
+master.menu.chef.kitchenutensils-link = My Kitchen Utensils
+master.menu.chef.ingredients-link = My Ingredients 
+
 # master.menu.provider ########################################################
 
 master.menu.provider = Provider
