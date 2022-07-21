@@ -15,6 +15,13 @@ master.menu.sign-up = Sign up
 master.menu.sign-in = Sign in
 master.menu.sign-out = Sign out
 
+# master.menu.any #############################################################
+
+master.menu.any = Any
+master.menu.any.items = Items
+master.menu.any.items.kitchenutensils = List of Kitchen Utensils
+master.menu.any.items.ingredients = List of Ingredients
+
 # master.menu.anonymous #######################################################
 
 master.menu.anonymous = Anonymous
@@ -33,6 +40,12 @@ master.menu.administrator.user-accounts = User accounts
 master.menu.administrator.populate-initial = Populate DB (initial)
 master.menu.administrator.populate-sample = Populate DB (samples)
 master.menu.administrator.shut-down = Shut down
+
+# master.menu.chef ############################################################
+
+master.menu.chef = Chef
+master.menu.chef.kitchenutensils-link = My Kitchen Utensils
+master.menu.chef.ingredients-link = My Ingredients 
 
 # master.menu.provider ########################################################
 

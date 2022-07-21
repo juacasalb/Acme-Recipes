@@ -1,0 +1,12 @@
+chef.item.list.label.name = Nombre
+chef.item.list.label.retailPrice = Precio
+chef.item.list.label.type = Tipo 
+chef.item.list.label.published = Publicado
+
+chef.item.form.label.name = Nombre
+chef.item.form.label.code = Codigo
+chef.item.form.label.technology = Tecnologia
+chef.item.form.label.description = Descripcion
+chef.item.form.label.retailPrice = Precio
+chef.item.form.label.link = Link
+chef.item.form.label.published = Publicado
