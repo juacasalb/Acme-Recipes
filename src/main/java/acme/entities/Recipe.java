@@ -39,4 +39,6 @@ public class Recipe extends AbstractEntity{
 	@URL
 	protected String link;
 	
+	protected boolean published;
+	
 }
