@@ -3,8 +3,6 @@ package acme.forms;
 import java.io.Serializable;
 import java.util.Map;
 
-import org.apache.commons.lang3.tuple.Pair;
-
 import lombok.Getter;
 import lombok.Setter;
 
