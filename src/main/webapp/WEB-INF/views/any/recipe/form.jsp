@@ -13,6 +13,6 @@
 	<acme:input-textbox code="any.recipe.form.label.published" path="published"/>
 	<acme:input-textbox code="any.recipe.form.label.chef" path="chef"/>
 	
-	<acme:button code="any.recipe.form.label.items" action="/any/item/list?=${id}"/>
+	<acme:button code="any.recipe.form.label.items" action="/any/item/list-item?id=${id}"/>
 	
 </acme:form>

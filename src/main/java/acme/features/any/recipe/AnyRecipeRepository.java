@@ -5,6 +5,7 @@ import java.util.Collection;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
+import acme.entities.Item;
 import acme.entities.Quantity;
 import acme.entities.Recipe;
 import acme.framework.repositories.AbstractRepository;
@@ -23,6 +24,9 @@ public interface AnyRecipeRepository extends AbstractRepository {
 	
 	@Query("select q from Quantity q where q.recipe.id = :id")
 	Collection<Quantity> findQuantityByRecipeId(int id);
+	
+	@Query("select q.item from Quantity q where q.id = :id")
+	Collection<Item> findManyItemsByQuantityId(int id);
 
 }
 

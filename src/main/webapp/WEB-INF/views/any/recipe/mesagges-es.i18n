@@ -1,0 +1,14 @@
+any.recipe.form.label.code = Código
+any.recipe.form.label.heading = Cabecera
+any.recipe.form.label.description = Descripción
+any.recipe.form.label.preparationNotes = Notas de Preparación
+any.recipe.form.label.link = Enlace
+any.recipe.form.label.retailPrice = Precio de Venta
+any.recipe.form.label.published = Publicado
+any.recipe.form.label.chef = Chef
+
+any.recipe.form.label.items = Items
+
+any.recipe.list.label.code = Código
+any.recipe.list.label.heading = Cabecera
+any.recipe.list.label.description = Descripción

@@ -37,7 +37,10 @@
 			<acme:menu-suboption code="master.menu.any.items.kitchenutensils" action="/any/item/list?type=kitchenutensil"/>
 			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.any.items.ingredients" action="/any/item/list?type=ingredient"/>
-
+		</acme:menu-option>
+		
+		<acme:menu-option code="master.menu.any.recipes">
+			<acme:menu-suboption code="master.menu.any.recipe" action="/any/recipe/list"/>
 		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.administrator" access="hasRole('Administrator')">

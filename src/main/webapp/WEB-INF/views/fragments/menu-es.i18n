@@ -19,8 +19,10 @@ master.menu.sign-out = Salir
 
 master.menu.any = Cualquiera
 master.menu.any.items = Items
+master.menu.any.recipes = Recetas
 master.menu.any.items.kitchenutensils = Lista de Utensilios de Cocina
 master.menu.any.items.ingredients = Lista de Ingredientes
+master.menu.any.recipe = Lista de recetas
 
 # master.menu.anonymous #######################################################
 
