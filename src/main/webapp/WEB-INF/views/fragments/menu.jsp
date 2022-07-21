@@ -26,6 +26,10 @@
 			<acme:menu-suboption code="master.menu.anonymous.link.vicgrabru" action="https://www.lavanguardia.com/"/>
 			<acme:menu-suboption code="master.menu.anonymous.link.juacasben" action="https://www.elmundo.es/"/>
 		</acme:menu-option>
+		
+		<acme:menu-option code="master.menu.any">
+			<acme:menu-suboption code="master.menu.any.published-recipes" action="/any/recipe/list"/>
+		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.administrator" access="hasRole('Administrator')">
 			<acme:menu-suboption code="master.menu.administrator.user-accounts" action="/administrator/user-account/list"/>

@@ -17,8 +17,8 @@ public class AnyRecipeController extends AbstractController<Any, Recipe>{
 	@Autowired
 	protected AnyRecipeListPublishedService listService;
 
-//	@Autowired
-//	protected AnyRecipeShowService showService;
+	@Autowired
+	protected AnyRecipeShowService showService;
 
 	// Constructors -----------------------------------------------------------
 
@@ -26,7 +26,7 @@ public class AnyRecipeController extends AbstractController<Any, Recipe>{
 	@PostConstruct
 	protected void initialise() {
 		super.addCommand("list", this.listService);
-		//super.addCommand("show", this.showService);
+		super.addCommand("show", this.showService);
 	}
 	
 }
