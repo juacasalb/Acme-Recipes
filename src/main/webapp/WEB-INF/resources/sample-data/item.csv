@@ -1,6 +1,6 @@
 key,name,type,unit,code,description,retailPrice,link,key:chef,key:recipe,published
-item-01,ingredient-01,INGREDIENT,grams,"IN:AAB-111","This is a ingredient","EUR 50.0",https://www.plum.com,chef-01,recipe-01,true
-item-02,ingredient-02,INGREDIENT,kilos,"IN:AAC-112","This is a ingredient","EUR 40.0",https://www.plum.com,chef-03,recipe-02,true
-item-03,ingredient-03,INGREDIENT,cm3,"IN:AAD-113","This is a ingredient","EUR 100.0",https://www.plum.com,chef-04,recipe-03,false
-item-04,utensil-01,KITCHENUTENSIL,gallons,"UT:AAB-111","This is a kitchen utensil","EUR 120.0",https://www.plum.com,chef-01,recipe-04,true
-item-05,utensil-02,KITCHENUTENSIL,tea spoons,"UT:AAC-112","This is a kitchen utensil","EUR 65.0",https://www.plum.com,chef-02,recipe-05,true
+item-01,ingredient-01,INGREDIENT,grams,"IN:AAB-111","This is a ingredient","EUR 50.00",https://www.plum.com,chef-01,recipe-01,true
+item-02,ingredient-02,INGREDIENT,kilos,"IN:AAC-112","This is a ingredient","EUR 40.00",https://www.plum.com,chef-03,recipe-02,true
+item-03,ingredient-03,INGREDIENT,cm3,"IN:AAD-113","This is a ingredient","EUR 100.00",https://www.plum.com,chef-04,recipe-03,false
+item-04,utensil-01,KITCHENUTENSIL,gallons,"UT:AAB-111","This is a kitchen utensil","EUR 120.00",https://www.plum.com,chef-01,recipe-04,true
+item-05,utensil-02,KITCHENUTENSIL,tea spoons,"UT:AAC-112","This is a kitchen utensil","EUR 65.00",https://www.plum.com,chef-02,recipe-05,true
