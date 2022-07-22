@@ -22,7 +22,7 @@ master.menu.any.items = Items
 master.menu.any.recipes = Recipes
 master.menu.any.items.kitchenutensils = List of Kitchen Utensils
 master.menu.any.items.ingredients = List of Ingredients
-master.menu.any.recipe = List of Recipes
+master.menu.any.recipe = List of Published Recipes
 
 # master.menu.anonymous #######################################################
 
