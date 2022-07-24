@@ -67,3 +67,13 @@ master.menu.user-account.provider = Provider data
 master.menu.user-account.become-provider = Become a provider
 master.menu.user-account.consumer = Consumer data
 master.menu.user-account.become-consumer = Become a consumer
+
+# master.menu.Chef #############################################################
+
+master.menu.chef = Chef
+master.menu.chef.memoranda.list = List all my memorandums
+
+# master.menu.epicure ##########################################################
+
+master.menu.epicure = Epicure
+master.menu.epicure.memoranda.list = List all my memorandums
