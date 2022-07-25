@@ -31,7 +31,7 @@ public class ChefMemorandaListService implements AbstractListService<Chef, Memor
 		int chefId;
 		Collection<Memorandum> result;
 		
-		chefId = request.getPrincipal().getAccountId();
+		chefId = request.getPrincipal().getActiveRoleId();
 		result = this.repository.findByChefId(chefId);
 		
 		return result;

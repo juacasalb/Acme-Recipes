@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.util.Pair;
 import org.springframework.stereotype.Service;
 
 import acme.entities.fineDish.State;
@@ -31,17 +32,14 @@ public class EpicureEpicureDashboardShowService implements AbstractShowService<E
 		assert request != null;
 		
 		State s;
-		Integer count;
+		Long count;
 		
-		Map<String, Double> acceptedMap, deniedMap, proposedMap;
-		acceptedMap = new HashMap<>();
-		proposedMap = new HashMap<>();
-		deniedMap = new HashMap<>();
+		Map<Pair<String, String>, Double> valueMap;
+		Map<String, Long> countMap;
+		countMap = new HashMap<>();
 		
 		EpicureDashboard result;
 		List<Object[]> fineDishesList;
-		
-		
 		
 		final Integer epicureId = request.getPrincipal().getActiveRoleId();
 		
@@ -50,123 +48,50 @@ public class EpicureEpicureDashboardShowService implements AbstractShowService<E
 		result = new EpicureDashboard();
 		for (final Object[] o: fineDishesList) {
 			s = (State) o[0];
-			count = (Integer) o[1];
-			switch(s) {
-			case PROPOSED:
-				result.setTotalNProposedFineDishes(count);
-				break;
-			case DENIED:
-				result.setTotalNDeniedFineDishes(count);
-				break;
-			case ACCEPTED:
-				result.setTotalNAcceptedFineDishes(count);
-				break;
-			}
+			count = (Long) o[1];
+			countMap.put(s.toString(), count);
 		}
+		result.setTotalNDishesOfState(countMap);
+		
+		//Average budgets
+		fineDishesList = this.repository.averageBudgetFineDishesOfStateByCurrency(epicureId);
+		valueMap = this.getMapFromList(fineDishesList);
+		result.setAverageBudgetFineDishesOfStateByCurrency(valueMap);
+		
+		//Deviation budgets
+		fineDishesList = this.repository.deviationBudgetFineDishesOfStateByCurrency(epicureId);
+		valueMap = this.getMapFromList(fineDishesList);
+		result.setDeviationBudgetFineDishesOfStateByCurrency(valueMap);
+		
+		//Min budget
+		fineDishesList = this.repository.minBudgetFineDishesOfStateByCurrency(epicureId);
+		valueMap = this.getMapFromList(fineDishesList);
+		result.setMinBudgetFineDishesOfStateByCurrency(valueMap);
+		
+		//Max budget
+		fineDishesList = this.repository.maxBudgetFineDishesOfStateByCurrency(epicureId);
+		valueMap = this.getMapFromList(fineDishesList);
+		result.setMaxBudgetFineDishesOfStateByCurrency(valueMap);
+		
+		return result;
+	}
+	
+	private Map<Pair<String,String>,Double> getMapFromList(final List<Object[]> list){
+		Map<Pair<String,String>,Double> result;
+		result = new HashMap<>();
+		
+		State state;
 		String currency;
+		Pair<String,String> key;
 		Double value;
 		
-		
-		fineDishesList = this.repository.averageBudgetFineDishesOfStateByCurrency(epicureId);
-		for (final Object[] o: fineDishesList) {
-			s = (State) o[0];
+		for(final Object[] o : list) {
+			state = (State) o[0];
 			currency = (String) o[1];
 			value = (Double) o[2];
-			switch(s) {
-			case PROPOSED:
-				proposedMap.put(currency, value);
-				break;
-			case ACCEPTED:
-				acceptedMap.put(currency, value);
-				break;
-			case DENIED:
-				deniedMap.put(currency, value);
-				break;
-			}
+			key = Pair.of(state.toString(), currency);
+			result.put(key, value);
 		}
-		result.setAverageBudgetAcceptedFineDishesByCurrency(acceptedMap);
-		result.setAverageBudgetDeniedFineDishesByCurrency(deniedMap);
-		result.setAverageBudgetProposedFineDishesByCurrency(proposedMap);
-		
-		acceptedMap.clear();
-		deniedMap.clear();
-		proposedMap.clear();
-		
-		fineDishesList = this.repository.deviationBudgetFineDishesOfStateByCurrency(epicureId);
-		for (final Object[] o: fineDishesList) {
-			s = (State) o[0];
-			currency = (String) o[1];
-			value = (Double) o[2];
-			switch(s) {
-			case PROPOSED:
-				proposedMap.put(currency, value);
-				break;
-			case ACCEPTED:
-				acceptedMap.put(currency, value);
-				break;
-			case DENIED:
-				deniedMap.put(currency, value);
-				break;
-			}
-		}
-		result.setDeviationBudgetAcceptedFineDishesByCurrency(acceptedMap);
-		result.setDeviationBudgetDeniedFineDishesByCurrency(deniedMap);
-		result.setDeviationBudgetProposedFineDishesByCurrency(proposedMap);
-		
-		acceptedMap.clear();
-		deniedMap.clear();
-		proposedMap.clear();
-		
-		fineDishesList = this.repository.minBudgetFineDishesOfStateByCurrency(epicureId);
-		for (final Object[] o: fineDishesList) {
-			s = (State) o[0];
-			currency = (String) o[1];
-			value = (Double) o[2];
-			switch(s) {
-			case PROPOSED:
-				proposedMap.put(currency, value);
-				break;
-			case ACCEPTED:
-				acceptedMap.put(currency, value);
-				break;
-			case DENIED:
-				deniedMap.put(currency, value);
-				break;
-			}
-		}
-		result.setMinBudgetAcceptedFineDishesByCurrency(acceptedMap);
-		result.setMinBudgetDeniedFineDishesByCurrency(deniedMap);
-		result.setMinBudgetProposedFineDishesByCurrency(proposedMap);
-		
-		acceptedMap.clear();
-		deniedMap.clear();
-		proposedMap.clear();
-		
-		fineDishesList = this.repository.maxBudgetFineDishesOfStateByCurrency(epicureId);
-		for (final Object[] o: fineDishesList) {
-			s = (State) o[0];
-			currency = (String) o[1];
-			value = (Double) o[2];
-			switch(s) {
-			case PROPOSED:
-				proposedMap.put(currency, value);
-				break;
-			case ACCEPTED:
-				acceptedMap.put(currency, value);
-				break;
-			case DENIED:
-				deniedMap.put(currency, value);
-				break;
-			}
-		}
-		result.setMaxBudgetAcceptedFineDishesByCurrency(acceptedMap);
-		result.setMaxBudgetDeniedFineDishesByCurrency(deniedMap);
-		result.setMaxBudgetProposedFineDishesByCurrency(proposedMap);
-		
-		acceptedMap.clear();
-		deniedMap.clear();
-		proposedMap.clear();
-		
 		return result;
 	}
 
@@ -176,11 +101,11 @@ public class EpicureEpicureDashboardShowService implements AbstractShowService<E
 		assert entity != null;
 		assert model != null;
 				
-		request.unbind(entity, model, "totalNProposedFineDishes", "totalNAcceptedFineDishes", "totalNDeniedFineDishes",
-			"averageBudgetProposedFineDishesByCurrency", "averageBudgetAcceptedFineDishesByCurrency", "averageBudgetDeniedFineDishesByCurrency",
-			"deviationBudgetProposedFineDishesByCurrency", "deviationBudgetAcceptedFineDishesByCurrency", "deviationBudgetDeniedFineDishesByCurrency",
-			"minBudgetProposedFineDishesByCurrency", "minBudgetAcceptedFineDishesByCurrency", "minBudgetDeniedFineDishesByCurrency",
-			"maxBudgetProposedFineDishesByCurrency", "maxBudgetAcceptedFineDishesByCurrency", "maxBudgetDeniedFineDishesByCurrency");
+		request.unbind(entity, model, "totalNDishesOfState",
+			"averageBudgetFineDishesOfStateByCurrency",
+			"deviationBudgetFineDishesOfStateByCurrency",
+			"minBudgetFineDishesOfStateByCurrency",
+			"maxBudgetFineDishesOfStateByCurrency");
 	}
 
 }

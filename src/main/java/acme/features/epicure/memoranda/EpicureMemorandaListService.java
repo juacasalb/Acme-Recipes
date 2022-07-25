@@ -31,7 +31,7 @@ public class EpicureMemorandaListService implements AbstractListService<Epicure,
 		int epicureId;
 		Collection<Memorandum> result;
 		
-		epicureId = request.getPrincipal().getAccountId();
+		epicureId = request.getPrincipal().getActiveRoleId();
 		result = this.repository.findByEpicureId(epicureId);
 		
 		return result;

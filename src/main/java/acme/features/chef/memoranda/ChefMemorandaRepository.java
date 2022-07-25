@@ -12,4 +12,7 @@ import acme.framework.repositories.AbstractRepository;
 public interface ChefMemorandaRepository extends AbstractRepository {
 	@Query("select m from Memorandum m where m.fineDish.chef.id = :id")
 	Collection<Memorandum> findByChefId(int id);
+	
+	@Query("select m from Memorandum m where m.id =:id")
+	Memorandum getMemorandumById(int id);
 }

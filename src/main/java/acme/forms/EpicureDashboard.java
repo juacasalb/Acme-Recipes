@@ -3,6 +3,8 @@ package acme.forms;
 import java.io.Serializable;
 import java.util.Map;
 
+import org.springframework.data.util.Pair;
+
 import lombok.Getter;
 import lombok.Setter;
 
@@ -11,27 +13,13 @@ import lombok.Setter;
 
 public class EpicureDashboard implements Serializable{
 
-private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
+		
+		
+	Map<String, Long> totalNDishesOfState;
 	
-	
-	Integer totalNProposedFineDishes;
-	Integer totalNAcceptedFineDishes;
-	Integer totalNDeniedFineDishes;
-	
-
-	Map<String,Double> averageBudgetProposedFineDishesByCurrency;
-	Map<String,Double> averageBudgetAcceptedFineDishesByCurrency;
-	Map<String,Double> averageBudgetDeniedFineDishesByCurrency;
-	
-	Map<String,Double> deviationBudgetProposedFineDishesByCurrency;
-	Map<String,Double> deviationBudgetAcceptedFineDishesByCurrency;
-	Map<String,Double> deviationBudgetDeniedFineDishesByCurrency;
-	
-	Map<String,Double> minBudgetProposedFineDishesByCurrency;
-	Map<String,Double> minBudgetAcceptedFineDishesByCurrency;
-	Map<String,Double> minBudgetDeniedFineDishesByCurrency;
-	
-	Map<String,Double> maxBudgetProposedFineDishesByCurrency;
-	Map<String,Double> maxBudgetAcceptedFineDishesByCurrency;
-	Map<String,Double> maxBudgetDeniedFineDishesByCurrency;
+	Map<Pair<String, String>,Double> averageBudgetFineDishesOfStateByCurrency;
+	Map<Pair<String, String>,Double> deviationBudgetFineDishesOfStateByCurrency;
+	Map<Pair<String, String>,Double> minBudgetFineDishesOfStateByCurrency;
+	Map<Pair<String, String>,Double> maxBudgetFineDishesOfStateByCurrency;
 }
