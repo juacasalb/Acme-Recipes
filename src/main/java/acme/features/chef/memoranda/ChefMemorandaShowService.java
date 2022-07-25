@@ -24,10 +24,10 @@ public class ChefMemorandaShowService implements AbstractShowService<Chef, Memor
 		boolean result;
 		
 		
-		userId = request.getPrincipal().getAccountId();
+		userId = request.getPrincipal().getActiveRoleId();
 		memorandumId = request.getModel().getInteger("id");
 		
-		memorandum = (Memorandum) this.repository.getOne(memorandumId);
+		memorandum = this.repository.getMemorandumById(memorandumId);
 		
 		result = memorandum.getFineDish().getChef().getId() == userId;
 		

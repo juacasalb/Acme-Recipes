@@ -12,4 +12,7 @@ import acme.framework.repositories.AbstractRepository;
 public interface EpicureMemorandaRepository extends AbstractRepository {
 	@Query("select m from Memorandum m where m.fineDish.epicure.id = :id")
 	Collection<Memorandum> findByEpicureId(int id);
+	
+	@Query("select m from Memorandum m where m.id =:id")
+	Memorandum getMemorandumById(int id);
 }
