@@ -47,7 +47,7 @@ public class EpicureMemorandaListService implements AbstractListService<Epicure,
 		formatter = DateFormat.getInstance();
 		
 		model.setAttribute("fineDishCode", entity.getFineDish().getCode());
-		model.setAttribute("fineDishEpicureUsername", entity.getFineDish().getEpicure().getUserAccount().getUsername());
+		model.setAttribute("fineDishChefUsername", entity.getFineDish().getChef().getUserAccount().getUsername());
 		model.setAttribute("instantiationMoment", formatter.format(entity.getInstantiationMoment()));
 		
 		request.unbind(entity, model, "automaticSeqNum");
