@@ -32,6 +32,7 @@
 			<acme:menu-suboption code="master.menu.chef.memoranda.list" action="/chef/memorandum/list"/>
 			<acme:menu-suboption code="master.menu.chef.ingredients-link" action="/chef/item/list-my-ingredients"/>
 			<acme:menu-suboption code="master.menu.chef.kitchenutensils-link" action="/chef/item/list-my-kitchenutensils"/>
+			<acme:menu-suboption code="master.menu.chef.recipe.list" action="/chef/recipe/list"/>			
     	</acme:menu-option>
 		
 		<acme:menu-option code="master.menu.any.items">

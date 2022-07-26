@@ -49,6 +49,7 @@ master.menu.chef = Chef
 master.menu.chef.kitchenutensils-link = Mis Utensilios de Cocina
 master.menu.chef.ingredients-link = Mis Ingredientes
 master.menu.chef.memoranda.list = Listar todos mis memorandums
+master.menu.chef.recipe.list = Mis recetas
 
 # master.menu.provider ########################################################
 
