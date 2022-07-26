@@ -47,7 +47,8 @@ master.menu.administrator.shut-down = Shut down
 
 master.menu.chef = Chef
 master.menu.chef.kitchenutensils-link = My Kitchen Utensils
-master.menu.chef.ingredients-link = My Ingredients 
+master.menu.chef.ingredients-link = My Ingredients
+master.menu.chef.memoranda.list = List all my memorandums
 
 # master.menu.provider ########################################################
 
@@ -68,12 +69,8 @@ master.menu.user-account.become-provider = Become a provider
 master.menu.user-account.consumer = Consumer data
 master.menu.user-account.become-consumer = Become a consumer
 
-# master.menu.Chef #############################################################
-
-master.menu.chef = Chef
-master.menu.chef.memoranda.list = List all my memorandums
-
 # master.menu.epicure ##########################################################
 
 master.menu.epicure = Epicure
 master.menu.epicure.memoranda.list = List all my memorandums
+master.menu.epicure.epicure-dashboard.show = Show my epicure dashboard
