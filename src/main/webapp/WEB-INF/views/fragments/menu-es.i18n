@@ -75,3 +75,8 @@ master.menu.user-account.become-consumer = Hazte consumidor
 master.menu.epicure = Epicure
 master.menu.epicure.memoranda.list = Listar todos mis memorandums
 master.menu.epicure.epicure-dashboard.show = Mostrar mi epicure dashboard
+
+# master.menu.authenticated ######################################################
+
+master.menu.authenticated = Autenticado
+master.menu.authenticated.bulletins = Boletines
