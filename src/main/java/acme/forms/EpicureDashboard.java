@@ -13,7 +13,8 @@ import lombok.Setter;
 
 public class EpicureDashboard implements Serializable{
 
-private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
+	
 	Map<String, Integer> totalNDishesOfState;
 
 	Map<Pair<String, String>,Double> averageBudgetFineDishesOfStateByCurrency;
