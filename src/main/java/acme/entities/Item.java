@@ -1,6 +1,4 @@
-package acme.entities.fineDish;
-
-import java.util.Date;
+package acme.entities;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -15,49 +13,44 @@ import org.hibernate.validator.constraints.URL;
 
 import acme.framework.datatypes.Money;
 import acme.framework.entities.AbstractEntity;
-import acme.roles.Chef;
-import acme.roles.Epicure;
 import lombok.Getter;
 import lombok.Setter;
 
 @Entity
 @Getter
 @Setter
-public class FineDish extends AbstractEntity{
+public class Item extends AbstractEntity{
 
 	private static final long serialVersionUID = 1L;
 	
-	@NotNull
-	protected State state;
+	@NotBlank
+	@Length(min = 1, max = 101)
+	protected String name;
 	
-	@Pattern(regexp="^([A-Z]{2}:)?[A-Z]{3}-[0-9]{3}$")
+	@NotNull
+	protected ItemType type;
+	
+	@Length(min = 1, max = 15)
+	protected String unit;
+	
+	@NotBlank
 	@Column(unique=true)
-	@NotBlank
+	@Pattern(regexp="^([A-Z]{2}:)?[A-Z]{3}-[0-9]{3}$")
 	protected String code;
+	
 	@NotBlank
-	@Length(max= 256)
-	protected String request;
+	@Length(min = 1, max = 256)
+	protected String description;
+	
 	@NotNull
-	protected Money budget;
-	@NotNull
-	protected Date startPeriod;
-	@NotNull
-	protected Date endPeriod;
+	@Valid
+	protected Money retailPrice;
+	
 	@URL
-	protected String moreInfo;
-	
-	//Relacion con epicure y chef
+	protected String link;
 	
 	@NotNull
 	@Valid
-	@ManyToOne(optional = false)
-	protected Chef chef;
-	
-	@NotNull
-	@Valid
-	@ManyToOne(optional = false)
-	protected Epicure epicure;
-	
-	
-
+	@ManyToOne(optional=true)
+	protected Recipe recipe;
 }

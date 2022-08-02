@@ -1,0 +1,6 @@
+key,name,type,code,description,retailPrice,link,key:recipe
+item-01,ingredient-01,INGREDIENT,"IN:AAB-111","This is a ingredient","EUR 50.0",https://www.plum.com,recipe-01
+item-02,ingredient-02,INGREDIENT,"IN:AAC-112","This is a ingredient","EUR 40.0",https://www.plum.com,recipe-02
+item-03,ingredient-03,INGREDIENT,"IN:AAD-113","This is a ingredient","EUR 100.0",https://www.plum.com,recipe-03
+item-04,utensil-01,KITCHENUTENSIL,"UT:AAB-111","This is a kitchen utensil","EUR 120.0",https://www.plum.com,recipe-04
+item-05,utensil-02,KITCHENUTENSIL,"UT:AAC-112","This is a kitchen utensil","EUR 65.0",https://www.plum.com,recipe-05
