@@ -1,0 +1,6 @@
+key,automaticSeqNum,instantiationMoment,report,link,key:fineDish
+memorandum-01,"FD:ABC-123:0001","2010/02/07 15:10","No. Thats too expensive",https://www.plum.com,fine-dish-02
+memorandum-02,"FD:DEF-456:0002","2015/02/07 10:23","Sure. We can do that",https://www.plums.com,fine-dish-03
+memorandum-03,"FD:GHI-789:0003","2002/02/07 08:05","No. That doesnt reach our quality standard",https://www.plumsd.com,fine-dish-04
+memorandum-04,"FD:JKL-151:0004","2021/02/07 16:00","What is that",https://www.plumsdfg.com,fine-dish-05
+memorandum-05,"FD:TST-001:0005","2010/02/15 17:15","Lets see what can be done",https://www.plumsdfghj.com,fine-dish-01

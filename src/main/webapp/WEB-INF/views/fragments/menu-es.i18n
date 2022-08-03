@@ -15,6 +15,15 @@ master.menu.sign-up = Registrarse
 master.menu.sign-in = Entrar
 master.menu.sign-out = Salir
 
+# master.menu.any #############################################################
+
+master.menu.any = Cualquiera
+master.menu.any.items = Items
+master.menu.any.recipes = Recetas
+master.menu.any.items.kitchenutensils = Lista de Utensilios de Cocina
+master.menu.any.items.ingredients = Lista de Ingredientes
+master.menu.any.recipe = Lista de recetas publicadas
+
 # master.menu.anonymous #######################################################
 
 master.menu.anonymous = Anónimo
@@ -34,6 +43,14 @@ master.menu.administrator.populate-initial = Poblar BD (inicial)
 master.menu.administrator.populate-sample = Poblar BD (ejemplos)
 master.menu.administrator.shut-down = Parar el sistema
 
+# master.menu.chef ############################################################
+
+master.menu.chef = Chef
+master.menu.chef.kitchenutensils-link = Mis Utensilios de Cocina
+master.menu.chef.ingredients-link = Mis Ingredientes
+master.menu.chef.memoranda.list = Listar todos mis memorandums
+master.menu.chef.recipe.list = Mis recetas
+
 # master.menu.provider ########################################################
 
 master.menu.provider = Proveedor
@@ -52,3 +69,14 @@ master.menu.user-account.provider = Datos de proveedor
 master.menu.user-account.become-provider = Hazte proveedor
 master.menu.user-account.consumer = Datos de consumidor
 master.menu.user-account.become-consumer = Hazte consumidor
+
+# master.menu.epicure ##########################################################
+
+master.menu.epicure = Epicure
+master.menu.epicure.memoranda.list = Listar todos mis memorandums
+master.menu.epicure.epicure-dashboard.show = Mostrar mi epicure dashboard
+
+# master.menu.authenticated ######################################################
+
+master.menu.authenticated = Autenticado
+master.menu.authenticated.bulletins = Boletines

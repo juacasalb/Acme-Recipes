@@ -26,6 +26,24 @@
 			<acme:menu-suboption code="master.menu.anonymous.link.vicgrabru" action="https://www.lavanguardia.com/"/>
 			<acme:menu-suboption code="master.menu.anonymous.link.juacasben" action="https://www.elmundo.es/"/>
 		</acme:menu-option>
+		
+
+		<acme:menu-option code="master.menu.chef" access="hasRole('Chef')">
+			<acme:menu-suboption code="master.menu.chef.memoranda.list" action="/chef/memorandum/list"/>
+			<acme:menu-suboption code="master.menu.chef.ingredients-link" action="/chef/item/list-my-ingredients"/>
+			<acme:menu-suboption code="master.menu.chef.kitchenutensils-link" action="/chef/item/list-my-kitchenutensils"/>
+			<acme:menu-suboption code="master.menu.chef.recipe.list" action="/chef/recipe/list"/>			
+    	</acme:menu-option>
+		
+		<acme:menu-option code="master.menu.any.items">
+			<acme:menu-suboption code="master.menu.any.items.kitchenutensils" action="/any/item/list?type=kitchenutensil"/>
+			<acme:menu-separator/>
+			<acme:menu-suboption code="master.menu.any.items.ingredients" action="/any/item/list?type=ingredient"/>
+		</acme:menu-option>
+		
+		<acme:menu-option code="master.menu.any.recipes">
+			<acme:menu-suboption code="master.menu.any.recipe" action="/any/recipe/list"/>
+		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.administrator" access="hasRole('Administrator')">
 			<acme:menu-suboption code="master.menu.administrator.user-accounts" action="/administrator/user-account/list"/>
@@ -39,9 +57,18 @@
 		<acme:menu-option code="master.menu.provider" access="hasRole('Provider')">
 			<acme:menu-suboption code="master.menu.provider.favourite-link" action="http://www.example.com/"/>
 		</acme:menu-option>
+		
+		<acme:menu-option code="master.menu.epicure" access="hasRole('Epicure')">
+			<acme:menu-suboption code="master.menu.epicure.memoranda.list" action="/epicure/memorandum/list"/>
+			<acme:menu-suboption code="master.menu.epicure.epicure-dashboard.show" action="/epicure/epicure-dashboard/show"/>
+		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.consumer" access="hasRole('Consumer')">
 			<acme:menu-suboption code="master.menu.consumer.favourite-link" action="http://www.example.com/"/>
+		</acme:menu-option>
+		
+		<acme:menu-option code="master.menu.authenticated" access="hasRole('Authenticated')">
+			<acme:menu-suboption code="master.menu.authenticated.bulletins" action="/authenticated/bulletin/list"/>
 		</acme:menu-option>
 	</acme:menu-left>
 

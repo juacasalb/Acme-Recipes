@@ -1,0 +1,9 @@
+authenticated.bulletin.list.label.instantiationMoment = Momento de Creación
+authenticated.bulletin.list.label.heading = Cabecera
+authenticated.bulletin.list.label.flag = Crítico o no
+
+authenticated.bulletin.form.label.instantiationMoment = Momento de Creación
+authenticated.bulletin.form.label.heading = Cabecera
+authenticated.bulletin.form.label.text = Texto
+authenticated.bulletin.form.label.flag = Crítico o no
+authenticated.bulletin.form.label.link = Enlace

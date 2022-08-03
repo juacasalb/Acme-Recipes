@@ -17,8 +17,9 @@ public class EpicureDashboard implements Serializable{
 	
 	Map<String, Integer> totalNDishesOfState;
 
-	Map<Pair<String, String>,Double> averageBudgetFineDishesOfStateByCurrency;
+  Map<Pair<String, String>,Double> averageBudgetFineDishesOfStateByCurrency;
 	Map<Pair<String, String>,Double> deviationBudgetFineDishesOfStateByCurrency;
 	Map<Pair<String, String>,Double> minBudgetFineDishesOfStateByCurrency;
 	Map<Pair<String, String>,Double> maxBudgetFineDishesOfStateByCurrency;
+  
 }
