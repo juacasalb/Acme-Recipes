@@ -6,7 +6,7 @@ import org.junit.jupiter.params.provider.CsvFileSource;
 
 import acme.testing.TestHarness;
 
-public class AnyRecipeFormPublishedTest extends TestHarness{
+public class AnyRecipeShowPublishedTest extends TestHarness{
 	
 	// Lifecycle management ---------------------------------------------------
 
