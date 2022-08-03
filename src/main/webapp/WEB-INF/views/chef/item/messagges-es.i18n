@@ -10,3 +10,4 @@ chef.item.form.label.description = Descripcion
 chef.item.form.label.retailPrice = Precio
 chef.item.form.label.link = Link
 chef.item.form.label.published = Publicado
+chef.item.form.label.type = Tipo
