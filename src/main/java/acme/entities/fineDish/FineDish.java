@@ -47,6 +47,7 @@ public class FineDish extends AbstractEntity{
 	protected String moreInfo;
 	
 	//Relacion con epicure y chef
+
 	@NotNull
 	@Valid
 	@ManyToOne(optional = false)
@@ -56,4 +57,5 @@ public class FineDish extends AbstractEntity{
 	@Valid
 	@ManyToOne(optional = false)
 	protected Epicure epicure;
+
 }
