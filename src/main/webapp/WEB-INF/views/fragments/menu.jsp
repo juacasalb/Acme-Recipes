@@ -40,6 +40,9 @@
 			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.any.items.ingredients" action="/any/item/list?type=ingredient"/>
 		</acme:menu-option>
+		<acme:menu-option code="master.menu.any.peeps">
+			<acme:menu-suboption code="master.menu.any.peeps.list" action="/any/peep/list"/>
+		</acme:menu-option>
 		
 		<acme:menu-option code="master.menu.any.recipes">
 			<acme:menu-suboption code="master.menu.any.recipe" action="/any/recipe/list"/>
