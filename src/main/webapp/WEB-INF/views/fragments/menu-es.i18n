@@ -23,6 +23,8 @@ master.menu.any.recipes = Recetas
 master.menu.any.items.kitchenutensils = Lista de Utensilios de Cocina
 master.menu.any.items.ingredients = Lista de Ingredientes
 master.menu.any.recipe = Lista de recetas publicadas
+master.menu.any.peeps = Peeps
+master.menu.any.peeps.list = Lista de Peeps
 
 # master.menu.anonymous #######################################################
 
