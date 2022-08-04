@@ -1,0 +1,6 @@
+authenticated.chef.form.label.organisation = Organización
+authenticated.chef.form.label.assertion = Afirmación
+authenticated.chef.form.label.link = Link
+
+authenticated.chef.form.button.create = Registrarse
+authenticated.chef.form.button.update = Actualizar
