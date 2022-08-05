@@ -16,9 +16,14 @@
 <%@taglib prefix="acme" uri="urn:jsptagdir:/WEB-INF/tags"%>
 
 <acme:form>
-	<acme:input-textbox code="form.chef.fine-dish.code" path="code"/>
-	<acme:input-textarea code="form.chef.fine-dish.request" path="request"/>
-	<acme:input-moment code="form.chef.fine.dish.startPeriod" path="startPeriod"/>
-	<acme:input-moment code="form.chef.fine.dish.endPeriod" path="endPeriod"/>
-	<acme:input-url code="form.chef.fine-dish.moreInfo" path="moreInfo"/>
+	<acme:input-select code="form.chef.fine-dish.state" path="state" readonly="${readOnly}">
+		<acme:input-option code="form.chef.fine-dish.state.PROPOSED" value="PROPOSED" selected="${type == 'PROPOSED'}"/>
+		<acme:input-option code="form.chef.fine-dish.state.DENIED" value="DENIED" selected="${type == 'DENIED'}"/>
+		<acme:input-option code="form.chef.fine-dish.state.ACCEPTED" value="ACCEPTED" selected="${type == 'ACCEPTED'}"/>
+	</acme:input-select>
+	<acme:input-textbox code="form.chef.fine-dish.code" path="code" readonly="${readOnly}"/>
+	<acme:input-textarea code="form.chef.fine-dish.request" path="request" readonly="${readOnly}"/>
+	<acme:input-moment code="form.chef.fine.dish.startPeriod" path="startPeriod" readonly="${readOnly}"/>
+	<acme:input-moment code="form.chef.fine.dish.endPeriod" path="endPeriod" readonly="${readOnly}"/>
+	<acme:input-url code="form.chef.fine-dish.moreInfo" path="moreInfo" readonly="${readOnly}"/>
 </acme:form>

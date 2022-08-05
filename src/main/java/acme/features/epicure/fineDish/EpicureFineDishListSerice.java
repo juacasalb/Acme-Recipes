@@ -20,14 +20,12 @@ public class EpicureFineDishListSerice implements AbstractListService<Epicure,Fi
 	@Override
 	public boolean authorise(final Request<FineDish> request) {
 		assert request != null;
-		
 		return true;
 	}
 
 	@Override
 	public Collection<FineDish> findMany(final Request<FineDish> request) {
 		assert request != null;
-		
 		final int epicureId = request.getPrincipal().getActiveRoleId();
 		Collection<FineDish> result;
 		result= this.repository.findEpicureDishesByEpicureId(epicureId);

@@ -19,8 +19,13 @@ public class ChefFineDishUpdateService implements AbstractUpdateService<Chef,Fin
 	
 	@Override
 	public boolean authorise(final Request<FineDish> request) {
-		// TODO Auto-generated method stub
-		return false;
+		assert request != null;
+		
+		final int roleId = request.getPrincipal().getActiveRoleId();
+		final int dishId = request.getModel().getInteger("id");
+		final FineDish fineDish = this.repository.findFineDishByDishId(dishId);
+		
+		return roleId == fineDish.getChef().getId();
 	}
 
 	@Override
@@ -31,26 +36,33 @@ public class ChefFineDishUpdateService implements AbstractUpdateService<Chef,Fin
 
 	@Override
 	public void unbind(final Request<FineDish> request, final FineDish entity, final Model model) {
-		// TODO Auto-generated method stub
+		assert request != null;
+		assert entity != null;
+		assert model != null;
+		request.getModel().setAttribute("readOnly", true);
+		request.unbind(entity, model,"state","code","request","budget","startPeriod","endPeriod","moreInfo");
 		
 	}
 
 	@Override
 	public FineDish findOne(final Request<FineDish> request) {
-		// TODO Auto-generated method stub
-		return null;
+		final int dishId = request.getModel().getInteger("id");
+		final FineDish result = this.repository.findFineDishByDishId(dishId);
+		return result;
 	}
 
 	@Override
 	public void validate(final Request<FineDish> request, final FineDish entity, final Errors errors) {
-		// TODO Auto-generated method stub
+		assert request != null;
+		assert entity != null;
+		assert errors != null;
 		
 	}
 
 	@Override
 	public void update(final Request<FineDish> request, final FineDish entity) {
-		// TODO Auto-generated method stub
-		
+		assert request != null;
+		assert entity != null;
 	}
 
 }
