@@ -30,6 +30,7 @@
 
 		<acme:menu-option code="master.menu.chef" access="hasRole('Chef')">
 			<acme:menu-suboption code="master.menu.chef.memoranda.list" action="/chef/memorandum/list"/>
+			<acme:menu-suboption code="master.menu.chef.fine-dish.list" action="/chef/fine-dish/list"/>
 			<acme:menu-suboption code="master.menu.chef.ingredients-link" action="/chef/item/list-my-ingredients"/>
 			<acme:menu-suboption code="master.menu.chef.kitchenutensils-link" action="/chef/item/list-my-kitchenutensils"/>
 			<acme:menu-suboption code="master.menu.chef.recipe.list" action="/chef/recipe/list"/>			
@@ -63,6 +64,7 @@
 		
 		<acme:menu-option code="master.menu.epicure" access="hasRole('Epicure')">
 			<acme:menu-suboption code="master.menu.epicure.memoranda.list" action="/epicure/memorandum/list"/>
+			<acme:menu-suboption code="master.menu.epicure.fine-dish.list" action="/epicure/fine-dish/list"/>
 			<acme:menu-suboption code="master.menu.epicure.epicure-dashboard.show" action="/epicure/epicure-dashboard/show"/>
 		</acme:menu-option>
 

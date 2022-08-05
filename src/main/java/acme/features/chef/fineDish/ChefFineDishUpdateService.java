@@ -39,9 +39,7 @@ public class ChefFineDishUpdateService implements AbstractUpdateService<Chef,Fin
 		assert request != null;
 		assert entity != null;
 		assert model != null;
-		request.getModel().setAttribute("readOnly", true);
-		request.unbind(entity, model,"state","code","request","budget","startPeriod","endPeriod","moreInfo");
-		
+		request.unbind(entity, model,"state","code","request","budget","startPeriod","endPeriod","moreInfo","epicure.identity.name","epicure.identity.surname","epicure.identity.email");		
 	}
 
 	@Override

@@ -12,3 +12,7 @@ form.epicure.fine-dish.state = State
 form.epicure.fine-dish.state.PROPOSED = Proposed
 form.epicure.fine-dish.state.DENIED = Denied
 form.epicure.fine-dish.state.ACCEPTED = Accepted
+
+form.epicure.fine-dish.chef.identity.name = Chef's name
+form.epicure.fine-dish.chef.identity.surname = Chef's surname
+form.epicure.fine-dish.chef.identity.email = Chef's email

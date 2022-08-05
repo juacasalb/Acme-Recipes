@@ -11,7 +11,7 @@ import acme.framework.repositories.AbstractRepository;
 @Repository
 public interface ChefFineDishRepository extends AbstractRepository {
 
-	@Query("SELECT fd FROM FineDish fd WHERE fd.epicure.id = :chefId")
+	@Query("SELECT fd FROM FineDish fd WHERE fd.chef.id = :chefId")
 	Collection<FineDish> findEpicureDishesByEpicureId(int chefId);
 
 	@Query("SELECT fd FROM FineDish fd WHERE fd.id = :dishId")

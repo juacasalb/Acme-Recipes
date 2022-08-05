@@ -26,4 +26,8 @@
 	<acme:input-moment code="form.chef.fine.dish.startPeriod" path="startPeriod" readonly="${readOnly}"/>
 	<acme:input-moment code="form.chef.fine.dish.endPeriod" path="endPeriod" readonly="${readOnly}"/>
 	<acme:input-url code="form.chef.fine-dish.moreInfo" path="moreInfo" readonly="${readOnly}"/>
+	<acme:input-textbox code="form.chef.fine-dish.epicure.identity.name" path="epicure.identity.name" readonly="${readOnly}"/>
+	<acme:input-textbox code="form.chef.fine-dish.epicure.identity.surname" path="epicure.identity.surname" readonly="${readOnly}"/>
+	<acme:input-textbox code="form.chef.fine-dish.epicure.identity.email" path="epicure.identity.email" readonly="${readOnly}"/>
 </acme:form>
+

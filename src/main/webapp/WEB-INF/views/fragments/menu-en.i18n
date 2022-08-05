@@ -53,6 +53,7 @@ master.menu.chef.kitchenutensils-link = My Kitchen Utensils
 master.menu.chef.ingredients-link = My Ingredients
 master.menu.chef.memoranda.list = List all my memorandums
 master.menu.chef.recipe.list = My recipes
+master.menu.chef.fine-dish.list = My fine dishes
 
 # master.menu.provider ########################################################
 
@@ -78,6 +79,7 @@ master.menu.user-account.become-consumer = Become a consumer
 master.menu.epicure = Epicure
 master.menu.epicure.memoranda.list = List all my memorandums
 master.menu.epicure.epicure-dashboard.show = Show my epicure dashboard
+master.menu.epicure.fine-dish.list = My fine dishes
 
 # master.menu.authenticated ######################################################
 

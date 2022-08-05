@@ -38,8 +38,7 @@ public class EpicureFineDishUpdateService implements AbstractUpdateService<Epicu
 		assert request != null;
 		assert entity != null;
 		assert model != null;
-		request.getModel().setAttribute("readOnly", true);
-		request.unbind(entity, model,"state","code","request","budget","startPeriod","endPeriod","moreInfo");
+		request.unbind(entity, model,"state","code","request","budget","startPeriod","endPeriod","moreInfo","chef.identity.name","chef.identity.surname","chef.identity.email");
 	}
 
 	@Override
@@ -64,4 +63,5 @@ public class EpicureFineDishUpdateService implements AbstractUpdateService<Epicu
 		
 	}
 
+	
 }
