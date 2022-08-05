@@ -1,0 +1,18 @@
+list.epicure.fine-dish.code = Code
+list.epicure.fine-dish.budget = Budget
+list.epicure.fine-dish.startPeriod = Start of period
+list.epicure.fine-dish.endPeriod = End of period
+
+form.epicure.fine-dish.code = Code
+form.epicure.fine-dish.request = Request
+form.epicure.fine.dish.startPeriod = Start of period
+form.epicure.fine.dish.endPeriod = End of period
+form.epicure.fine-dish.moreInfo = More info
+form.epicure.fine-dish.state = State
+form.epicure.fine-dish.state.PROPOSED = Proposed
+form.epicure.fine-dish.state.DENIED = Denied
+form.epicure.fine-dish.state.ACCEPTED = Accepted
+
+form.epicure.fine-dish.chef.identity.name = Chef's name
+form.epicure.fine-dish.chef.identity.surname = Chef's surname
+form.epicure.fine-dish.chef.identity.email = Chef's email

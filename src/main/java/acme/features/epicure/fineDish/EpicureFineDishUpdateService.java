@@ -1,4 +1,4 @@
-package acme.features.chef.fineDish;
+package acme.features.epicure.fineDish;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -8,15 +8,14 @@ import acme.framework.components.models.Model;
 import acme.framework.controllers.Errors;
 import acme.framework.controllers.Request;
 import acme.framework.services.AbstractUpdateService;
-import acme.roles.Chef;
+import acme.roles.Epicure;
 
 @Service
-public class ChefFineDishUpdateService implements AbstractUpdateService<Chef,FineDish>{
-
+public class EpicureFineDishUpdateService implements AbstractUpdateService<Epicure,FineDish> {
 	
 	@Autowired
-	protected ChefFineDishRepository repository;
-	
+	protected EpicureFineDishRepository repository;
+
 	@Override
 	public boolean authorise(final Request<FineDish> request) {
 		assert request != null;
@@ -25,7 +24,7 @@ public class ChefFineDishUpdateService implements AbstractUpdateService<Chef,Fin
 		final int dishId = request.getModel().getInteger("id");
 		final FineDish fineDish = this.repository.findFineDishByDishId(dishId);
 		
-		return roleId == fineDish.getChef().getId();
+		return roleId == fineDish.getEpicure().getId();
 	}
 
 	@Override
@@ -39,7 +38,7 @@ public class ChefFineDishUpdateService implements AbstractUpdateService<Chef,Fin
 		assert request != null;
 		assert entity != null;
 		assert model != null;
-		request.unbind(entity, model,"state","code","request","budget","startPeriod","endPeriod","moreInfo","epicure.identity.name","epicure.identity.surname","epicure.identity.email");		
+		request.unbind(entity, model,"state","code","request","budget","startPeriod","endPeriod","moreInfo","chef.identity.name","chef.identity.surname","chef.identity.email");
 	}
 
 	@Override
@@ -61,6 +60,8 @@ public class ChefFineDishUpdateService implements AbstractUpdateService<Chef,Fin
 	public void update(final Request<FineDish> request, final FineDish entity) {
 		assert request != null;
 		assert entity != null;
+		
 	}
 
+	
 }

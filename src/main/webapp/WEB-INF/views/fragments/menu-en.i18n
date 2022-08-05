@@ -23,6 +23,9 @@ master.menu.any.recipes = Recipes
 master.menu.any.items.kitchenutensils = List of Kitchen Utensils
 master.menu.any.items.ingredients = List of Ingredients
 master.menu.any.recipe = List of Published Recipes
+master.menu.any.peeps = Peeps
+master.menu.any.peeps.list = List of Peeps
+
 
 # master.menu.anonymous #######################################################
 
@@ -50,6 +53,7 @@ master.menu.chef.kitchenutensils-link = My Kitchen Utensils
 master.menu.chef.ingredients-link = My Ingredients
 master.menu.chef.memoranda.list = List all my memorandums
 master.menu.chef.recipe.list = My recipes
+master.menu.chef.fine-dish.list = My fine dishes
 
 # master.menu.provider ########################################################
 
@@ -75,6 +79,7 @@ master.menu.user-account.become-epicure = Become a epicure
 master.menu.epicure = Epicure
 master.menu.epicure.memoranda.list = List all my memorandums
 master.menu.epicure.epicure-dashboard.show = Show my epicure dashboard
+master.menu.epicure.fine-dish.list = My fine dishes
 
 # master.menu.authenticated ######################################################
 

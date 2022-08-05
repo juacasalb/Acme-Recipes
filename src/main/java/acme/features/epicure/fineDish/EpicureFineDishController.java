@@ -1,4 +1,4 @@
-package acme.features.chef.fineDish;
+package acme.features.epicure.fineDish;
 
 import javax.annotation.PostConstruct;
 
@@ -7,15 +7,15 @@ import org.springframework.stereotype.Controller;
 
 import acme.entities.fineDish.FineDish;
 import acme.framework.controllers.AbstractController;
-import acme.roles.Chef;
+import acme.roles.Epicure;
 
 @Controller
-public class ChefFineDishController extends AbstractController<Chef,FineDish> {
+public class EpicureFineDishController extends AbstractController<Epicure, FineDish>{
 
 	@Autowired
-	protected ChefFineDishListService listService;
+	protected EpicureFineDishListSerice listService;
 	@Autowired
-	protected ChefFineDishUpdateService updateService;
+	protected EpicureFineDishUpdateService updateService;
 	
 	@PostConstruct
 	protected void initialise() {

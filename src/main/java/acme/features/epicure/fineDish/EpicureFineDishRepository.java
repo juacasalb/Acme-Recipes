@@ -1,4 +1,4 @@
-package acme.features.chef.fineDish;
+package acme.features.epicure.fineDish;
 
 import java.util.Collection;
 
@@ -9,13 +9,12 @@ import acme.entities.fineDish.FineDish;
 import acme.framework.repositories.AbstractRepository;
 
 @Repository
-public interface ChefFineDishRepository extends AbstractRepository {
+public interface EpicureFineDishRepository extends AbstractRepository{
 
-	@Query("SELECT fd FROM FineDish fd WHERE fd.chef.id = :chefId")
-	Collection<FineDish> findEpicureDishesByEpicureId(int chefId);
+	@Query("SELECT fd FROM FineDish fd WHERE fd.epicure.id = :epicureId")
+	Collection<FineDish> findEpicureDishesByEpicureId(int epicureId);
 
 	@Query("SELECT fd FROM FineDish fd WHERE fd.id = :dishId")
 	FineDish findFineDishByDishId(int dishId);
 
-	
 }

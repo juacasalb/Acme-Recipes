@@ -1,0 +1,18 @@
+list.epicure.fine-dish.code = Código
+list.epicure.fine-dish.budget = Presupuesto
+list.epicure.fine-dish.startPeriod = Comienzo de período
+list.epicure.fine-dish.endPeriod = Fin de período
+
+form.epicure.fine-dish.code = Código
+form.epicure.fine-dish.request = Petición
+form.epicure.fine.dish.startPeriod = Comienzo de período
+form.epicure.fine.dish.endPeriod = Fin de período
+form.epicure.fine-dish.moreInfo = Más información
+form.epicure.fine-dish.state = Estado
+form.epicure.fine-dish.state.PROPOSED = Propuesto
+form.epicure.fine-dish.state.DENIED = Denegado
+form.epicure.fine-dish.state.ACCEPTED = Aceptado
+
+form.epicure.fine-dish.chef.identity.name = Nombre del chef
+form.epicure.fine-dish.chef.identity.surname = Apellido del chef
+form.epicure.fine-dish.chef.identity.email = Email del chef

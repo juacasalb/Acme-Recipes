@@ -1,4 +1,4 @@
-package acme.features.chef.fineDish;
+package acme.features.epicure.fineDish;
 
 import java.util.Collection;
 
@@ -9,14 +9,14 @@ import acme.entities.fineDish.FineDish;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
 import acme.framework.services.AbstractListService;
-import acme.roles.Chef;
+import acme.roles.Epicure;
 
 @Service
-public class ChefFineDishListService implements AbstractListService<Chef,FineDish> {
-
-	@Autowired
-	protected ChefFineDishRepository repository;
+public class EpicureFineDishListSerice implements AbstractListService<Epicure,FineDish> {
 	
+	@Autowired
+	protected EpicureFineDishRepository repository;
+
 	@Override
 	public boolean authorise(final Request<FineDish> request) {
 		assert request != null;
@@ -26,9 +26,9 @@ public class ChefFineDishListService implements AbstractListService<Chef,FineDis
 	@Override
 	public Collection<FineDish> findMany(final Request<FineDish> request) {
 		assert request != null;
-		final int chefId = request.getPrincipal().getActiveRoleId();
+		final int epicureId = request.getPrincipal().getActiveRoleId();
 		Collection<FineDish> result;
-		result= this.repository.findEpicureDishesByEpicureId(chefId);
+		result= this.repository.findEpicureDishesByEpicureId(epicureId);
 		return result;
 	}
 
