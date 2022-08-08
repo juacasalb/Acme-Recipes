@@ -1,6 +1,6 @@
 key,key:userAccount,organisation,assertion
 epicure-01,user-account-epicure-01,"Organistaion DP II","This is a epicure assertion"
-epicure-02,user-account-epicure-02,"Organistaion DP II","This is a chef assertion"
-epicure-03,user-account-epicure-03,"Organistaion IA","This is a chef assertion"
-epicure-04,user-account-epicure-04,"Organistaion ASR","This is a chef assertion"
-epicure-05,user-account-epicure-05,"Organistaion IA","This is a chef assertion"
+epicure-02,user-account-epicure-02,"Organistaion DP II","This is a epicure assertion"
+epicure-03,user-account-epicure-03,"Organistaion IA","This is a epicure assertion"
+epicure-04,user-account-epicure-04,"Organistaion ASR","This is a epicure assertion"
+epicure-05,user-account-epicure-05,"Organistaion IA","This is a epicure assertion"

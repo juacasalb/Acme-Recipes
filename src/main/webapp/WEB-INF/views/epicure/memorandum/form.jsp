@@ -16,11 +16,20 @@
 <%@taglib prefix="acme" uri="urn:jsptagdir:/WEB-INF/tags"%>
 
 <acme:form readonly="${readOnly}">
-	<acme:input-integer code="epicure.memoranda.form.label.automatic-seq-num" path="automaticSeqNum"/>
+	<acme:input-moment code="epicure.memoranda.form.label.instantiation-moment" path="instantiationMoment" readonly="${true}"/>
 	<acme:input-textbox code="epicure.memoranda.form.label.report" path="report"/>
 	<acme:input-url code="epicure.memoranda.form.label.link" path="link"/>
-	<acme:input-moment code="epicure.memoranda.form.label.instantiation-moment" path="instantiationMoment"/>
-	
 	<acme:input-textbox code="epicure.memoranda.form.label.fine-dish.code" path="fineDishCode"/>
-	<acme:input-textbox code="epicure.memoranda.form.label.fine-dish.chef-username" path="fineDishChefUsername"/>
+	
+	
+	<jstl:choose>
+		<jstl:when test="${command == 'show'}">
+			<acme:input-integer code="epicure.memoranda.form.label.automatic-seq-num" path="automaticSeqNum"/>
+			<acme:input-textbox code="epicure.memoranda.form.label.fine-dish.chef-username" path="fineDishChefUsername"/>
+		</jstl:when>
+		<jstl:when test="${command == 'create'}">
+			<acme:input-checkbox code="epicure.memoranda.form.label.confirmation" path="confirmation"/>
+			<acme:submit code="epicure.memoranda.form.label.create.button" action="/epicure/memorandum/create"/>
+		</jstl:when>
+	</jstl:choose>
 </acme:form>

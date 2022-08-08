@@ -1,4 +1,4 @@
-package acme.features.chef.memoranda;
+package acme.features.epicure.memoranda;
 
 import java.sql.Date;
 import java.time.LocalDate;
@@ -13,13 +13,13 @@ import acme.framework.components.models.Model;
 import acme.framework.controllers.Errors;
 import acme.framework.controllers.Request;
 import acme.framework.services.AbstractCreateService;
-import acme.roles.Chef;
+import acme.roles.Epicure;
 
 @Service
-public class ChefMemorandaCreateService implements AbstractCreateService<Chef, Memorandum> {
+public class EpicureMemorandaCreateService implements AbstractCreateService<Epicure, Memorandum> {
 	
 	@Autowired
-	protected ChefMemorandaRepository repository;
+	protected EpicureMemorandaRepository repository;
 	
 	@Override
 	public boolean authorise(final Request<Memorandum> request) {
@@ -80,13 +80,13 @@ public class ChefMemorandaCreateService implements AbstractCreateService<Chef, M
 		
 		//Comprueba que se ha marcado la casilla de confirmacion
 		if(!errors.hasErrors("confirmation")) {
-			errors.state(request, request.getModel().getBoolean("confirmation"), "confirmation", "chef.memoranda.confirmation.required");
+			errors.state(request, request.getModel().getBoolean("confirmation"), "confirmation", "epicure.memoranda.confirmation.required");
 		}
 		//Comprueba que hay un FineDish con el codigo especificado
 		if(!errors.hasErrors("fineDishCode")) {
 			code = request.getModel().getString("fineDishCode");
 			fd = this.repository.getFineDishByCode(code);
-			errors.state(request, fd != null, "fineDishCode", "chef.memoranda.fine-dish-code.fine-dish-doesnt-exist");
+			errors.state(request, fd != null, "fineDishCode", "epicure.memoranda.fine-dish-code.fine-dish-doesnt-exist");
 		}
 		
 		

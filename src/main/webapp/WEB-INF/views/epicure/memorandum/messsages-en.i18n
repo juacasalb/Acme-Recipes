@@ -14,8 +14,13 @@ epicure.memoranda.form.label.link = Optional Link
 epicure.memoranda.form.label.instantiation-moment = Instantiation moment
 epicure.memoranda.form.label.fine-dish.code = Code of the fine dish
 epicure.memoranda.form.label.fine-dish.chef-username = Username of the chef
+epicure.memoranda.form.label.confirmation = Yes, I am aware that i cannot change or delete this memorandum once it is created
+epicure.memoranda.form.label.create.button = Create memorandum
+epicure.memoranda.confirmation.required = It is required that you check this checkbox to create the memorandum
+epicure.memoranda.fine-dish-code.fine-dish-doesnt-exist = There is no Fine Dish with this code
 
 epicure.memoranda.list.label.automatic-seq-num = Sequence number
 epicure.memoranda.list.label.instantiation-moment = Instantiation moment
 epicure.memoranda.list.label.fine-dish.code = Code of the fine dish
 epicure.memoranda.list.label.fine-dish.chef-username = Username of the chef
+epicure.memoranda.list.label.create-redirect-button = Create a new memorandum
