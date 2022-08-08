@@ -23,11 +23,19 @@
 	</acme:input-select>
 	<acme:input-textbox code="form.epicure.fine-dish.code" path="code" readonly="${readOnly}"/>
 	<acme:input-textarea code="form.epicure.fine-dish.request" path="request" readonly="${readOnly}"/>
+	<acme:input-money code="form.epicure.fine.dish.budget" path="budget"/>
 	<acme:input-moment code="form.epicure.fine.dish.startPeriod" path="startPeriod" readonly="${readOnly}"/>
 	<acme:input-moment code="form.epicure.fine.dish.endPeriod" path="endPeriod" readonly="${readOnly}"/>
 	<acme:input-url code="form.epicure.fine-dish.moreInfo" path="moreInfo" readonly="${readOnly}"/>
-	<acme:input-textbox code="form.epicure.fine-dish.chef.identity.name" path="chef.identity.name" readonly="${readOnly}"/>
-	<acme:input-textbox code="form.epicure.fine-dish.chef.identity.surname" path="chef.identity.surname" readonly="${readOnly}"/>
-	<acme:input-textbox code="form.epicure.fine-dish.chef.identity.email" path="chef.identity.email" readonly="${readOnly}"/>
+	<jstl:when test="${command == 'show, update, delete, publish' }">
+		<acme:input-textbox code="form.epicure.fine-dish.chef.identity.name" path="chef.identity.name" readonly="${readOnly}"/>
+		<acme:input-textbox code="form.epicure.fine-dish.chef.identity.surname" path="chef.identity.surname" readonly="${readOnly}"/>
+		<acme:input-textbox code="form.epicure.fine-dish.chef.identity.email" path="chef.identity.email" readonly="${readOnly}"/>
+	</jstl:when>
+	<jstl:when test="${command =='create' }">
+		<acme:input-textbox code="form.epicure.fine-dish.chef.find" path="chef-id"/>
+	</jstl:when>
+	
+	
 </acme:form>
 

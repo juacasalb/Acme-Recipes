@@ -5,6 +5,7 @@ list.epicure.fine-dish.endPeriod = Fin de período
 
 form.epicure.fine-dish.code = Código
 form.epicure.fine-dish.request = Petición
+form.epicure.fine.dish.budget = Presupuesto
 form.epicure.fine.dish.startPeriod = Comienzo de período
 form.epicure.fine.dish.endPeriod = Fin de período
 form.epicure.fine-dish.moreInfo = Más información

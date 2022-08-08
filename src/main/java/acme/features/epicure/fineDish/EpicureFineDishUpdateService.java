@@ -29,7 +29,7 @@ public class EpicureFineDishUpdateService implements AbstractUpdateService<Epicu
 
 	@Override
 	public void bind(final Request<FineDish> request, final FineDish entity, final Errors errors) {
-		// TODO Auto-generated method stub
+		request.bind(request,errors,"state","code","request","budget","startPeriod","endPeriod","moreInfo");
 		
 	}
 

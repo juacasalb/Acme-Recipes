@@ -7,6 +7,7 @@ import org.springframework.stereotype.Repository;
 
 import acme.entities.fineDish.FineDish;
 import acme.framework.repositories.AbstractRepository;
+import acme.roles.Epicure;
 
 @Repository
 public interface EpicureFineDishRepository extends AbstractRepository{
@@ -16,5 +17,9 @@ public interface EpicureFineDishRepository extends AbstractRepository{
 
 	@Query("SELECT fd FROM FineDish fd WHERE fd.id = :dishId")
 	FineDish findFineDishByDishId(int dishId);
+
+	@Query("SELECT e FROM Epicre e WHERE e.id = :epicureId")
+	Epicure findById(int epicureId);
+	
 
 }

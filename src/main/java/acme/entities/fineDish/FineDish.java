@@ -46,6 +46,8 @@ public class FineDish extends AbstractEntity{
 	@URL
 	protected String moreInfo;
 	
+	protected boolean published = false;
+	
 	//Relacion con epicure y chef
 
 	@NotNull
