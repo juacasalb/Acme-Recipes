@@ -14,8 +14,14 @@ chef.memoranda.form.label.link = Enlace opcional
 chef.memoranda.form.label.instantiation-moment = Momento de instanciación
 chef.memoranda.form.label.fine-dish.code = Código del plato fino
 chef.memoranda.form.label.fine-dish.epicure-username = Nombre de usuario del epicure
+chef.memoranda.form.label.confirmation = Soy consciente de que no se puede cambiar o eliminar este memorandum una vez creado
+chef.memoranda.form.label.create.button = Crear memorandum
+chef.memoranda.confirmation.required = Se debe confirmar esta casilla para crear el memorandum
+chef.memoranda.fine-dish-code.fine-dish-doesnt-exist = No existe un plato fino con este código
+
 
 chef.memoranda.list.label.automatic-seq-num = Número de secuencia
 chef.memoranda.list.label.instantiation-moment = Momento de instanciación
 chef.memoranda.list.label.fine-dish.code = Código del plato fino
 chef.memoranda.list.label.fine-dish.epicure-username = Nombre de usuario del epicure
+chef.memoranda.list.label.create-redirect-button = Crear un memorandum nuevo
