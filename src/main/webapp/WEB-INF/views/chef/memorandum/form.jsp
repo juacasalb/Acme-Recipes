@@ -17,12 +17,9 @@
 
 <acme:form readonly="${readOnly}">
 	<acme:input-moment code="chef.memoranda.form.label.instantiation-moment" path="instantiationMoment" readonly="${true}"/>
-	
-	
 	<acme:input-textbox code="chef.memoranda.form.label.report" path="report"/>
 	<acme:input-url code="chef.memoranda.form.label.link" path="link"/>
 	<acme:input-textbox code="chef.memoranda.form.label.fine-dish.code" path="fineDishCode"/>
-	
 	<jstl:choose>
 		<jstl:when test="${command == 'show'}">
 			<acme:input-textbox code="chef.memoranda.form.label.automatic-seq-num" path="automaticSeqNum" readonly="${true}"/>
