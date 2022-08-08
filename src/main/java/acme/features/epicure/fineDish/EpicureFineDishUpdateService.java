@@ -60,6 +60,7 @@ public class EpicureFineDishUpdateService implements AbstractUpdateService<Epicu
 	public void update(final Request<FineDish> request, final FineDish entity) {
 		assert request != null;
 		assert entity != null;
+		this.repository.save(entity);
 		
 	}
 

@@ -27,14 +27,15 @@
 	<acme:input-moment code="form.epicure.fine.dish.startPeriod" path="startPeriod" readonly="${readOnly}"/>
 	<acme:input-moment code="form.epicure.fine.dish.endPeriod" path="endPeriod" readonly="${readOnly}"/>
 	<acme:input-url code="form.epicure.fine-dish.moreInfo" path="moreInfo" readonly="${readOnly}"/>
-	<jstl:when test="${command == 'show, update, delete, publish' }">
+	<jstl:if test="${command != 'create' }">
 		<acme:input-textbox code="form.epicure.fine-dish.chef.identity.name" path="chef.identity.name" readonly="${readOnly}"/>
 		<acme:input-textbox code="form.epicure.fine-dish.chef.identity.surname" path="chef.identity.surname" readonly="${readOnly}"/>
 		<acme:input-textbox code="form.epicure.fine-dish.chef.identity.email" path="chef.identity.email" readonly="${readOnly}"/>
-	</jstl:when>
-	<jstl:when test="${command =='create' }">
+	</jstl:if>
+	<jstl:if test="${command =='create' }">
 		<acme:input-textbox code="form.epicure.fine-dish.chef.find" path="chef-id"/>
-	</jstl:when>
+		<acme:submit code="form.epicure.fine-dish.create" action="/epicure/fine-dish/create"/>
+	</jstl:if>
 	
 	
 </acme:form>

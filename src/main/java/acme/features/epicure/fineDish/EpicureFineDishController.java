@@ -16,11 +16,14 @@ public class EpicureFineDishController extends AbstractController<Epicure, FineD
 	protected EpicureFineDishListSerice listService;
 	@Autowired
 	protected EpicureFineDishUpdateService updateService;
+	@Autowired
+	protected EpicureFineDishCreateService createService;
 	
 	@PostConstruct
 	protected void initialise() {
 		super.addCommand("list", this.listService);
 		super.addCommand("update", this.updateService);
 		super.addCommand("show", this.updateService);
+		super.addCommand("create", this.createService);
 	}
 }

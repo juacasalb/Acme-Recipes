@@ -11,10 +11,11 @@ import acme.framework.components.models.Model;
 import acme.framework.controllers.Errors;
 import acme.framework.controllers.Request;
 import acme.framework.services.AbstractCreateService;
+import acme.roles.Chef;
 import acme.roles.Epicure;
 
 @Service
-public class EpicureFineDishCreate implements AbstractCreateService<Epicure,FineDish>{
+public class EpicureFineDishCreateService implements AbstractCreateService<Epicure,FineDish>{
 
 	@Autowired
 	protected EpicureFineDishRepository repository;
@@ -30,6 +31,12 @@ public class EpicureFineDishCreate implements AbstractCreateService<Epicure,Fine
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
+		assert request.getModel().hasAttribute("chef-id");
+		final String chefId = request.getModel().getString("chef-id");
+		Chef chefFromUN;
+		if(chefId!=null) {
+			chefFromUN = this.repository.findChefByUsername(chefId);
+		}
 		request.bind(entity, errors, "state","code","request","budget","startPeriod","endPeriod","moreInfo","chef");
 		
 	}
@@ -37,6 +44,7 @@ public class EpicureFineDishCreate implements AbstractCreateService<Epicure,Fine
 	@Override
 	public void unbind(final Request<FineDish> request, final FineDish entity, final Model model) {
 		request.unbind(entity, model, "state","code","request","budget","startPeriod","endPeriod","moreInfo");
+		model.setAttribute("chef-id", "chef1");
 	}
 
 	@Override
