@@ -30,8 +30,11 @@ public class ChefFineDishUpdateService implements AbstractUpdateService<Chef,Fin
 
 	@Override
 	public void bind(final Request<FineDish> request, final FineDish entity, final Errors errors) {
-		// TODO Auto-generated method stub
+		assert request != null;
+		assert entity != null;
+		assert errors != null;
 		
+		request.bind(entity, errors, "state");
 	}
 
 	@Override
@@ -54,13 +57,14 @@ public class ChefFineDishUpdateService implements AbstractUpdateService<Chef,Fin
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
-		
 	}
 
 	@Override
 	public void update(final Request<FineDish> request, final FineDish entity) {
 		assert request != null;
 		assert entity != null;
+		
+		this.repository.save(entity);
 	}
 
 }

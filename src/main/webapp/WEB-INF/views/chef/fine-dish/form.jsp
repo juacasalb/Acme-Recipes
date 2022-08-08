@@ -17,17 +17,22 @@
 
 <acme:form>
 	<acme:input-select code="form.chef.fine-dish.state" path="state" readonly="${readOnly}">
-		<acme:input-option code="form.chef.fine-dish.state.PROPOSED" value="PROPOSED" selected="${type == 'PROPOSED'}"/>
-		<acme:input-option code="form.chef.fine-dish.state.DENIED" value="DENIED" selected="${type == 'DENIED'}"/>
-		<acme:input-option code="form.chef.fine-dish.state.ACCEPTED" value="ACCEPTED" selected="${type == 'ACCEPTED'}"/>
+		<acme:input-option code="form.chef.fine-dish.state.PROPOSED" value="PROPOSED" selected="${state == 'PROPOSED'}"/>
+		<acme:input-option code="form.chef.fine-dish.state.DENIED" value="DENIED" selected="${state == 'DENIED'}"/>
+		<acme:input-option code="form.chef.fine-dish.state.ACCEPTED" value="ACCEPTED" selected="${state == 'ACCEPTED'}"/>
 	</acme:input-select>
 	<acme:input-textbox code="form.chef.fine-dish.code" path="code" readonly="${readOnly}"/>
 	<acme:input-textarea code="form.chef.fine-dish.request" path="request" readonly="${readOnly}"/>
+	<acme:input-money code="form.chef.fine-dish.budget" path="budget"/>
 	<acme:input-moment code="form.chef.fine.dish.startPeriod" path="startPeriod" readonly="${readOnly}"/>
 	<acme:input-moment code="form.chef.fine.dish.endPeriod" path="endPeriod" readonly="${readOnly}"/>
 	<acme:input-url code="form.chef.fine-dish.moreInfo" path="moreInfo" readonly="${readOnly}"/>
 	<acme:input-textbox code="form.chef.fine-dish.epicure.identity.name" path="epicure.identity.name" readonly="${readOnly}"/>
 	<acme:input-textbox code="form.chef.fine-dish.epicure.identity.surname" path="epicure.identity.surname" readonly="${readOnly}"/>
 	<acme:input-textbox code="form.chef.fine-dish.epicure.identity.email" path="epicure.identity.email" readonly="${readOnly}"/>
+	<jstl:if test="${state == 'PROPOSED'}">
+		<acme:submit code="form.chef.fine-dish.update" action="/chef/fine-dish/update"/>
+	</jstl:if>
+	
 </acme:form>
 
