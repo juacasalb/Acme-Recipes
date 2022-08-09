@@ -24,6 +24,12 @@ public interface EpicureFineDishRepository extends AbstractRepository{
 
 	@Query("SELECT c FROM Chef c WHERE c.userAccount.username = :chefId")
 	Chef findChefByUsername(String chefId);
+
+	@Query("SELECT cc.acceptedCurrencies FROM CurrencyConfiguration cc")
+	String acceptedCurrencies();
+
+	@Query("SELECT fd FROM FineDish fd WHERE fd.code = :code")
+	FineDish findDishByCode(String code);
 	
 
 }

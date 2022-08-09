@@ -48,6 +48,8 @@ public class FineDish extends AbstractEntity{
 	
 	protected boolean published = false;
 	
+	protected Date creationMomment;
+	
 	//Relacion con epicure y chef
 
 	@NotNull
