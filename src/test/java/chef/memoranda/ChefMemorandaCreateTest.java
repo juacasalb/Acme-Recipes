@@ -1,6 +1,7 @@
 package chef.memoranda;
 
 import org.junit.jupiter.api.Order;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
 
@@ -59,4 +60,23 @@ public class ChefMemorandaCreateTest extends TestHarness{
 		
 		super.signOut();
 	}
+	
+	@Test
+	@Order(10)
+	public void hackingTest() {
+		super.checkNotLinkExists("Account");
+		super.navigate("/chef/memorandum/create");
+		super.checkPanicExists();
+		
+		super.signIn("epicure1", "epicure1");
+		super.navigate("/chef/memorandum/create");
+		super.checkPanicExists();
+		super.signOut();
+		
+		super.signIn("administrator", "administrator");
+		super.navigate("/chef/memorandum/create");
+		super.checkPanicExists();
+		super.signOut();
+	}
+	
 }
