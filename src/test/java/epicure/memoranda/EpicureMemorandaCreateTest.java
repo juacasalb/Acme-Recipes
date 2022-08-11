@@ -1,6 +1,7 @@
 package epicure.memoranda;
 
 import org.junit.jupiter.api.Order;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
 
@@ -57,6 +58,24 @@ public class EpicureMemorandaCreateTest extends TestHarness{
 		
 		super.checkErrorsExist();
 		
+		super.signOut();
+	}
+	
+	@Test
+	@Order(10)
+	public void hackingTest() {
+		super.checkNotLinkExists("Account");
+		super.navigate("/epicure/memorandum/create");
+		super.checkPanicExists();
+		
+		super.signIn("chef1", "chef1");
+		super.navigate("/epicure/memorandum/create");
+		super.checkPanicExists();
+		super.signOut();
+		
+		super.signIn("administrator", "administrator");
+		super.navigate("/epicure/memorandum/create");
+		super.checkPanicExists();
 		super.signOut();
 	}
 }
