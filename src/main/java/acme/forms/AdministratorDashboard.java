@@ -24,17 +24,17 @@ private static final long serialVersionUID = 1L;
 
 	Map<String,Double> averageRetailPriceIngredientsByCurrency;
 	Map<String,Double> averageRetailPriceKitchenUtensilsByCurrency;
-	Map<Pair<String, String>, Double> averageBudgetDishesByStatus;
+	Map<Pair<State, String>, Double> averageBudgetDishesByStatus;
 	
 	Map<String,Double> deviationRetailPriceIngredientsByCurrency;
 	Map<String,Double> deviationRetailPriceKitchenUtensilsByCurrency;
-	Map<Pair<String, String>, Double> deviationBudgetDishesByStatus;
+	Map<Pair<State, String>, Double> deviationBudgetDishesByStatus;
 	
 	Map<String,Double> minRetailPriceIngredientsByCurrency;
 	Map<String,Double> minRetailPriceKitchenUtensilsByCurrency;
-	Map<Pair<String, String>, Double> minBudgetDishesByStatus;
+	Map<Pair<State, String>, Double> minBudgetDishesByStatus;
 	
 	Map<String,Double> maxRetailPriceIngredientsByCurrency;
 	Map<String,Double> maxRetailPriceKitchenUtensilsByCurrency;
-	Map<Pair<String, String>, Double> maxBudgetDishesByStatus;
+	Map<Pair<State, String>, Double> maxBudgetDishesByStatus;
 }
