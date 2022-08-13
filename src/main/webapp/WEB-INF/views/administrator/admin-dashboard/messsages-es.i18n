@@ -1,0 +1,25 @@
+# messages-es.i18n
+#
+# Copyright (C) 2012-2022 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+
+administrator.dashboard.form.label.totalNIngredients = Número Total de Ingredientes
+administrator.dashboard.form.label.totalNKitchenUtensils = Número Total de Utensilios de Cocina
+administrator.dashboard.form.label.totalNDishesByStatus = Número Total de Platos por Estado
+administrator.dashboard.form.label.averageRetailPriceIngredientsByCurrency = Precio al por menor medio de Ingredientes por moneda
+administrator.dashboard.form.label.averageRetailPriceKitchenUtensilsByCurrency = Precio al por menor medio de Utensilios de Cocina por moneda
+administrator.dashboard.form.label.averageBudgetDishesByStatus = Presupuesto medio de Platos por Estado
+administrator.dashboard.form.label.deviationRetailPriceIngredientsByCurrency = Desviacion del precio al por menor de Ingredientes por moneda
+administrator.dashboard.form.label.deviationRetailPriceKitchenUtensilsByCurrency = Desviacion del precio al por menor de Utensilios de Cocina por moneda
+administrator.dashboard.form.label.deviationBudgetDishesByStatus = Desviacion del presupuesto de Platos por Estado
+administrator.dashboard.form.label.minRetailPriceIngredientsByCurrency = Precio al por menor minimo de Ingredientes por moneda
+administrator.dashboard.form.label.minRetailPriceKitchenUtensilsByCurrency = Precio al por menor minimo de Utensilios de Cocina por moneda
+administrator.dashboard.form.label.minBudgetDishesByStatus = Presupuesto minimo de Platos por Estado
+administrator.dashboard.form.label.maxRetailPriceIngredientsByCurrency = Precio al por menor maximo de Ingredientes por moneda
+administrator.dashboard.form.label.maxRetailPriceKitchenUtensilsByCurrency = Precio al por menor maximo de Utensilios de Cocina por moneda
+administrator.dashboard.form.label.maxBudgetDishesByStatus = Presupuesto maximo de Platos por Estado

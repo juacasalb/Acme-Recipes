@@ -1,0 +1,25 @@
+# messages-en.i18n
+#
+# Copyright (C) 2012-2022 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+
+administrator.dashboard.form.label.totalNIngredients = Total Number of Ingredients
+administrator.dashboard.form.label.totalNKitchenUtensils = Total Number of Kitchen Utensils
+administrator.dashboard.form.label.totalNDishesByStatus = Total Number of Dishes by Status
+administrator.dashboard.form.label.averageRetailPriceIngredientsByCurrency = Average of Retail Price of Ingredients by Currency
+administrator.dashboard.form.label.averageRetailPriceKitchenUtensilsByCurrency = Average of Retail Price of Kitchen Utensils by Currency
+administrator.dashboard.form.label.averageBudgetDishesByStatus = Average of Budget of Dishes by Status
+administrator.dashboard.form.label.deviationRetailPriceIngredientsByCurrency = Deviation of Retail Price of Ingredients by Currency
+administrator.dashboard.form.label.deviationRetailPriceKitchenUtensilsByCurrency = Deviation of Retail Price of Kitchen Utensils by Currency
+administrator.dashboard.form.label.deviationBudgetDishesByStatus = Deviation of Budget of Dishes by Status
+administrator.dashboard.form.label.minRetailPriceIngredientsByCurrency = Minimum of Retail Price of Ingredients by Currency
+administrator.dashboard.form.label.minRetailPriceKitchenUtensilsByCurrency = Minimum of Retail Price of Kitchen Utensils by Currency
+administrator.dashboard.form.label.minBudgetDishesByStatus = Minimum of Budget of Dishes by Status
+administrator.dashboard.form.label.maxRetailPriceIngredientsByCurrency = Maximum of Retail Price of Ingredients by Currency
+administrator.dashboard.form.label.maxRetailPriceKitchenUtensilsByCurrency = Maximum of Retail Price of Kitchen Utensils by Currency
+administrator.dashboard.form.label.maxBudgetDishesByStatus = Maximum of Budget of Dishes by Status
