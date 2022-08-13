@@ -25,6 +25,9 @@ master.menu.any.items.ingredients = Lista de Ingredientes
 master.menu.any.recipe = Lista de recetas publicadas
 master.menu.any.peeps = Peeps
 master.menu.any.peeps.list = Lista de Peeps
+master.menu.any.user-account = Usuarios
+master.menu.any.user-account.chef = Lista de chefs
+master.menu.any.user-account.epicure = Lista de sibaritas
 
 # master.menu.anonymous #######################################################
 

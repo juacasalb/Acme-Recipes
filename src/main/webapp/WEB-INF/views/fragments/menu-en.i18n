@@ -25,6 +25,9 @@ master.menu.any.items.ingredients = List of Ingredients
 master.menu.any.recipe = List of Published Recipes
 master.menu.any.peeps = Peeps
 master.menu.any.peeps.list = List of Peeps
+master.menu.any.user-account = Users
+master.menu.any.user-account.chef = List all chefs
+master.menu.any.user-account.epicure = List all epicures
 
 
 # master.menu.anonymous #######################################################

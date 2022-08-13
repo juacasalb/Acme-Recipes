@@ -48,6 +48,11 @@
 		<acme:menu-option code="master.menu.any.recipes">
 			<acme:menu-suboption code="master.menu.any.recipe" action="/any/recipe/list"/>
 		</acme:menu-option>
+		
+		<acme:menu-option code="master.menu.any.user-account">
+			<acme:menu-suboption code="master.menu.any.user-account.chef" action="/any/user-account/list?role=chef"/>
+			<acme:menu-suboption code="master.menu.any.user-account.epicure" action="/any/user-account/list?role=epicure"/>
+		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.administrator" access="hasRole('Administrator')">
 			<acme:menu-suboption code="master.menu.administrator.user-accounts" action="/administrator/user-account/list"/>
