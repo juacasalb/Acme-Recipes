@@ -26,15 +26,30 @@ public class ChefItemController extends AbstractController<Chef, Item>{
 	protected ChefItemShowService showService;
 	
 	@Autowired
+	protected ChefItemCreateService createService;
+	
+	@Autowired
+	protected ChefItemUpdateService updateService;
+	
+	@Autowired
+	protected ChefItemPublishService publishService;
+	
+	@Autowired
+	protected ChefItemDeleteService deleteService;
+	
+	@Autowired
 	protected ChefRecipeItemListService listRecipeService;
 	
 	@PostConstruct
 	protected void initialise() {
 		super.addCommand("list-my-kitchenutensils", "list", this.listMyKitchenUtensilsService);
 		super.addCommand("list-my-ingredients", "list", this.listMyIngredientsService);
-		super.addCommand("show", this.showService);
+		super.addCommand("create", "create", this.createService);
+		super.addCommand("update", this.updateService);
+		super.addCommand("show", "show", this.showService);
 		super.addCommand("list", this.listService);
 		super.addCommand("list-item", "list", this.listRecipeService);
+		super.addCommand("publish","update",this.publishService);
 	}
 	
 }

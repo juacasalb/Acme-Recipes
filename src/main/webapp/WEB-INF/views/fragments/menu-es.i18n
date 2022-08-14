@@ -53,6 +53,8 @@ master.menu.chef.ingredients-link = Mis Ingredientes
 master.menu.chef.memoranda.list = Listar todos mis memorandums
 master.menu.chef.recipe.list = Mis recetas
 master.menu.chef.fine-dish.list = Mis platos finos
+master.menu.chef.create = Crear ingredientes/utensilios
+master.menu.chef.update = Modificar ingredientes/utensilios
 
 # master.menu.provider ########################################################
 
