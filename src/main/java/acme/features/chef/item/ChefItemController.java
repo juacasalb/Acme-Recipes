@@ -44,7 +44,7 @@ public class ChefItemController extends AbstractController<Chef, Item>{
 	protected void initialise() {
 		super.addCommand("list-my-kitchenutensils", "list", this.listMyKitchenUtensilsService);
 		super.addCommand("list-my-ingredients", "list", this.listMyIngredientsService);
-		super.addCommand("create", "create", this.createService);
+		super.addCommand("create", this.createService);
 		super.addCommand("update", this.updateService);
 		super.addCommand("show", "show", this.showService);
 		super.addCommand("list", this.listService);

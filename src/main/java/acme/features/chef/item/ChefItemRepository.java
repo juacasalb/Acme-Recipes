@@ -29,5 +29,8 @@ public interface ChefItemRepository extends AbstractRepository{
 	
 	@Query("SELECT i FROM Chef i WHERE i.id=:id")
 	Chef findChefById(int id);
+	
+	@Query("SELECT c FROM Chef c WHERE c.userAccount.id=:id")
+	Chef findChefByUserAccountId(int id);
 
 }
