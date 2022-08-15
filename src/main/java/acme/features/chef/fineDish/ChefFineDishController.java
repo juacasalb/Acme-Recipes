@@ -15,12 +15,17 @@ public class ChefFineDishController extends AbstractController<Chef,FineDish> {
 	@Autowired
 	protected ChefFineDishListService listService;
 	@Autowired
-	protected ChefFineDishUpdateService updateService;
+	protected ChefFineDishShowService showService;
+	@Autowired
+	protected ChefFineDishAcceptService acceptService;
+	@Autowired
+	protected ChefFineDishDenyService denyService;
 	
 	@PostConstruct
 	protected void initialise() {
 		super.addCommand("list", this.listService);
-		super.addCommand("update", this.updateService);
-		super.addCommand("show", this.updateService);
+		super.addCommand("show", this.showService);
+		super.addCommand("accept", "update", this.acceptService);
+		super.addCommand("deny", "update", this.denyService);
 	}
 }

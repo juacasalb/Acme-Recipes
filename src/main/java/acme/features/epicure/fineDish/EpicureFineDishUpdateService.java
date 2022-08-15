@@ -1,5 +1,8 @@
 package acme.features.epicure.fineDish;
 
+import java.util.Date;
+
+import org.apache.commons.lang3.time.DateUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -7,7 +10,9 @@ import acme.entities.fineDish.FineDish;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Errors;
 import acme.framework.controllers.Request;
+import acme.framework.datatypes.Money;
 import acme.framework.services.AbstractUpdateService;
+import acme.roles.Chef;
 import acme.roles.Epicure;
 
 @Service
@@ -29,7 +34,20 @@ public class EpicureFineDishUpdateService implements AbstractUpdateService<Epicu
 
 	@Override
 	public void bind(final Request<FineDish> request, final FineDish entity, final Errors errors) {
-		request.bind(request,errors,"state","code","request","budget","startPeriod","endPeriod","moreInfo");
+		assert request != null;
+		assert entity != null;
+		assert errors != null;
+		final Model model = request.getModel();
+		if(!model.hasAttribute("chef.userAccount.username")) {
+			model.setAttribute("chef.userAccount.username", "chef1");
+			final Chef chef = this.repository.findChefByUsername("chef1");
+			model.setAttribute("chef", chef);
+		} else {
+			final String chefun = model.getString("chef.userAccount.username");
+			final Chef chef = this.repository.findChefByUsername(chefun);
+			model.setAttribute("chef", chef);
+		}
+		request.bind(request,errors,"request","budget","startPeriod","endPeriod","moreInfo","chef");
 		
 	}
 
@@ -38,7 +56,8 @@ public class EpicureFineDishUpdateService implements AbstractUpdateService<Epicu
 		assert request != null;
 		assert entity != null;
 		assert model != null;
-		request.unbind(entity, model,"state","code","request","budget","startPeriod","endPeriod","moreInfo","chef.identity.name","chef.identity.surname","chef.identity.email");
+		
+		request.unbind(entity, model,"state","code","request","budget","startPeriod","endPeriod","moreInfo","chef.userAccount.username");
 	}
 
 	@Override
@@ -53,7 +72,40 @@ public class EpicureFineDishUpdateService implements AbstractUpdateService<Epicu
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
-		
+		if(!errors.hasErrors("budget")) {
+			final Money budget = entity.getBudget();
+			final String currencies = this.repository.acceptedCurrencies();
+			final String[] currenciesArr = currencies.split(",");
+			final String budgetCurrency = budget.getCurrency();
+			final double amount = budget.getAmount();
+			errors.state(request, amount>0 ,"budget", "error.budget-amount");
+			boolean isRealCurrency = false;
+			for(final String curr:currenciesArr) {
+				if(curr.equals(budgetCurrency)) {
+					isRealCurrency = true;
+					break;
+				}
+			}
+			errors.state(request, isRealCurrency ,"budget", "error.budget-currency");
+		}
+		if(!errors.hasErrors("code")) {
+			final FineDish dish = this.repository.findDishByCode(entity.getCode()); 
+			errors.state(request, dish == null||dish.getCode().equals(entity.getCode()), "code", "error.code-exists");
+ 		}
+		if(!errors.hasErrors("startPeriod")) {
+			final Date creation = entity.getCreationMomment();
+			final Date soonAfter = DateUtils.addMinutes(DateUtils.addMonths(creation, 1), -1);
+			errors.state(request, entity.getStartPeriod().after(soonAfter), "startPeriod", "error.startPeriodTooSoon");
+		}
+		if(!errors.hasErrors("endPeriod")) {
+			final Date startP = entity.getStartPeriod();
+			final Date soonAfter = DateUtils.addMinutes(DateUtils.addMonths(startP, 1), -1);
+			errors.state(request,entity.getEndPeriod().after(soonAfter), "endPeriod", "error.endPeriodTooSoon");
+		}
+		if(!errors.hasErrors("chef.userAccount.username")) {
+			final Chef chef = this.repository.findChefByUsername(request.getModel().getString("chef.userAccount.username"));
+			errors.state(request, chef!=null, "chef.userAccount.username", "error.chef-username-not-found");
+		}
 	}
 
 	@Override

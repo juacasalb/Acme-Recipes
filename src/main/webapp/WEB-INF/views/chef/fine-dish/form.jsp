@@ -23,7 +23,7 @@
 	</acme:input-select>
 	<acme:input-textbox code="form.chef.fine-dish.code" path="code" readonly="${readOnly}"/>
 	<acme:input-textarea code="form.chef.fine-dish.request" path="request" readonly="${readOnly}"/>
-	<acme:input-money code="form.chef.fine-dish.budget" path="budget"/>
+	<acme:input-money code="form.chef.fine-dish.budget" path="budget" readonly="${readOnly}"/>
 	<acme:input-moment code="form.chef.fine.dish.startPeriod" path="startPeriod" readonly="${readOnly}"/>
 	<acme:input-moment code="form.chef.fine.dish.endPeriod" path="endPeriod" readonly="${readOnly}"/>
 	<acme:input-url code="form.chef.fine-dish.moreInfo" path="moreInfo" readonly="${readOnly}"/>
@@ -31,7 +31,8 @@
 	<acme:input-textbox code="form.chef.fine-dish.epicure.identity.surname" path="epicure.identity.surname" readonly="${readOnly}"/>
 	<acme:input-textbox code="form.chef.fine-dish.epicure.identity.email" path="epicure.identity.email" readonly="${readOnly}"/>
 	<jstl:if test="${state == 'PROPOSED'}">
-		<acme:submit code="form.chef.fine-dish.update" action="/chef/fine-dish/update"/>
+		<acme:submit code="form.chef.fine-dish.accept" action="/chef/fine-dish/accept"/>
+		<acme:submit code="form.chef.fine-dish.deny" action="/chef/fine-dish/deny"/>
 	</jstl:if>
 	
 </acme:form>

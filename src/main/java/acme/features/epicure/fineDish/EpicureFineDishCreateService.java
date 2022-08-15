@@ -102,6 +102,10 @@ public class EpicureFineDishCreateService implements AbstractCreateService<Epicu
 			final Date soonAfter = DateUtils.addMinutes(DateUtils.addMonths(startP, 1), -1);
 			errors.state(request,entity.getEndPeriod().after(soonAfter), "endPeriod", "error.endPeriodTooSoon");
 		}
+		if(!errors.hasErrors("chefun")) {
+			final Chef chef = this.repository.findChefByUsername(request.getModel().getString("chefun"));
+			errors.state(request, chef!=null, "chefun", "error.chef-username-not-found");
+		}
 		
 	}
 
@@ -109,7 +113,7 @@ public class EpicureFineDishCreateService implements AbstractCreateService<Epicu
 	public void create(final Request<FineDish> request, final FineDish entity) {
 		assert request != null;
 		assert entity != null;
-		 this.repository.save(entity);
+		this.repository.save(entity);
 		
 	}
 

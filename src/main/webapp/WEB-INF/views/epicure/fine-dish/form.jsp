@@ -19,11 +19,11 @@
 	<acme:input-select code="form.epicure.fine-dish.state" path="state"
 		readonly="true">
 		<acme:input-option code="form.epicure.fine-dish.state.PROPOSED"
-			value="PROPOSED" selected="${type == 'PROPOSED'}" />
+			value="PROPOSED" selected="${state == 'PROPOSED'}" />
 		<acme:input-option code="form.epicure.fine-dish.state.DENIED"
-			value="DENIED" selected="${type == 'DENIED'}" />
+			value="DENIED" selected="${state == 'DENIED'}" />
 		<acme:input-option code="form.epicure.fine-dish.state.ACCEPTED"
-			value="ACCEPTED" selected="${type == 'ACCEPTED'}" />
+			value="ACCEPTED" selected="${state == 'ACCEPTED'}" />
 	</acme:input-select>
 	<acme:input-textbox code="form.epicure.fine-dish.code" path="code"
 		readonly="${readOnly}" />
@@ -38,19 +38,19 @@
 		readonly="${readOnly}" />
 	<jstl:if test="${command != 'create' }">
 		<acme:input-textbox code="form.epicure.fine-dish.chef.identity.name"
-			path="chef.identity.name" readonly="${readOnly}" />
-		<acme:input-textbox
-			code="form.epicure.fine-dish.chef.identity.surname"
-			path="chef.identity.surname" readonly="${readOnly}" />
-		<acme:input-textbox code="form.epicure.fine-dish.chef.identity.email"
-			path="chef.identity.email" readonly="${readOnly}" />
+			path="chef.userAccount.username" readonly="${readOnly}" />
+		<jstl:if test="${state == 'PROPOSED' }">
+			<acme:submit code="form.epicure.fine-dish.update" action="/epicure/fine-dish/update"/>
+		</jstl:if>
+		
 	</jstl:if>
 	<jstl:if test="${command =='create' }">
 		<acme:input-textbox code="form.epicure.fine-dish.chef.find"
-			path="chefun" />
+			path="chef.userAccount.username" />
 		<acme:submit code="form.epicure.fine-dish.create"
 			action="/epicure/fine-dish/create" />
 	</jstl:if>
+	
 
 
 </acme:form>
