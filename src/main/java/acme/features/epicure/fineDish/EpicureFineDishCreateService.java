@@ -34,12 +34,12 @@ public class EpicureFineDishCreateService implements AbstractCreateService<Epicu
 		assert entity != null;
 		assert errors != null;
 		final Model model = request.getModel();
-		if(!model.hasAttribute("chefun")) {
-			model.setAttribute("chefun", "chef1");
+		if(!model.hasAttribute("chef.userAccount.username")) {
+			model.setAttribute("chef.userAccount.username", "chef1");
 			final Chef chef = this.repository.findChefByUsername("chef1");
 			model.setAttribute("chef", chef);
 		} else {
-			final String chefun = model.getString("chefun");
+			final String chefun = model.getString("chef.userAccount.username");
 			final Chef chef = this.repository.findChefByUsername(chefun);
 			model.setAttribute("chef", chef);
 		}
@@ -50,7 +50,7 @@ public class EpicureFineDishCreateService implements AbstractCreateService<Epicu
 
 	@Override
 	public void unbind(final Request<FineDish> request, final FineDish entity, final Model model) {
-		request.unbind(entity, model, "state","code","request","budget","startPeriod","endPeriod","moreInfo");
+		request.unbind(entity, model, "state","code","request","budget","startPeriod","endPeriod","moreInfo","chef.userAccount.username");
 		
 	}
 
@@ -102,9 +102,9 @@ public class EpicureFineDishCreateService implements AbstractCreateService<Epicu
 			final Date soonAfter = DateUtils.addMinutes(DateUtils.addMonths(startP, 1), -1);
 			errors.state(request,entity.getEndPeriod().after(soonAfter), "endPeriod", "error.endPeriodTooSoon");
 		}
-		if(!errors.hasErrors("chefun")) {
-			final Chef chef = this.repository.findChefByUsername(request.getModel().getString("chefun"));
-			errors.state(request, chef!=null, "chefun", "error.chef-username-not-found");
+		if(!errors.hasErrors("chef.userAccount.username")) {
+			final Chef chef = this.repository.findChefByUsername(request.getModel().getString("chef.userAccount.username"));
+			errors.state(request, chef!=null, "chef.userAccount.username", "error.chef-username-not-found");
 		}
 		
 	}

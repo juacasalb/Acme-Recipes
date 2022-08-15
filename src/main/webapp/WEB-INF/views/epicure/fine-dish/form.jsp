@@ -41,6 +41,7 @@
 			path="chef.userAccount.username" readonly="${readOnly}" />
 		<jstl:if test="${state == 'PROPOSED' }">
 			<acme:submit code="form.epicure.fine-dish.update" action="/epicure/fine-dish/update"/>
+			<acme:submit code="form.epicure.fine-dish.delete" action="/epicure/fine-dish/delete"/>
 		</jstl:if>
 		
 	</jstl:if>

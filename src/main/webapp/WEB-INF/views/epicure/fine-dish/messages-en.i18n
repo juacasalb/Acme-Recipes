@@ -16,7 +16,8 @@ form.epicure.fine-dish.state.DENIED = Denied
 form.epicure.fine-dish.state.ACCEPTED = Accepted
 form.epicure.fine-dish.chef.find = Username of chef
 form.epicure.fine-dish.create = Create
-
+form.epicure.fine-dish.update = Update
 form.epicure.fine-dish.chef.identity.name = Chef's name
 form.epicure.fine-dish.chef.identity.surname = Chef's surname
 form.epicure.fine-dish.chef.identity.email = Chef's email
+form.epicure.fine-dish.delete = Delete
