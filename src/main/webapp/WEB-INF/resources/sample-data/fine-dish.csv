@@ -1,6 +1,6 @@
-key,state,code,request,budget,startPeriod,endPeriod,moreInfo,key:chef,key:epicure
-fine-dish-01,ACCEPTED,"FD:TST-001","Gold steak","EUR 75.00","2010/02/03 12:00","2010/03/05 15:00",https://www.a.com,chef-01,epicure-02
-fine-dish-02,DENIED,"FD:ABC-123","Caviar pizza","USD 314.15","2010/02/03 13:17","2010/03/05 15:48",https://www.b.com,chef-02,epicure-03
-fine-dish-03,ACCEPTED,"FD:DEF-456","Meatball sandwich","GBP 10.00","2015/02/03 18:43","2015/06/05 15:37",https://www.c.com,chef-03,epicure-04
-fine-dish-04,DENIED,"FD:GHI-789","Bacon pancakes","EUR 05.00","2002/02/03 15:22","2002/03/05 15:56",https://www.d.com,chef-04,epicure-05
-fine-dish-05,PROPOSED,"FD:JKL-151","Slowpoke tail","USD 100.00","2020/02/03 07:04","2022/01/05 19:31",https://www.e.com,chef-05,epicure-01
+key,state,code,request,budget,startPeriod,endPeriod,moreInfo,published,creationMomment,key:chef,key:epicure
+fine-dish-01,ACCEPTED,"FD:TST-001","Gold steak","EUR 75.00","2010/02/03 12:00","2010/03/05 15:00",https://www.a.com,true,"2010/01/03 12:00",chef-01,epicure-02
+fine-dish-02,DENIED,"FD:ABC-123","Caviar pizza","USD 314.15","2010/02/03 13:17","2010/03/05 15:48",https://www.b.com,true,"2010/01/03 12:00",chef-02,epicure-03
+fine-dish-03,ACCEPTED,"FD:DEF-456","Meatball sandwich","GBP 10.00","2015/02/03 18:43","2015/06/05 15:37",https://www.c.com,true,"2010/01/03 12:00",chef-03,epicure-04
+fine-dish-04,DENIED,"FD:GHI-789","Bacon pancakes","EUR 05.00","2002/02/03 15:22","2002/03/05 15:56",https://www.d.com,true,"2010/01/03 12:00",chef-04,epicure-05
+fine-dish-05,PROPOSED,"FD:JKL-151","Slowpoke tail","USD 100.00","2020/02/03 07:04","2022/01/05 19:31",https://www.e.com,true,"2010/01/03 12:00",chef-05,epicure-01

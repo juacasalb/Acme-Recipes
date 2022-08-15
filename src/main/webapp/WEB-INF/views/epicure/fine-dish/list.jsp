@@ -21,3 +21,4 @@
 	<acme:list-column code="list.epicure.fine-dish.startPeriod" path="startPeriod"/>
 	<acme:list-column code="list.epicure.fine-dish.endPeriod" path="endPeriod"/>
 </acme:list>
+<acme:button code="list.epicure.fine-dish.create" action="/epicure/fine-dish/create"/>
