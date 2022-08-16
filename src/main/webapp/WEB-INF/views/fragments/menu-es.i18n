@@ -89,3 +89,4 @@ master.menu.epicure.fine-dish.list = Mis platos finos
 
 master.menu.authenticated = Autenticado
 master.menu.authenticated.bulletins = Boletines
+master.menu.authenticated.sys-config = Configuracion del sistema
