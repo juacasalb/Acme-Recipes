@@ -9,3 +9,5 @@
 	<acme:list-column code="chef.recipe.list.label.description" path="description"/>
 	<acme:list-column code="chef.recipe.list.label.published" path="published"/>
 </acme:list>
+
+<acme:button code="chef.recipe.list.button.create" action="/chef/recipe/create"/>

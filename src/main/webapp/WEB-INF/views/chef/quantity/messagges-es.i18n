@@ -1,0 +1,18 @@
+chef.quantity.form.label.number = Número
+chef.item.form.label.type = Tipo
+chef.item.form.label.name = Nombre
+chef.quantity.item.form.label.code = Código del Item
+chef.item.form.label.retailPrice = Precio
+chef.quantity.recipe.form.label.code = Código de la Recipe
+chef.quantity.form.label.item = Item
+
+chef.quantity.form.button.create = Crear
+chef.quantity.form.button.update = Actualizar
+chef.quantity.form.button.delete = Borrar
+
+chef.quantity.list.label.type = Tipo
+chef.quantity.list.label.name = Nombre
+chef.quantity.list.label.retailPrice = Precio
+chef.quantity.list.label.number = Número
+
+chef.quantity.form.button.add = Añadir
