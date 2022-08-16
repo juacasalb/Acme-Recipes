@@ -82,6 +82,7 @@
 		
 		<acme:menu-option code="master.menu.authenticated" access="hasRole('Authenticated')">
 			<acme:menu-suboption code="master.menu.authenticated.bulletins" action="/authenticated/bulletin/list"/>
+			<acme:menu-suboption code="master.menu.authenticated.sys-config" action="/authenticated/system-configuration/show-config"/>
 		</acme:menu-option>
 	</acme:menu-left>
 

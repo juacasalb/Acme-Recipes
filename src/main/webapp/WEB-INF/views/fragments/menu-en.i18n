@@ -90,3 +90,4 @@ master.menu.epicure.fine-dish.list = My fine dishes
 
 master.menu.authenticated = Authenticated
 master.menu.authenticated.bulletins = Bulletins
+master.menu.authenticated.sys-config = System Configuration
