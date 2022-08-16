@@ -36,8 +36,11 @@ public class AdministratorSystemConfigurationShowService implements AbstractShow
 
 	@Override
 	public void unbind(final Request<SystemConfiguration> request, final SystemConfiguration entity, final Model model) {
-		model.setAttribute("currencyConfig", entity.getCurrencyConfiguration());
-		model.setAttribute("spamConfig", entity.getSpamConfiguration());
+		assert request != null;
+		assert entity != null;
+		assert model != null;
+		
+		request.unbind(entity, model, "currencyConfiguration", "spamConfiguration");
 	}
 
 }

@@ -1,5 +1,7 @@
 package acme.features.administrator.systemConfiguration;
 
+import javax.annotation.PostConstruct;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
@@ -14,8 +16,9 @@ public class AdministratorSystemConfigurationController extends AbstractControll
 	protected AdministratorSystemConfigurationShowService showService;
 
 	
+	@PostConstruct
 	public void initialise() {
-		super.addCommand("show", this.showService);
+		super.addCommand("show-config","show" , this.showService);
 
 	}
 }
