@@ -48,6 +48,11 @@
 		<acme:menu-option code="master.menu.any.recipes">
 			<acme:menu-suboption code="master.menu.any.recipe" action="/any/recipe/list"/>
 		</acme:menu-option>
+		
+		<acme:menu-option code="master.menu.any.user-account">
+			<acme:menu-suboption code="master.menu.any.user-account.chef" action="/any/user-account/list?role=chef"/>
+			<acme:menu-suboption code="master.menu.any.user-account.epicure" action="/any/user-account/list?role=epicure"/>
+		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.administrator" access="hasRole('Administrator')">
 			<acme:menu-suboption code="master.menu.administrator.user-accounts" action="/administrator/user-account/list"/>
@@ -56,6 +61,9 @@
 			<acme:menu-suboption code="master.menu.administrator.populate-sample" action="/administrator/populate-sample"/>			
 			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.administrator.shut-down" action="/administrator/shut-down"/>
+			<acme:menu-separator/>
+			<acme:menu-suboption code="master.menu.administrator.admin-dashboard" action="/administrator/administrator-dashboard/show"/>
+			<acme:menu-suboption code="master.menu.administrator.sys-config" action="/administrator/system-configuration/show-config"/>
 		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.provider" access="hasRole('Provider')">

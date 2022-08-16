@@ -1,0 +1,9 @@
+administrator.sys-config.currency-default = Default Currency
+administrator.sys-config.currency-accepted = Accepted Currencies
+
+administrator.sys-config.spam-word = Spam Word
+administrator.sys-config.spam-threshold = Threshold
+administrator.sys-config.actions = Action
+spam.delete = Delete
+spam.create = Create new spam term
+currency.update = Update currency configuration

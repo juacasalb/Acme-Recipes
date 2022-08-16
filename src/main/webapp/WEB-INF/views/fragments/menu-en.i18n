@@ -25,6 +25,9 @@ master.menu.any.items.ingredients = List of Ingredients
 master.menu.any.recipe = List of Published Recipes
 master.menu.any.peeps = Peeps
 master.menu.any.peeps.list = List of Peeps
+master.menu.any.user-account = Users
+master.menu.any.user-account.chef = List all chefs
+master.menu.any.user-account.epicure = List all epicures
 
 
 # master.menu.anonymous #######################################################
@@ -45,6 +48,8 @@ master.menu.administrator.user-accounts = User accounts
 master.menu.administrator.populate-initial = Populate DB (initial)
 master.menu.administrator.populate-sample = Populate DB (samples)
 master.menu.administrator.shut-down = Shut down
+master.menu.administrator.admin-dashboard = Show administrator dashboard 
+master.menu.administrator.sys-config = System configuration
 
 # master.menu.chef ############################################################
 
