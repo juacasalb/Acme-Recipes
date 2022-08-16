@@ -19,6 +19,9 @@ public class ChefRecipeController extends AbstractController<Chef, Recipe>{
 	
 	@Autowired
 	protected ChefRecipeShowService showMineService;
+	
+	@Autowired
+	protected ChefRecipeCreateService createService;
 		
 	// Constructors -----------------------------------------------------------
 
@@ -27,6 +30,7 @@ public class ChefRecipeController extends AbstractController<Chef, Recipe>{
 	protected void initialise() {
 		super.addCommand("list", this.listMineService);	
 		super.addCommand("show", this.showMineService);
+		super.addCommand("create", this.createService);
 	}
 
 }
