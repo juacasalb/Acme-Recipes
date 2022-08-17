@@ -25,12 +25,18 @@ public interface ChefItemRepository extends AbstractRepository{
 	Item findItemById(int id);
 	
 	@Query("SELECT i FROM Item i WHERE i.code = :code")
-	Item findItemByCode(int code);
+	Item findItemByCode(String code);
 	
 	@Query("SELECT i FROM Chef i WHERE i.id=:id")
 	Chef findChefById(int id);
 	
 	@Query("SELECT c FROM Chef c WHERE c.userAccount.id=:id")
 	Chef findChefByUserAccountId(int id);
+	
+	@Query("SELECT s.acceptedCurrencies FROM SystemConfiguration s")
+	String findAvailableCurrencies();
+	
+	@Query("SELECT s.systemCurrency FROM SystemConfiguration s")
+	String findBaseCurrency();
 
 }

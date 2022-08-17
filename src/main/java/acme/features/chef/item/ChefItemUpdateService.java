@@ -82,10 +82,6 @@ public class ChefItemUpdateService implements AbstractUpdateService<Chef, Item>{
 		assert entity != null;
 		assert errors != null;
 		
-		if(!errors.hasErrors("published")) {
-			errors.state(request, request.getModel().getBoolean("published"), "published", "chef.item.published.required");
-		}
-		
 		if(!errors.hasErrors("retailPrice")) {
 			final Money retailPrice = entity.getRetailPrice();
 			if (entity.getType().equals(ItemType.INGREDIENT)) {

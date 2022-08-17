@@ -19,7 +19,5 @@ chef.item.form.button.update = Actualizar
 chef.item.form.button.delete = Borrar
 chef.item.form.button.publish = Publicar
 
-chef.item.published.required = Este campo es requerido
-
 chef.item.form.error.retail-price-ingredient-positive = El precio debe ser mayor que 0
 chef.item.form.error.retail-price-kitchen-utensil-zero-or-positive = El precio debe ser mayor o igual a 0
