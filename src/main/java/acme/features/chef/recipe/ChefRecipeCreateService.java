@@ -38,7 +38,7 @@ public class ChefRecipeCreateService implements AbstractCreateService<Chef, Reci
 		assert entity != null;
 		assert model != null;
 		
-		request.unbind(entity, model, "code", "heading", "description", "preparationNotes", "link", "chef.userAccount.username", "retailPrice");
+		request.unbind(entity, model, "code", "heading", "description", "preparationNotes", "link", "chef.userAccount.username", "retailPrice", "published");
 	}
 
 	@Override

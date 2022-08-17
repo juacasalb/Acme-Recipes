@@ -60,9 +60,4 @@ public class Item extends AbstractEntity{
 	@ManyToOne(optional=false)
 	@OnDelete(action = OnDeleteAction.CASCADE)
 	protected Chef chef;
-	
-	@NotNull
-	@Valid
-	@ManyToOne(optional=true)
-	protected Recipe recipe;
 }
