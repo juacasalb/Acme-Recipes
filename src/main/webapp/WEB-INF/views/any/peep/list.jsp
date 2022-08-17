@@ -10,3 +10,4 @@
 	<acme:list-column code="any.peep.list.label.writer" path="writer"/>
 	<acme:list-column code="any.peep.list.label.email" path="email"/>
 </acme:list>
+<acme:button code="any.peep.list.create" action="/any/peep/create"/>

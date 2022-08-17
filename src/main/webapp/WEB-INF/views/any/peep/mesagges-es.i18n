@@ -3,3 +3,12 @@ any.peep.list.label.heading = Título
 any.peep.list.label.writer = Escritor
 any.peep.list.label.piece-of-text = Texto
 any.peep.list.label.email = Email
+any.peep.list.create = Crear
+
+form.peep.heading = Cabecera
+form.peep.writer = Escritor
+form.peep.pieceOfText = Texto
+form.peep.email = Email
+form.peep.confirm = Debes confirmar
+any.peep.form.create = Crear
+form.peep.confirm.message = Confirmar
