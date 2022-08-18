@@ -58,6 +58,7 @@ master.menu.chef.ingredients-link = Mis Ingredientes
 master.menu.chef.memoranda.list = Listar todos mis memorandums
 master.menu.chef.recipe.list = Mis recetas
 master.menu.chef.fine-dish.list = Mis platos finos
+master.menu.authenticated.chef = Mi perfil de chef
 
 # master.menu.provider ########################################################
 
@@ -84,6 +85,7 @@ master.menu.epicure = Epicure
 master.menu.epicure.memoranda.list = Listar todos mis memorandums
 master.menu.epicure.epicure-dashboard.show = Mostrar mi epicure dashboard
 master.menu.epicure.fine-dish.list = Mis platos finos
+master.menu.authenticated.epicure = Mi perfil de sibarita
 
 # master.menu.authenticated ######################################################
 
