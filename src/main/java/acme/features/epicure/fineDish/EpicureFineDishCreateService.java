@@ -44,7 +44,7 @@ public class EpicureFineDishCreateService implements AbstractCreateService<Epicu
 			model.setAttribute("chef", chef);
 		}
 		request.setModel(model);
-		request.bind(entity, errors, "state","code","request","budget","startPeriod","endPeriod","moreInfo","chef");
+		request.bind(entity, errors,"code","request","budget","startPeriod","endPeriod","moreInfo","chef");
 		
 	}
 
@@ -74,17 +74,13 @@ public class EpicureFineDishCreateService implements AbstractCreateService<Epicu
 	public void validate(final Request<FineDish> request, final FineDish entity, final Errors errors) {
 		if(!errors.hasErrors("budget")) {
 			final Money budget = entity.getBudget();
-			final String currencies = this.repository.acceptedCurrencies();
-			final String[] currenciesArr = currencies.split(",");
+			final String currencies = this.repository.findCurrencyConiguration().getAcceptedCurrencies();
 			final String budgetCurrency = budget.getCurrency();
 			final double amount = budget.getAmount();
 			errors.state(request, amount>0 ,"budget", "error.budget-amount");
 			boolean isRealCurrency = false;
-			for(final String curr:currenciesArr) {
-				if(curr.equals(budgetCurrency)) {
-					isRealCurrency = true;
-					break;
-				}
+			if(currencies.contains(budgetCurrency)) {
+				isRealCurrency = true;
 			}
 			errors.state(request, isRealCurrency ,"budget", "error.budget-currency");
 		}

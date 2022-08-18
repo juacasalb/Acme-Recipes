@@ -9,6 +9,7 @@ import acme.entities.fineDish.FineDish;
 import acme.framework.repositories.AbstractRepository;
 import acme.roles.Chef;
 import acme.roles.Epicure;
+import acme.system.configuration.CurrencyConfiguration;
 
 @Repository
 public interface EpicureFineDishRepository extends AbstractRepository{
@@ -28,6 +29,9 @@ public interface EpicureFineDishRepository extends AbstractRepository{
 	@Query("SELECT cc.acceptedCurrencies FROM CurrencyConfiguration cc")
 	String acceptedCurrencies();
 
+	@Query("SELECT cc FROM CurrencyConfiguration cc")
+	CurrencyConfiguration findCurrencyConiguration();
+	
 	@Query("SELECT fd FROM FineDish fd WHERE fd.code = :code")
 	FineDish findDishByCode(String code);
 	

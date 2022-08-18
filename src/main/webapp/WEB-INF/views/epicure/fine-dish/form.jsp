@@ -36,18 +36,19 @@
 		path="endPeriod" readonly="${readOnly}" />
 	<acme:input-url code="form.epicure.fine-dish.moreInfo" path="moreInfo"
 		readonly="${readOnly}" />
+	<acme:input-textbox code="form.epicure.fine-dish.chef.identity.name"
+		path="chef.userAccount.username" readonly="${readOnly}" />
 	<jstl:if test="${command != 'create' }">
-		<acme:input-textbox code="form.epicure.fine-dish.chef.identity.name"
-			path="chef.userAccount.username" readonly="${readOnly}" />
-		<jstl:if test="${state == 'PROPOSED' }">
-			<acme:submit code="form.epicure.fine-dish.update" action="/epicure/fine-dish/update"/>
-			<acme:submit code="form.epicure.fine-dish.delete" action="/epicure/fine-dish/delete"/>
+		<jstl:if test="${!published }">
+			<acme:submit code="form.epicure.fine-dish.publish" action="/epicure/fine-dish/publish"/>
+			<jstl:if test="${state == 'PROPOSED' }">
+				<acme:submit code="form.epicure.fine-dish.update" action="/epicure/fine-dish/update"/>
+				<acme:submit code="form.epicure.fine-dish.delete" action="/epicure/fine-dish/delete"/>
+			</jstl:if>
 		</jstl:if>
 		
 	</jstl:if>
 	<jstl:if test="${command =='create' }">
-		<acme:input-textbox code="form.epicure.fine-dish.chef.find"
-			path="chef.userAccount.username" />
 		<acme:submit code="form.epicure.fine-dish.create"
 			action="/epicure/fine-dish/create" />
 	</jstl:if>
