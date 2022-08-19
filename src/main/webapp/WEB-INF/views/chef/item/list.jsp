@@ -5,5 +5,8 @@
 
 <acme:list>
 	<acme:list-column code="chef.item.list.label.name" path="name"/>
-	<acme:list-column code="chef.item.list.label.type" path="type"/>	
+	<acme:list-column code="chef.item.list.label.type" path="type"/>
 </acme:list>
+
+<acme:button code="chef.item.list.button.create" action="/chef/item/create"/>
+

@@ -67,6 +67,4 @@ public class ChefQuantityShowService implements AbstractShowService<Chef, Quanti
 		
 		request.unbind(entity, model, "number", "recipe.code", "item.type", "item.name", "item.code", "item.retailPrice");
 	}
-	
-	
 }

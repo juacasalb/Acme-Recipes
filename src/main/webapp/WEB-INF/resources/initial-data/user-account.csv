@@ -11,3 +11,5 @@ user-account-epicure-02,true,"UserIdentity{name: 'E2', surname: 'Acme', email: '
 user-account-epicure-03,true,"UserIdentity{name: 'E3', surname: 'Acme', email: 'e3@acme.com'}",epicure3,epicure3
 user-account-epicure-04,true,"UserIdentity{name: 'E4', surname: 'Acme', email: 'e4@acme.com'}",epicure4,epicure4
 user-account-epicure-05,true,"UserIdentity{name: 'E5', surname: 'Acme', email: 'e5@acme.com'}",epicure5,epicure5
+user-account-consumer-01,true,"UserIdentity{name: 'C1', surname: 'Acme', email: 'c1@acme.com'}",consumer1,consumer1
+user-account-provider-01,true,"UserIdentity{name: 'PR1', surname: 'Acme', email: 'pr1@acme.com'}",provider1,provider1

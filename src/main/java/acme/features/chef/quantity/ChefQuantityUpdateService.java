@@ -2,7 +2,6 @@ package acme.features.chef.quantity;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import acme.entities.Item;
 import acme.entities.ItemType;
 import acme.entities.Quantity;
@@ -55,6 +54,7 @@ public class ChefQuantityUpdateService implements AbstractUpdateService<Chef, Qu
 		assert errors != null;
 
 		request.bind(entity, errors, "number"); 
+
 	}
 
 	@Override
@@ -76,6 +76,7 @@ public class ChefQuantityUpdateService implements AbstractUpdateService<Chef, Qu
 		quantity = this.repository.findOneQuantityById(id);
 		
 		return quantity;
+
 	}
 
 	@Override
@@ -88,6 +89,7 @@ public class ChefQuantityUpdateService implements AbstractUpdateService<Chef, Qu
 		
 		if(item.getType().equals(ItemType.INGREDIENT)) {
 			errors.state(request, entity.getNumber() == 1, "number", "inventor.quantity.form.error.recipe-one-ingredient");
+
 		}
 		
 	}

@@ -48,6 +48,7 @@ public class ChefQuantityDeleteService implements AbstractDeleteService<Chef, Qu
 
 	@Override
 	public void bind(final Request<Quantity> request, final Quantity entity, final Errors errors) {
+
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
@@ -57,6 +58,7 @@ public class ChefQuantityDeleteService implements AbstractDeleteService<Chef, Qu
 
 	@Override
 	public void unbind(final Request<Quantity> request, final Quantity entity, final Model model) {
+
 		assert request != null;
 		assert entity != null;
 		assert model != null;
@@ -92,7 +94,5 @@ public class ChefQuantityDeleteService implements AbstractDeleteService<Chef, Qu
 		
 		this.repository.delete(entity);
 	}
-	
-	
 
 }

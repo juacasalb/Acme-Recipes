@@ -12,8 +12,6 @@ import acme.roles.Chef;
 @Controller
 public class ChefQuantityController extends AbstractController<Chef, Quantity>{
 	
-	// Internal state ---------------------------------------------------------
-
 	@Autowired
 	protected ChefQuantityListService listService;
 	
@@ -24,21 +22,18 @@ public class ChefQuantityController extends AbstractController<Chef, Quantity>{
 	protected ChefQuantityCreateService createService;
 	
 	@Autowired
+	protected ChefQuantityUpdateService updateService;
+  
+	@Autowired
 	protected ChefQuantityDeleteService deleteService;
 	
-	@Autowired
-	protected ChefQuantityUpdateService updateService;
-		
-	// Constructors -----------------------------------------------------------
-
-
 	@PostConstruct
 	protected void initialise() {
-		super.addCommand("list", this.listService);
-		super.addCommand("show", this.showService);
 		super.addCommand("create", this.createService);
-		super.addCommand("delete", this.deleteService);
 		super.addCommand("update", this.updateService);
+		super.addCommand("show", this.showService);
+		super.addCommand("list", "list", this.listService);
+		super.addCommand("delete", this.deleteService);
 	}
 
 }

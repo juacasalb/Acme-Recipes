@@ -32,7 +32,6 @@ public class ChefQuantityCreateService implements AbstractCreateService<Chef, Qu
 	@Override
 	public boolean authorise(final Request<Quantity> request) {
 		assert request != null;
-		
 		boolean result;
 		int id;
 		Recipe recipe;
@@ -48,7 +47,7 @@ public class ChefQuantityCreateService implements AbstractCreateService<Chef, Qu
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
-		
+
 		entity.setItem(this.itemRepository.findItemById(Integer.valueOf(request.getModel().getAttribute("itemId").toString())));
 		final int id = this.repository.findOneRecipeById(request.getModel().getInteger("id")).getId();
 		entity.setId(id);
@@ -88,10 +87,10 @@ public class ChefQuantityCreateService implements AbstractCreateService<Chef, Qu
 
 	@Override
 	public void validate(final Request<Quantity> request, final Quantity entity, final Errors errors) {
+
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
-		
 		final Item item = entity.getItem();
 		
 		if(item.getType().equals(ItemType.INGREDIENT)) {
@@ -101,6 +100,7 @@ public class ChefQuantityCreateService implements AbstractCreateService<Chef, Qu
 
 	@Override
 	public void create(final Request<Quantity> request, final Quantity entity) {
+
 		assert request != null;
 		assert entity != null;	
 		
