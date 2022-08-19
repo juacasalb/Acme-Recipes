@@ -8,11 +8,14 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.URL;
 
 import acme.framework.datatypes.Money;
 import acme.framework.entities.AbstractEntity;
+import acme.roles.Chef;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -48,6 +51,15 @@ public class Item extends AbstractEntity{
 	
 	@URL
 	protected String link;
+	
+	@NotNull
+	protected Boolean published;
+	
+	@NotNull
+	@Valid
+	@ManyToOne(optional=false)
+	@OnDelete(action = OnDeleteAction.CASCADE)
+	protected Chef chef;
 	
 	@NotNull
 	@Valid

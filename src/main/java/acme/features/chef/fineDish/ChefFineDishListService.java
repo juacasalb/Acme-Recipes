@@ -19,19 +19,26 @@ public class ChefFineDishListService implements AbstractListService<Chef,FineDis
 	
 	@Override
 	public boolean authorise(final Request<FineDish> request) {
-		// TODO Auto-generated method stub
-		return false;
+		assert request != null;
+		return true;
 	}
 
 	@Override
 	public Collection<FineDish> findMany(final Request<FineDish> request) {
-		// TODO Auto-generated method stub
-		return null;
+		assert request != null;
+		final int chefId = request.getPrincipal().getActiveRoleId();
+		Collection<FineDish> result;
+		result= this.repository.findEpicureDishesByEpicureId(chefId);
+		return result;
 	}
 
 	@Override
 	public void unbind(final Request<FineDish> request, final FineDish entity, final Model model) {
-		// TODO Auto-generated method stub
+		assert request != null;
+		assert entity != null;
+		assert model != null;
+		
+		request.unbind(entity, model, "code", "budget","startPeriod", "endPeriod");
 		
 	}
 

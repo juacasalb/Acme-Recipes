@@ -21,5 +21,6 @@ public class ChefFineDishController extends AbstractController<Chef,FineDish> {
 	protected void initialise() {
 		super.addCommand("list", this.listService);
 		super.addCommand("update", this.updateService);
+		super.addCommand("show", this.updateService);
 	}
 }

@@ -1,0 +1,3 @@
+recordIndex,code,heading,description,preparationNotes,link,published,chef
+0,"RE:AAB-111","Recipe 1","This is a recipe","To make it you need ingredients and kitchen utensils",https://www.a.com,true,chef1
+1,"RE:AAC-112","Recipe 2","This is a recipe","To make it you need ingredients and kitchen utensils",https://www.a.com,false,chef1

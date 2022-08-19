@@ -1,0 +1,10 @@
+any.item.form.label.name = Name
+any.item.form.label.code = Code
+any.item.form.label.unit = Unit
+any.item.form.label.description = Description
+any.item.form.label.retailPrice = Retail Price
+any.item.form.label.link = Link
+any.item.form.label.type = Type
+
+any.item.list.label.name = Name
+any.item.list.label.type = Type
