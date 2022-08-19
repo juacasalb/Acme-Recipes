@@ -23,7 +23,7 @@ public class ChefQuantityController extends AbstractController<Chef, Quantity>{
 	
 	@Autowired
 	protected ChefQuantityUpdateService updateService;
-	
+  
 	@Autowired
 	protected ChefQuantityDeleteService deleteService;
 	
@@ -35,5 +35,5 @@ public class ChefQuantityController extends AbstractController<Chef, Quantity>{
 		super.addCommand("list", "list", this.listService);
 		super.addCommand("delete", this.deleteService);
 	}
-	
+
 }

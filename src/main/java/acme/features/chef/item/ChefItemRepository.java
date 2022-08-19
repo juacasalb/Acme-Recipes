@@ -38,5 +38,8 @@ public interface ChefItemRepository extends AbstractRepository{
 	
 	@Query("SELECT s.systemCurrency FROM SystemConfiguration s")
 	String findBaseCurrency();
+  
+	@Query("select i from Item i where i.published = true and i not in (select q.item from Quantity q where q.recipe.id = :recipeId)")
+	Collection<Item> findManyPublishedAndValidItems(int recipeId);
 
 }

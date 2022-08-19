@@ -1,14 +1,22 @@
 package acme.features.chef.quantity;
 
+import java.util.Collection;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.entities.Item;
 import acme.entities.ItemType;
 import acme.entities.Quantity;
 import acme.entities.Recipe;
+import acme.features.chef.item.ChefItemRepository;
+import acme.features.chef.recipe.ChefRecipeRepository;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Errors;
+import acme.framework.controllers.HttpMethod;
 import acme.framework.controllers.Request;
+import acme.framework.controllers.Response;
+import acme.framework.helpers.PrincipalHelper;
 import acme.framework.services.AbstractCreateService;
 import acme.roles.Chef;
 
@@ -16,64 +24,65 @@ import acme.roles.Chef;
 public class ChefQuantityCreateService implements AbstractCreateService<Chef, Quantity>{
 
 	@Autowired
-	protected ChefQuantityRepository repository;
+	protected ChefRecipeRepository repository;
+	
+	@Autowired
+	protected ChefItemRepository itemRepository;
 	
 	@Override
 	public boolean authorise(final Request<Quantity> request) {
 		assert request != null;
-
-		boolean checkPublished = true;
-		int masterId;
+		boolean result;
+		int id;
 		Recipe recipe;
 
-		masterId = request.getModel().getInteger("masterId");
-		recipe = this.repository.findRecipeById(masterId);
-		checkPublished = (recipe != null && recipe.isPublished()) && request.isPrincipal(recipe.getChef());
-		
-		return checkPublished;
+		id = request.getModel().getInteger("id");
+		recipe = this.repository.findOneRecipeById(id);
+		result = (recipe != null && !recipe.isPublished() && request.isPrincipal(recipe.getChef()));
+		return result;
 	}
 
 	@Override
 	public void bind(final Request<Quantity> request, final Quantity entity, final Errors errors) {
-
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
+
+		entity.setItem(this.itemRepository.findItemById(Integer.valueOf(request.getModel().getAttribute("itemId").toString())));
+		final int id = this.repository.findOneRecipeById(request.getModel().getInteger("id")).getId();
+		entity.setId(id);
 		
-		entity.setItem(this.repository.findItemById(Integer.valueOf(request.getModel().getAttribute("itemId").toString())));
-		request.bind(entity, errors, "quantity", "itemId");
-		
-	}
+		request.bind(entity, errors, "number", "itemId");		
+	}	
 
 	@Override
 	public void unbind(final Request<Quantity> request, final Quantity entity, final Model model) {
+		assert request != null; 
+		assert entity != null; 
+		assert model != null; 
 
-		assert request != null;
-		assert entity != null;
-		assert model != null;
+		final int masterId = Integer.parseInt((String) request.getModel().getAttribute("id"));
+		final Collection<Item> items =  this.itemRepository.findManyPublishedAndValidItems(masterId);
 		
-		final int masterId = request.getModel().getInteger("masterId");
-		final ItemType type = ItemType.valueOf((String)request.getModel().getAttribute("type"));
-		
-		final Recipe t = this.repository.findRecipeById(Integer.valueOf(request.getModel().getAttribute("masterId").toString()));
-		model.setAttribute("published", t.isPublished());
-		model.setAttribute("type",  type.toString());
-		model.setAttribute("masterId", request.getModel().getAttribute("masterId"));
-		model.setAttribute("items", this.repository.findManyItemsNotInRecipe(masterId,type));
-		request.unbind(entity, model, "quantity");
+		model.setAttribute("masterId", masterId);
+		model.setAttribute("items", items);
+		request.unbind(entity, model, "number");
 	}
+	
+
 
 	@Override
 	public Quantity instantiate(final Request<Quantity> request) {
-
 		assert request != null;
 		
-		final Quantity q = new Quantity();
-		final int toolkitId = request.getModel().getInteger("masterId");
-		q.setRecipe(this.repository.findRecipeById(toolkitId));
-		q.setNumber(1);
+		Quantity result;
+		result= new Quantity();
 		
-		return q;
+		final Recipe recipe = this.repository.findOneRecipeById(request.getModel().getInteger("id"));
+		
+		result.setRecipe(recipe);
+		
+		return result;
 	}
 
 	@Override
@@ -82,13 +91,10 @@ public class ChefQuantityCreateService implements AbstractCreateService<Chef, Qu
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
+		final Item item = entity.getItem();
 		
-		if(!errors.hasErrors("quantity")) {
-			errors.state(request, entity.getNumber() > 0, "quantity", "chef.quantity.form.error.negative-number");
-		}
-					
-		if(!errors.hasErrors("quantity") && entity.getItem().getType().equals(ItemType.KITCHENUTENSIL)) {
-			errors.state(request, entity.getNumber() == 1, "quantity", "chef.quantity.form.error.incorrect-kitchenutensil-quantity");
+		if(item.getType().equals(ItemType.INGREDIENT)) {
+			errors.state(request, entity.getNumber() == 1, "number", "inventor.quantity.form.error.recipe-one-ingredient");
 		}
 	}
 
@@ -96,11 +102,19 @@ public class ChefQuantityCreateService implements AbstractCreateService<Chef, Qu
 	public void create(final Request<Quantity> request, final Quantity entity) {
 
 		assert request != null;
-		assert entity != null;
-
-		this.repository.save(entity);
+		assert entity != null;	
 		
+		this.repository.save(entity);
 	}
 
+	@Override
+	public void onSuccess(final Request<Quantity> request, final Response<Quantity> response) {
+		assert request != null;
+		assert response != null;
+
+		if (request.isMethod(HttpMethod.POST)) {
+			PrincipalHelper.handleUpdate();
+		}
+	}
 	
 }

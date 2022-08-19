@@ -10,4 +10,3 @@
 
 <acme:button code="chef.item.list.button.create" action="/chef/item/create"/>
 
-	

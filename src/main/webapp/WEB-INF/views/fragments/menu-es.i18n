@@ -25,6 +25,9 @@ master.menu.any.items.ingredients = Lista de Ingredientes
 master.menu.any.recipe = Lista de recetas publicadas
 master.menu.any.peeps = Peeps
 master.menu.any.peeps.list = Lista de Peeps
+master.menu.any.user-account = Usuarios
+master.menu.any.user-account.chef = Lista de chefs
+master.menu.any.user-account.epicure = Lista de sibaritas
 
 # master.menu.anonymous #######################################################
 
@@ -44,6 +47,9 @@ master.menu.administrator.user-accounts = Cuentas de usuario
 master.menu.administrator.populate-initial = Poblar BD (inicial)
 master.menu.administrator.populate-sample = Poblar BD (ejemplos)
 master.menu.administrator.shut-down = Parar el sistema
+master.menu.administrator.admin-dashboard = Muestra administrator dashboard 
+master.menu.administrator.sys-config = Configuracion del sistema
+master.menu.administrator.bulletin.create = Crear Boletin
 
 # master.menu.chef ############################################################
 
@@ -55,6 +61,7 @@ master.menu.chef.recipe.list = Mis recetas
 master.menu.chef.fine-dish.list = Mis platos finos
 master.menu.chef.create = Crear ingredientes/utensilios
 master.menu.chef.update = Modificar ingredientes/utensilios
+master.menu.authenticated.chef = Mi perfil de chef
 
 # master.menu.provider ########################################################
 
@@ -81,8 +88,10 @@ master.menu.epicure = Epicure
 master.menu.epicure.memoranda.list = Listar todos mis memorandums
 master.menu.epicure.epicure-dashboard.show = Mostrar mi epicure dashboard
 master.menu.epicure.fine-dish.list = Mis platos finos
+master.menu.authenticated.epicure = Mi perfil de sibarita
 
 # master.menu.authenticated ######################################################
 
 master.menu.authenticated = Autenticado
 master.menu.authenticated.bulletins = Boletines
+master.menu.authenticated.sys-config = Configuracion del sistema

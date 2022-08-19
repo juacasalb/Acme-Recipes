@@ -59,5 +59,4 @@ public class Item extends AbstractEntity{
 	@ManyToOne(optional=false)
 	@OnDelete(action = OnDeleteAction.CASCADE)
 	protected Chef chef;
-	
 }

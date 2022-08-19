@@ -3,12 +3,11 @@ package acme.features.chef.quantity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import acme.entities.Item;
 import acme.entities.Quantity;
 import acme.entities.Recipe;
+import acme.features.chef.recipe.ChefRecipeRepository;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
-import acme.framework.entities.Principal;
 import acme.framework.services.AbstractShowService;
 import acme.roles.Chef;
 
@@ -16,57 +15,56 @@ import acme.roles.Chef;
 public class ChefQuantityShowService implements AbstractShowService<Chef, Quantity>{
 
 	@Autowired
-	protected ChefQuantityRepository repository;
+	protected ChefRecipeRepository repository;
 	
 	@Override
 	public boolean authorise(final Request<Quantity> request) {
-assert request != null;
+		assert request != null;
 		
-		final boolean result;
-		int id;
-		int inventorId;
-		Recipe recipe;
-		final Principal principal;
-
-		id = request.getModel().getInteger("id");
-		recipe = this.repository.findQuantityById(id).getRecipe();
-		principal = request.getPrincipal();
-		inventorId=principal.getActiveRoleId();
+		boolean res = false;
 		
-
-
-		result = recipe.getChef().getId()==inventorId;
-		return result;
+		int quantityId;
+		quantityId = request.getModel().getInteger("id");
+		final Quantity quantity = this.repository.findOneQuantityById(quantityId);
+		
+		int recipeId;
+		recipeId = quantity.getRecipe().getId();
+		final Recipe recipe = this.repository.findOneRecipeById(recipeId);
+		
+		int userId;
+		userId = request.getPrincipal().getAccountId();
+		
+		int chefId;
+		chefId = recipe.getChef().getId();
+		final Chef chef = this.repository.findOneChefByUserAccountId(userId);
+		
+		final int chefIdUser = chef.getId();		
+		
+		res = chefIdUser == chefId;
+		
+		return res;
 	}
 
 	@Override
 	public Quantity findOne(final Request<Quantity> request) {
 		assert request != null;
-
+		
 		Quantity result;
-		Item item;
-		int masterId;
-
-		masterId = request.getModel().getInteger("id");
-		result = this.repository.findQuantityById(masterId);
+		int id;
+		id = request.getModel().getInteger("id");
+		result = this.repository.findOneQuantityById(id);
 		
-		item = result.getItem();
-		
-		this.repository.save(item);
-
 		return result;
 	}
 
 	@Override
 	public void unbind(final Request<Quantity> request, final Quantity entity, final Model model) {
-		assert request != null; 
-		assert entity != null; 
-		assert model != null; 
-
-		request.unbind(entity, model, "quantity", "name", "type", "code", "description", "unit", "retailPrice"); 
-		model.setAttribute("type", entity.getItem().getType().toString());
-		model.setAttribute("published", entity.getRecipe().isPublished());
+		assert request != null;
+		assert entity != null;
+		assert model != null;
 		
+		model.setAttribute("recipePublished", entity.getRecipe().isPublished());
+		
+		request.unbind(entity, model, "number", "recipe.code", "item.type", "item.name", "item.code", "item.retailPrice");
 	}
-	
 }
