@@ -35,9 +35,6 @@ public class ChefItemController extends AbstractController<Chef, Item>{
 	
 	@Autowired
 	protected ChefItemDeleteService deleteService;
-	
-	@Autowired
-	protected ChefRecipeItemListService listRecipeService;
 
 	@PostConstruct
 	protected void initialise() {
@@ -48,7 +45,6 @@ public class ChefItemController extends AbstractController<Chef, Item>{
 		super.addCommand("show", "show", this.showService);
 		super.addCommand("delete", this.deleteService);
 		super.addCommand("list", this.listService);
-		super.addCommand("list-item", "list", this.listRecipeService);
 		super.addCommand("publish","update",this.publishService);
 	}
 	
