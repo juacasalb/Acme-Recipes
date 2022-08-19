@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.fineDish.FineDish;
+import acme.entities.fineDish.State;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Errors;
 import acme.framework.controllers.Request;
@@ -108,6 +109,7 @@ public class EpicureFineDishUpdateService implements AbstractUpdateService<Epicu
 		assert request != null;
 		assert entity != null;
 		entity.setPublished(false);
+		entity.setState(State.PROPOSED);
 		this.repository.save(entity);
 	}
 

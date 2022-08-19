@@ -6,6 +6,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import acme.entities.fineDish.FineDish;
+import acme.entities.fineDish.State;
 import acme.framework.repositories.AbstractRepository;
 import acme.roles.Chef;
 import acme.roles.Epicure;
@@ -34,6 +35,15 @@ public interface EpicureFineDishRepository extends AbstractRepository{
 	
 	@Query("SELECT fd FROM FineDish fd WHERE fd.code = :code")
 	FineDish findDishByCode(String code);
+
+	@Query("SELECT fd FROM FineDish fd WHERE fd.epicure.id = :epicureId AND fd.published = false")
+	Collection<FineDish> findNotPublishedDishesByEpicureId(int epicureId);
+	
+	@Query("SELECT fd FROM FineDish fd WHERE fd.epicure.id = :epicureId AND fd.published = true")
+	Collection<FineDish> findPublishedDishesByEpicureId(int epicureId);
+
+	@Query("SELECT fd FROM FineDish fd WHERE fd.epicure.id = :epicureId AND fd.state = :state")
+	Collection<FineDish> findDishesByEpicureIdAndState(int epicureId, State state);
 	
 
 }

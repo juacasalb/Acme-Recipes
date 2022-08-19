@@ -13,7 +13,7 @@ import acme.roles.Epicure;
 public class EpicureFineDishController extends AbstractController<Epicure, FineDish>{
 
 	@Autowired
-	protected EpicureFineDishListSerice listService;
+	protected EpicureFineDishListService listService;
 	@Autowired
 	protected EpicureFineDishUpdateService updateService;
 	@Autowired
@@ -24,6 +24,16 @@ public class EpicureFineDishController extends AbstractController<Epicure, FineD
 	protected EpicureFineDishShowService showService;
 	@Autowired
 	protected EpicureFineDishPublishService publishService;
+	@Autowired
+	protected EpicureFineDishListPublishedService listPublishedService;
+	@Autowired
+	protected EpicureFineDishListNotPublishedService listNotPublishedService;
+	@Autowired
+	protected EpicureFineDishListAcceptedService listAcceptedService;
+	@Autowired
+	protected EpicureFineDishListDeniedService listDeniedService;
+	@Autowired
+	protected EpicureFineDishListProposedService listProposedService;
 	
 	@PostConstruct
 	protected void initialise() {
@@ -33,5 +43,10 @@ public class EpicureFineDishController extends AbstractController<Epicure, FineD
 		super.addCommand("create", this.createService);
 		super.addCommand("delete", this.deleteService);
 		super.addCommand("publish", "update", this.publishService);
+		super.addCommand("list-published", "list", this.listPublishedService);
+		super.addCommand("list-not-published", "list", this.listNotPublishedService);
+		super.addCommand("list-accepted", "list", this.listAcceptedService);
+		super.addCommand("list-denied", "list", this.listDeniedService);
+		super.addCommand("list-proposed", "list", this.listProposedService);
 	}
 }

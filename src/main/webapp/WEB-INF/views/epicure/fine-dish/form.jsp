@@ -41,12 +41,11 @@
 	<jstl:if test="${command != 'create' }">
 		<jstl:if test="${!published }">
 			<acme:submit code="form.epicure.fine-dish.publish" action="/epicure/fine-dish/publish"/>
-			<jstl:if test="${state == 'PROPOSED' }">
-				<acme:submit code="form.epicure.fine-dish.update" action="/epicure/fine-dish/update"/>
-				<acme:submit code="form.epicure.fine-dish.delete" action="/epicure/fine-dish/delete"/>
-			</jstl:if>
 		</jstl:if>
-		
+		<jstl:if test="${state != 'ACCEPTED' }">
+			<acme:submit code="form.epicure.fine-dish.update" action="/epicure/fine-dish/update"/>
+			<acme:submit code="form.epicure.fine-dish.delete" action="/epicure/fine-dish/delete"/>
+		</jstl:if>
 	</jstl:if>
 	<jstl:if test="${command =='create' }">
 		<acme:submit code="form.epicure.fine-dish.create"

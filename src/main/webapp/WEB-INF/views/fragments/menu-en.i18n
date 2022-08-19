@@ -60,6 +60,8 @@ master.menu.chef.ingredients-link = My Ingredients
 master.menu.chef.memoranda.list = List all my memorandums
 master.menu.chef.recipe.list = My recipes
 master.menu.chef.fine-dish.list = My fine dishes
+master.menu.chef.fine-dish.list-proposed = My proposed dishes
+master.menu.chef.fine-dish.list-accepted = My accepted dishes
 master.menu.authenticated.chef = My chef profile
 
 # master.menu.provider ########################################################
@@ -87,6 +89,11 @@ master.menu.epicure = Epicure
 master.menu.epicure.memoranda.list = List all my memorandums
 master.menu.epicure.epicure-dashboard.show = Show my epicure dashboard
 master.menu.epicure.fine-dish.list = My fine dishes
+master.menu.epicure.fine-dish.list-published = My published dishes
+master.menu.epicure.fine-dish.list-not-published = My not published dishes
+master.menu.epicure.fine-dish.list-accepted = My accepted dishes
+master.menu.epicure.fine-dish.list-denied = My denied dishes
+master.menu.epicure.fine-dish.list-proposed = My proposed dishes
 master.menu.authenticated.epicure = My epicure profile
 
 # master.menu.authenticated ######################################################
