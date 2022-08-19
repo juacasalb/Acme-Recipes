@@ -21,3 +21,11 @@ form.epicure.fine-dish.chef.identity.name = Nombre del chef
 form.epicure.fine-dish.chef.identity.surname = Apellido del chef
 form.epicure.fine-dish.chef.identity.email = Email del chef
 form.epicure.fine-dish.delete = Eliminar
+form.epicure.fine-dish.publish = Publish
+
+error.budget-amount = Cantidad debe ser mayor que 0
+error.budget-currency = Moneda debe estar entre divisas aceptadas
+error.code-exists = Codigo en uso
+error.startPeriodTooSoon = Debe ser al menos un mes despues del momento de creacion
+error.endPeriodTooSoon = Debe ser al menos un mes despues del comienzo de periodo
+error.chef-username-not-found = Chef no encontrado

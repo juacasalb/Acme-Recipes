@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.fineDish.FineDish;
+import acme.entities.fineDish.State;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Errors;
 import acme.framework.controllers.Request;
@@ -16,20 +17,18 @@ import acme.roles.Chef;
 import acme.roles.Epicure;
 
 @Service
-public class EpicureFineDishUpdateService implements AbstractUpdateService<Epicure,FineDish> {
-	
+public class EpicureFineDishUpdateService implements AbstractUpdateService<Epicure,FineDish>{
+
 	@Autowired
 	protected EpicureFineDishRepository repository;
-
+	
 	@Override
 	public boolean authorise(final Request<FineDish> request) {
 		assert request != null;
-		
-		final int roleId = request.getPrincipal().getActiveRoleId();
+		final int epicureId = request.getPrincipal().getActiveRoleId();
 		final int dishId = request.getModel().getInteger("id");
-		final FineDish fineDish = this.repository.findFineDishByDishId(dishId);
-		
-		return roleId == fineDish.getEpicure().getId();
+		final int ownerId = this.repository.findFineDishByDishId(dishId).getEpicure().getId();
+		return epicureId==ownerId;
 	}
 
 	@Override
@@ -38,17 +37,17 @@ public class EpicureFineDishUpdateService implements AbstractUpdateService<Epicu
 		assert entity != null;
 		assert errors != null;
 		final Model model = request.getModel();
-		if(!model.hasAttribute("chef.userAccount.username")) {
-			model.setAttribute("chef.userAccount.username", "chef1");
-			final Chef chef = this.repository.findChefByUsername("chef1");
+		if(model.hasAttribute("chef.userAccount.username")) {
+			final String usrname = model.getString("chef.userAccount.username");
+			final Chef chef = this.repository.findChefByUsername(usrname);
 			model.setAttribute("chef", chef);
 		} else {
-			final String chefun = model.getString("chef.userAccount.username");
-			final Chef chef = this.repository.findChefByUsername(chefun);
+			final Chef chef = this.repository.findChefByUsername("chef1");
 			model.setAttribute("chef", chef);
+			model.setAttribute("chef.userAccount.username", "chef1");
 		}
-		request.bind(request,errors,"request","budget","startPeriod","endPeriod","moreInfo","chef");
-		
+		request.setModel(model);
+		request.bind(entity, errors,"code", "request", "budget","startPeriod","endPeriod", "moreInfo", "chef");
 	}
 
 	@Override
@@ -56,15 +55,15 @@ public class EpicureFineDishUpdateService implements AbstractUpdateService<Epicu
 		assert request != null;
 		assert entity != null;
 		assert model != null;
-		
-		request.unbind(entity, model,"state","code","request","budget","startPeriod","endPeriod","moreInfo","chef.userAccount.username");
+		request.unbind(entity, model,"state", "code", "request", "budget","startPeriod","endPeriod", "moreInfo", "chef", "chef.userAccount.username","published");
 	}
 
 	@Override
 	public FineDish findOne(final Request<FineDish> request) {
-		final int dishId = request.getModel().getInteger("id");
-		final FineDish result = this.repository.findFineDishByDishId(dishId);
-		return result;
+		assert request != null;
+		final int id = request.getModel().getInteger("id");
+		final FineDish dish = this.repository.findFineDishByDishId(id);
+		return dish;
 	}
 
 	@Override
@@ -74,23 +73,19 @@ public class EpicureFineDishUpdateService implements AbstractUpdateService<Epicu
 		assert errors != null;
 		if(!errors.hasErrors("budget")) {
 			final Money budget = entity.getBudget();
-			final String currencies = this.repository.acceptedCurrencies();
-			final String[] currenciesArr = currencies.split(",");
+			final String currencies = this.repository.findCurrencyConiguration().getAcceptedCurrencies();
 			final String budgetCurrency = budget.getCurrency();
 			final double amount = budget.getAmount();
 			errors.state(request, amount>0 ,"budget", "error.budget-amount");
 			boolean isRealCurrency = false;
-			for(final String curr:currenciesArr) {
-				if(curr.equals(budgetCurrency)) {
-					isRealCurrency = true;
-					break;
-				}
+			if(currencies.contains(budgetCurrency)) {
+				isRealCurrency = true;
 			}
 			errors.state(request, isRealCurrency ,"budget", "error.budget-currency");
 		}
 		if(!errors.hasErrors("code")) {
 			final FineDish dish = this.repository.findDishByCode(entity.getCode()); 
-			errors.state(request, dish == null||dish.getCode().equals(entity.getCode()), "code", "error.code-exists");
+			errors.state(request, dish == null||dish.equals(entity), "code", "error.code-exists");
  		}
 		if(!errors.hasErrors("startPeriod")) {
 			final Date creation = entity.getCreationMomment();
@@ -106,15 +101,16 @@ public class EpicureFineDishUpdateService implements AbstractUpdateService<Epicu
 			final Chef chef = this.repository.findChefByUsername(request.getModel().getString("chef.userAccount.username"));
 			errors.state(request, chef!=null, "chef.userAccount.username", "error.chef-username-not-found");
 		}
+		
 	}
 
 	@Override
 	public void update(final Request<FineDish> request, final FineDish entity) {
 		assert request != null;
 		assert entity != null;
+		entity.setPublished(false);
+		entity.setState(State.PROPOSED);
 		this.repository.save(entity);
-		
 	}
 
-	
 }
