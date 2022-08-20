@@ -1,0 +1,5 @@
+testIndex,organisation,assertion,link
+0,,"This is a chef assertion",
+1,"Organistaion Testing",,"https://github.com/juacasalb/Acme-Recipes"
+2,"Organistaion Testing","This is a chef assertion","Link no válido"
+3,,,
