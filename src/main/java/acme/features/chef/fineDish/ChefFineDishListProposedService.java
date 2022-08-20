@@ -1,4 +1,4 @@
-package acme.features.epicure.fineDish;
+package acme.features.chef.fineDish;
 
 import java.util.Collection;
 
@@ -6,17 +6,17 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.fineDish.FineDish;
+import acme.entities.fineDish.State;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
 import acme.framework.services.AbstractListService;
-import acme.roles.Epicure;
-
+import acme.roles.Chef;
 @Service
-public class EpicureFineDishListSerice implements AbstractListService<Epicure,FineDish> {
-	
-	@Autowired
-	protected EpicureFineDishRepository repository;
+public class ChefFineDishListProposedService implements AbstractListService<Chef,FineDish> {
 
+	@Autowired
+	protected ChefFineDishRepository repository;
+	
 	@Override
 	public boolean authorise(final Request<FineDish> request) {
 		assert request != null;
@@ -26,10 +26,9 @@ public class EpicureFineDishListSerice implements AbstractListService<Epicure,Fi
 	@Override
 	public Collection<FineDish> findMany(final Request<FineDish> request) {
 		assert request != null;
-		final int epicureId = request.getPrincipal().getActiveRoleId();
-		Collection<FineDish> result;
-		result= this.repository.findEpicureDishesByEpicureId(epicureId);
-		return result;
+		final int chefId = request.getPrincipal().getActiveRoleId();
+		final Collection<FineDish> dishes = this.repository.findDishesByChefIdAndState(chefId, State.PROPOSED);
+		return dishes;
 	}
 
 	@Override
@@ -39,7 +38,6 @@ public class EpicureFineDishListSerice implements AbstractListService<Epicure,Fi
 		assert model != null;
 		
 		request.unbind(entity, model, "code", "budget","startPeriod", "endPeriod");
-		
 	}
 
 }

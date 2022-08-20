@@ -16,11 +16,18 @@
 <%@taglib prefix="acme" uri="urn:jsptagdir:/WEB-INF/tags"%>
 
 <acme:form readonly="${readOnly}">
-	<acme:input-integer code="chef.memoranda.form.label.automatic-seq-num" path="automaticSeqNum"/>
+	<acme:input-moment code="chef.memoranda.form.label.instantiation-moment" path="instantiationMoment" readonly="${true}"/>
 	<acme:input-textbox code="chef.memoranda.form.label.report" path="report"/>
 	<acme:input-url code="chef.memoranda.form.label.link" path="link"/>
-	<acme:input-moment code="chef.memoranda.form.label.instantiation-moment" path="instantiationMoment"/>
-	
 	<acme:input-textbox code="chef.memoranda.form.label.fine-dish.code" path="fineDishCode"/>
-	<acme:input-textbox code="chef.memoranda.form.label.fine-dish.epicure-username" path="fineDishEpicureUsername"/>
+	<jstl:choose>
+		<jstl:when test="${command == 'show'}">
+			<acme:input-textbox code="chef.memoranda.form.label.automatic-seq-num" path="automaticSeqNum" readonly="${true}"/>
+			<acme:input-textbox code="chef.memoranda.form.label.fine-dish.epicure-username" path="fineDishEpicureUsername"/>
+		</jstl:when>
+		<jstl:when test="${command == 'create'}">
+			<acme:input-checkbox code="chef.memoranda.form.label.confirmation" path="confirmation"/>
+			<acme:submit code="chef.memoranda.form.label.create.button" action="/chef/memorandum/create"/>
+		</jstl:when>
+	</jstl:choose>
 </acme:form>

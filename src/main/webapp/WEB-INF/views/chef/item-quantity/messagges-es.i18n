@@ -1,0 +1,20 @@
+chef.quantity.list.label.quantity = Quantity
+chef.quantity.list.label.name = Name
+chef.quantity.list.label.code = Code
+chef.quantity.list.label.type = Type
+chef.quantity.list.label.unit = Unit
+chef.quantity.list.label.retailPrice = Retail Price
+
+chef.quantity.form.label.quantity = Quantity
+chef.quantity.form.label.item = Item
+chef.quantity.form.button.create = Create
+chef.quantity.form.button.update = Update quantity
+chef.quantity.form.button.delete = Delete from Kitchen Utensil
+
+chef.quantity.button.addKitchenUtensil = Add Kitchen Utensil
+chef.quantity.button.addIngredient = Add Ingredient
+chef.quantity.ingredient.button.create = Add Ingredient
+chef.quantity.kitchenutensil.button.create = Add Kitchen Utensil
+
+chef.quantity.form.error.negative-number = Quantity must be positive
+chef.quantity.form.error.incorrect-kitchenutensil-quantity = You can only have 1 Kitchen Utensil

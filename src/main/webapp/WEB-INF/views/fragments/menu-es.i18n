@@ -49,6 +49,7 @@ master.menu.administrator.populate-sample = Poblar BD (ejemplos)
 master.menu.administrator.shut-down = Parar el sistema
 master.menu.administrator.admin-dashboard = Muestra administrator dashboard 
 master.menu.administrator.sys-config = Configuracion del sistema
+master.menu.administrator.bulletin.create = Crear Boletin
 
 # master.menu.chef ############################################################
 
@@ -58,6 +59,13 @@ master.menu.chef.ingredients-link = Mis Ingredientes
 master.menu.chef.memoranda.list = Listar todos mis memorandums
 master.menu.chef.recipe.list = Mis recetas
 master.menu.chef.fine-dish.list = Mis platos finos
+master.menu.chef.create = Crear ingredientes/utensilios
+master.menu.chef.update = Modificar ingredientes/utensilios
+master.menu.chef.fine-dish.list-proposed = Mis platos propuestos
+master.menu.epicure.fine-dish.list-accepted = Mis platos aceptados
+master.menu.epicure.fine-dish.list-denied = Mis platos denegados
+master.menu.epicure.fine-dish.list-proposed = Mis platos propuestos
+master.menu.authenticated.chef = Mi perfil de chef
 
 # master.menu.provider ########################################################
 
@@ -74,9 +82,9 @@ master.menu.consumer.favourite-link = Enlace favorito
 master.menu.user-account = Cuenta
 master.menu.user-account.general-data = Datos generales
 master.menu.user-account.provider = Datos de proveedor
-master.menu.user-account.become-provider = Hazte proveedor
+master.menu.user-account.become-chef = Hazte chef
 master.menu.user-account.consumer = Datos de consumidor
-master.menu.user-account.become-consumer = Hazte consumidor
+master.menu.user-account.become-consumer = Hazte epicure
 
 # master.menu.epicure ##########################################################
 
@@ -84,6 +92,9 @@ master.menu.epicure = Epicure
 master.menu.epicure.memoranda.list = Listar todos mis memorandums
 master.menu.epicure.epicure-dashboard.show = Mostrar mi epicure dashboard
 master.menu.epicure.fine-dish.list = Mis platos finos
+master.menu.epicure.fine-dish.list-published = Mis platos publicados
+master.menu.epicure.fine-dish.list-not-published = Mis platos por publicar
+master.menu.authenticated.epicure = Mi perfil de sibarita
 
 # master.menu.authenticated ######################################################
 
