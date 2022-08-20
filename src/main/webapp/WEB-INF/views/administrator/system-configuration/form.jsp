@@ -22,7 +22,7 @@
 			</td>
 		</tr>
 	</table>
-	<acme:submit code="currency.update" action="administrator/currency-configuration/show"/>
+	<acme:submit code="currency.update" action="/administrator/currency-configuration/show"/>
 	<table>
 		<tr>
 			<th>
@@ -44,10 +44,10 @@
 					<jstl:out value="${spam.getThreshold() }"/>
 				</td>
 				<td>
-					<acme:submit code="spam.delete" action="administrator/spam-tuple/delete?id=${spam.getId()}"/>
+					<acme:submit code="spam.delete" action="/administrator/spam-tuple/delete?id=${spam.getId()}"/>
 				</td>
 			</tr>
 		</jstl:forEach>
 	</table>
-	<acme:submit code="spam.create" action="administrator/spam-tuple/create"/>
+	<acme:submit code="spam.create" action="/administrator/spam-tuple/create"/>
 </acme:form>
