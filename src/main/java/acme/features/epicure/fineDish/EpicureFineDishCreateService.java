@@ -61,8 +61,10 @@ public class EpicureFineDishCreateService implements AbstractCreateService<Epicu
 		final FineDish newDish = new FineDish();
 		newDish.setEpicure(epicure);
 		final Date current = new Date(System.currentTimeMillis()-60);
-		final Date startP = DateUtils.addMonths(new Date(System.currentTimeMillis()), 1);
-		final Date endP = DateUtils.addMonths(new Date(System.currentTimeMillis()+60), 2);
+		Date startP = DateUtils.addMonths(new Date(System.currentTimeMillis()), 1);
+		startP = DateUtils.addMinutes(startP, 5);
+		Date endP = DateUtils.addMonths(new Date(System.currentTimeMillis()+60), 2);
+		endP = DateUtils.addMinutes(endP, 5);
 		newDish.setCreationMomment(current);
 		newDish.setStartPeriod(startP);
 		newDish.setEndPeriod(endP);
