@@ -1,6 +1,7 @@
 package epicure.fineDish;
 
 import org.junit.jupiter.api.Order;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
 
@@ -12,8 +13,7 @@ public class EpicureFineDishListShowTest extends TestHarness {
 	@CsvFileSource(resources = "/epicure/fine-dish/fine-dish.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(10)
 	public void epicureListAndShowFineDish(final int recorIndex, final String code, final String budget, final String startPeriod, 
-		final String endPeriod, final String request, final String moreInfo,final String chName, final String chSurname, final String chEmail,
-		final String state) {
+		final String endPeriod, final String request, final String moreInfo,final String chName, final String state) {
 		super.signIn("epicure1", "epicure1");
 		super.clickOnMenu("Epicure", "My fine dishes");
 		super.checkListingExists();
@@ -29,13 +29,26 @@ public class EpicureFineDishListShowTest extends TestHarness {
 		super.checkInputBoxHasValue("state", state);
 		super.checkInputBoxHasValue("code", code);
 		super.checkInputBoxHasValue("request", request);
-		//super.checkInputBoxHasValue("budget", budget);
+		super.checkInputBoxHasValue("budget", budget);
 		super.checkInputBoxHasValue("startPeriod", startPeriod);
 		super.checkInputBoxHasValue("endPeriod", endPeriod);
 		super.checkInputBoxHasValue("moreInfo", moreInfo);
-		super.checkInputBoxHasValue("chef.identity.name", chName);
-		super.checkInputBoxHasValue("chef.identity.surname", chSurname);
-		super.checkInputBoxHasValue("chef.identity.email", chEmail);
+		super.checkInputBoxHasValue("chef.userAccount.username", chName);
 		
+		super.signOut();
+	}
+	
+	
+	@Test
+	@Order(20)
+	public void hackingTest() {
+		
+		super.navigate("/epicure/fine-dish/list");
+		super.checkPanicExists();
+		super.signIn("chef1", "chef1");
+		super.navigate("/epicure/fine-dish/list");
+		super.checkPanicExists();
+		
+		super.signOut();
 	}
 }
