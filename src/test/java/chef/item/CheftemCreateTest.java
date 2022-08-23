@@ -12,7 +12,7 @@ public class CheftemCreateTest extends TestHarness{
 	@ParameterizedTest
 	@CsvFileSource(resources = "/chef/item/items.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(10)
-	public void inventorCreateItemPositive(final int testIndex, final String name, final String unit, final String type,
+	public void chefCreateItemPositive(final int testIndex, final String name, final String unit, final String type,
 		final String code, final String description,
 		final String retailPrice, final String link) {
 		
@@ -57,7 +57,7 @@ public class CheftemCreateTest extends TestHarness{
 	@ParameterizedTest
 	@CsvFileSource(resources = "/chef/item/negativeItem.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(20)
-	public void inventorCreateItemNegative(final int testIndex, final String name, final String unit, final String type,
+	public void chefCreateItemNegative(final int testIndex, final String name, final String unit, final String type,
 		final String code, final String description,
 		final String retailPrice, final String link) {
 		
