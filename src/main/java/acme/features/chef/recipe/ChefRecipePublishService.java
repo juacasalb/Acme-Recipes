@@ -96,13 +96,9 @@ public class ChefRecipePublishService implements AbstractUpdateService<Chef, Rec
 		}
 		
 		errors.state(request, !items.isEmpty(), "*", "chef.recipe.form.error.items-empty");
-		
-		if(!items.isEmpty()) {
-			for(final Item i:items) {
-				publish = publish && i.getPublished();
-			}
-		}else {
-			publish = false;
+
+		for(final Item i:items) {
+			publish = publish && i.getPublished();
 		}
 		
 		errors.state(request, publish, "*", "chef.recipe.form.error.items-no-published");

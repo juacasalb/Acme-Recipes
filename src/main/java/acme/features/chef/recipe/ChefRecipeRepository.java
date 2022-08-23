@@ -20,6 +20,9 @@ public interface ChefRecipeRepository extends AbstractRepository{
 	@Query("SELECT r FROM Recipe r WHERE r.id = :id")
 	Recipe findOneRecipeById(int id);
 	
+	@Query("SELECT r FROM Recipe r WHERE r.code = :code")
+	Recipe findOneRecipeByCode(String code);
+	
 	@Query("select cc.defaultCurrency from CurrencyConfiguration cc")
 	String findSystemCurrency();
 	

@@ -77,6 +77,13 @@ public class ChefRecipeUpdateService implements AbstractUpdateService<Chef, Reci
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
+		
+		if(!errors.hasErrors("code")) {
+			Recipe createdRecipe;
+			
+			createdRecipe = this.repository.findOneRecipeByCode(entity.getCode());
+			errors.state(request, createdRecipe == null, "code", "chef.recipe.form.error.code-duplicated");
+		}
 	}
 
 	@Override
