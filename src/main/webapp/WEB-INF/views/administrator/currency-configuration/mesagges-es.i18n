@@ -1,0 +1,6 @@
+administrator.currency-configuration.form.label.defaultCurrency = Moneda por defecto
+administrator.currency-configuration.form.label.acceptedCurrencies = Monedas aceptadas
+
+administrator.currency-configuration.form.button.update = Actualizar configuracion de divisas
+
+administrator.currencyConfiguration.form.error.currency-not-available =  No es una moneda aceptada

@@ -16,5 +16,11 @@ public interface AdministratorSystemConfigurationRepository extends AbstractRepo
 
 	@Query("SELECT st FROM SpamTuple st")
 	List<SpamTuple> findAllSpamTuple();
+	
+	@Query("select cc.acceptedCurrencies from CurrencyConfiguration cc")
+	String findAvailableCurrencies();
+	
+	@Query("SELECT st FROM SpamTuple st WHERE st.id = :id")
+	SpamTuple findSpamTupleById(int id);
 
 }

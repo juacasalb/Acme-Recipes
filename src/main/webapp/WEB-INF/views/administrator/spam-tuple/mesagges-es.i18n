@@ -1,0 +1,3 @@
+administrator.spam-tuple.form.label.spamWord = Palabra de spam
+administrator.spam-tuple.form.label.threshold = Umbral
+administrator.spam-tuple.form.button.create = Crear nuevo termino de spam

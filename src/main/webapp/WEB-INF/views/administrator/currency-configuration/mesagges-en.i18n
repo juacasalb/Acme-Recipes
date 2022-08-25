@@ -1,0 +1,6 @@
+administrator.currency-configuration.form.label.defaultCurrency = Default Currency
+administrator.currency-configuration.form.label.acceptedCurrencies = Accepted Currencies
+
+administrator.currency-configuration.form.button.update = Update currency configuration
+
+administrator.currencyConfiguration.form.error.currency-not-available =  No Accepted Currency
