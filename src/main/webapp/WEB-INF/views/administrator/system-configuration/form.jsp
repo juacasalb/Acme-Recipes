@@ -22,7 +22,7 @@
 			</td>
 		</tr>
 	</table>
-	<acme:submit code="currency.update" action="/administrator/currency-configuration/show"/>
+	<acme:button code="currency.update" action="/administrator/currency-configuration/show"/>
 	<table>
 		<tr>
 			<th>
@@ -49,5 +49,5 @@
 			</tr>
 		</jstl:forEach>
 	</table>
-	<acme:submit code="spam.create" action="/administrator/spam-tuple/create"/>
+	<acme:button code="spam.create" action="/administrator/spam-tuple/create"/>
 </acme:form>
