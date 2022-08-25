@@ -1,0 +1,3 @@
+recordIndex,number,type,name,itemCode,retailPrice,recipeCode
+0,1,INGREDIENT,"ingredient-01","IN:AAB-111","EUR 50.00","RE:AAB-111"
+1,23,KITCHENUTENSIL,"utensil-02","UT:AAC-112","EUR 65.00","RE:AAB-111"
