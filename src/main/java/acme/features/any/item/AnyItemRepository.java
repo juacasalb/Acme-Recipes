@@ -20,4 +20,5 @@ public interface AnyItemRepository extends AbstractRepository{
 	@Query("SELECT i FROM Item i WHERE i.type = 0 AND published=true")
 	Collection<Item> findAllIngredients();
 	
+	
 }
