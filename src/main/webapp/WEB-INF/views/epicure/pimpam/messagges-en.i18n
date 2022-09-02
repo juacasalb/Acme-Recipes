@@ -1,0 +1,22 @@
+epicure.pimpam.list.label.title = Title
+epicure.pimpam.list.label.budget = Price
+epicure.pimpam.list.label.instantationMoment = Instantation moment
+
+epicure.pimpam.list.button.create = Create
+
+epicure.pimpam.form.label.title = Title
+epicure.pimpam.form.label.code = Code
+epicure.pimpam.form.label.description = Description
+epicure.pimpam.form.label.budget = Budget
+epicure.pimpam.form.label.link = Link
+epicure.pimpam.form.label.item = Item
+epicure.pimpam.form.label.instantationMoment = Instantation moment
+epicure.pimpam.form.label.published = Published
+
+epicure.pimpam.form.button.create = Create
+epicure.pimpam.form.button.update = Update
+epicure.pimpam.form.button.delete = Delete
+epicure.pimpam.form.button.publish = Publish
+
+epicure.pimpam.form.error.retail-price-ingredient-positive = The retail price must be greater than 0
+epicure.pimpam.form.error.retail-price-kitchen-utensil-zero-or-positive = The retail price must be greater or equals than 0
