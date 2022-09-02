@@ -1,0 +1,22 @@
+chef.pimpam.list.label.title = Title
+chef.pimpam.list.label.budget = Price
+chef.pimpam.list.label.instantationMoment = Instantation moment
+
+chef.pimpam.list.button.create = Create
+
+chef.pimpam.form.label.title = Title
+chef.pimpam.form.label.code = Code
+chef.pimpam.form.label.description = Description
+chef.pimpam.form.label.budget = Budget
+chef.pimpam.form.label.link = Link
+chef.pimpam.form.label.item = Item
+chef.pimpam.form.label.instantationMoment = Instantation moment
+chef.pimpam.form.label.published = Published
+
+chef.pimpam.form.button.create = Create
+chef.pimpam.form.button.update = Update
+chef.pimpam.form.button.delete = Delete
+chef.pimpam.form.button.publish = Publish
+
+chef.pimpam.form.error.retail-price-ingredient-positive = The retail price must be greater than 0
+chef.pimpam.form.error.retail-price-kitchen-utensil-zero-or-positive = The retail price must be greater or equals than 0

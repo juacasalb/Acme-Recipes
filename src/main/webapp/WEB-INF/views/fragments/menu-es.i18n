@@ -54,6 +54,7 @@ master.menu.administrator.bulletin.create = Crear Boletin
 # master.menu.chef ############################################################
 
 master.menu.chef = Chef
+master.menu.chef.pimpam.list = Mostrar Pimpams
 master.menu.chef.kitchenutensils-link = Mis Utensilios de Cocina
 master.menu.chef.ingredients-link = Mis Ingredientes
 master.menu.chef.memoranda.list = Listar todos mis memorandums
@@ -89,6 +90,7 @@ master.menu.user-account.become-consumer = Hazte epicure
 # master.menu.epicure ##########################################################
 
 master.menu.epicure = Epicure
+master.menu.epicure.pimpam.list = Mostrar Pimpams
 master.menu.epicure.memoranda.list = Listar todos mis memorandums
 master.menu.epicure.epicure-dashboard.show = Mostrar mi epicure dashboard
 master.menu.epicure.fine-dish.list = Mis platos finos
