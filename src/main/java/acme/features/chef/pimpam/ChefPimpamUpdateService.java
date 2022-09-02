@@ -29,7 +29,7 @@ public class ChefPimpamUpdateService implements AbstractUpdateService<Chef, Pimp
 		id = request.getModel().getInteger("id");
 		pimpam = this.repository.findPimpamById(id);
 		chef = pimpam.getItem().getChef();
-		result = !pimpam.getPublished() && request.isPrincipal(chef);
+		result = request.isPrincipal(chef);
 		
 		return result;
 	}
@@ -41,7 +41,6 @@ public class ChefPimpamUpdateService implements AbstractUpdateService<Chef, Pimp
 		assert entity != null;
 		assert errors != null;
 		
-		entity.setPublished(false);
 		this.repository.save(entity);
 		
 		request.bind(entity, errors, "title", "code", "description", "budget", "link", "instantationMoment", "item.name");

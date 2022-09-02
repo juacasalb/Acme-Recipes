@@ -57,9 +57,6 @@ public class Pimpam extends AbstractEntity{
 	protected String link;
 	
 	@NotNull
-	protected Boolean published;
-	
-	@NotNull
 	@Temporal(TemporalType.TIMESTAMP)
 	protected Date finishingDate;
 	

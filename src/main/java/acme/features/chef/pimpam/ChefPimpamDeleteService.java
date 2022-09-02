@@ -29,7 +29,7 @@ public class ChefPimpamDeleteService implements AbstractDeleteService<Chef, Pimp
 		pimpamId = request.getModel().getInteger("id");
 		pimpam = this.repository.findPimpamById(pimpamId);
 		chef = pimpam.getItem().getChef();
-		result = !pimpam.getPublished() && request.isPrincipal(chef);
+		result = request.isPrincipal(chef);
 		
 		return result;
 		
@@ -53,7 +53,7 @@ public class ChefPimpamDeleteService implements AbstractDeleteService<Chef, Pimp
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "title", "code", "description", "budget", "link", "instantationMoment", "item.name", "published");
+		request.unbind(entity, model, "title", "code", "description", "budget", "link", "instantationMoment", "item.name");
 	}
 	
 	@Override

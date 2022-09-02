@@ -1,10 +1,12 @@
 package acme.features.chef.pimpam;
 
+import java.util.Collection;
 import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.entities.Item;
 import acme.entities.Pimpam;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Errors;
@@ -34,7 +36,7 @@ public class ChefPimpamCreateService implements AbstractCreateService<Chef, Pimp
 		assert errors != null;
 		Date moment;
 		moment = new Date(System.currentTimeMillis() - 1);
-		request.bind(entity, errors, "title", "code", "description", "budget", "link", "item.name");
+		request.bind(entity, errors, "title", "code", "description", "budget", "link");
 		entity.setInstantationMoment(moment);
 	}
 
@@ -45,7 +47,12 @@ public class ChefPimpamCreateService implements AbstractCreateService<Chef, Pimp
 		assert entity != null;
 		assert model != null;
 		
-		request.unbind(entity, model, "title", "code", "description", "budget", "link", "instantationMoment", "item.name", "published");
+		final int chefId = this.repository.findChefById(request.getPrincipal().getActiveRoleId()).getId();
+		final Collection<Item> items =  this.repository.findManyAvailableItemsByChef(chefId);
+		
+		model.setAttribute("items", items);
+		
+		request.unbind(entity, model, "title", "code", "description", "budget", "link", "instantationMoment");
 	}
 
 	@Override
@@ -56,7 +63,6 @@ public class ChefPimpamCreateService implements AbstractCreateService<Chef, Pimp
 		Pimpam pimpam;
 		
 		pimpam = new Pimpam();
-		pimpam.setPublished(false);
 		
 		return pimpam;
 	}
@@ -75,8 +81,6 @@ public class ChefPimpamCreateService implements AbstractCreateService<Chef, Pimp
 
 		assert request != null;
 		assert entity != null;
-		
-		entity.setPublished(false);
 		
 		this.repository.save(entity);
 		

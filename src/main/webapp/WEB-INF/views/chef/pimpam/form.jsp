@@ -5,7 +5,11 @@
 
 <acme:form>
 	<acme:input-textbox code="chef.pimpam.form.label.title" path="title"/>
-	<acme:input-textbox code="chef.pimpam.form.label.item" path="item.name"/>
+	<acme:input-select code="chef.quantity.form.label.item" path="item.name">
+        <jstl:forEach items="${items}" var="myItem">
+            <acme:input-option code="${myItem.getName()}" value="${myItem.getId()}" selected="${myItem.getId() == item.name}"/>
+        </jstl:forEach>
+    </acme:input-select>
 	<acme:input-textbox code="chef.pimpam.form.label.code" path="code"/>
 	<acme:input-textarea code="chef.pimpam.form.label.description" path="description"/>
 	<acme:input-money code="chef.pimpam.form.label.budget" path="budget"/>
@@ -17,10 +21,6 @@
 			<acme:submit code="chef.pimpam.form.button.delete" action="/chef/pimpam/delete"/>
 			<acme:submit code="chef.pimpam.form.button.publish" action="/chef/pimpam/publish"/>
 		</jstl:when>	
-		
-		<jstl:when test="${command == 'show'}">
-			<acme:input-textbox code="chef.pimpam.form.label.published" path="published" readonly="true"/>
-		</jstl:when>
 
 		<jstl:when test="${command == 'create'}">
 			<acme:submit code="chef.pimpam.form.button.create" action="/chef/pimpam/create"/>
