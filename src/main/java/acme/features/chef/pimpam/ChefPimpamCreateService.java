@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import acme.entities.Item;
 import acme.entities.Pimpam;
+import acme.features.chef.item.ChefItemRepository;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Errors;
 import acme.framework.controllers.Request;
@@ -20,6 +21,9 @@ public class ChefPimpamCreateService implements AbstractCreateService<Chef, Pimp
 	@Autowired
 	protected ChefPimpamRepository repository;
 	
+	@Autowired
+	protected ChefItemRepository itemRepository;
+	
 	@Override
 	public boolean authorise(final Request<Pimpam> request) {
 
@@ -28,16 +32,27 @@ public class ChefPimpamCreateService implements AbstractCreateService<Chef, Pimp
 		return true;
 	}
 
+	@SuppressWarnings("deprecation")
 	@Override
 	public void bind(final Request<Pimpam> request, final Pimpam entity, final Errors errors) {
 
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
+		
 		Date moment;
+		String code;
+		Collection<Pimpam> similarCodes;
+		
 		moment = new Date(System.currentTimeMillis() - 1);
-		request.bind(entity, errors, "title", "code", "description", "budget", "link");
+		code = moment.getYear()%100 + "-" + (moment.getMonth()+1>10?moment.getMonth()+1:"0"+(moment.getMonth()+1)) + "-" +  (moment.getDate()>9?moment.getDate():"0"+moment.getDate());
+		similarCodes = this.repository.findPimpamBySimilarCode(code);
+
+		code += "-" + (similarCodes.size()>9?similarCodes.size():"0"+similarCodes.size());
+		
+		request.bind(entity, errors, "title", "description", "budget", "link", "finishingDate");
 		entity.setInstantationMoment(moment);
+		entity.setCode(code);
 	}
 
 	@Override
@@ -52,7 +67,7 @@ public class ChefPimpamCreateService implements AbstractCreateService<Chef, Pimp
 		
 		model.setAttribute("items", items);
 		
-		request.unbind(entity, model, "title", "code", "description", "budget", "link", "instantationMoment");
+		request.unbind(entity, model, "title", "code", "description", "budget", "link", "finishingDate", "instantationMoment");
 	}
 
 	@Override
@@ -81,6 +96,8 @@ public class ChefPimpamCreateService implements AbstractCreateService<Chef, Pimp
 
 		assert request != null;
 		assert entity != null;
+		
+		entity.setItem(this.itemRepository.findItemById(Integer.valueOf(request.getModel().getAttribute("itemId").toString())));
 		
 		this.repository.save(entity);
 		

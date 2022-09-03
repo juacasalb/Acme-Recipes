@@ -9,6 +9,7 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.persistence.Transient;
 import javax.validation.Valid;
+import javax.validation.constraints.Future;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
@@ -33,7 +34,7 @@ public class Pimpam extends AbstractEntity{
 	
 	@NotBlank
 	@Column(unique=true)
-	@Pattern(regexp="^[0-9]{2}-[0-9]{2}-[0-9]{2}$")
+	@Pattern(regexp="^[0-9]{2}-[0-9]{2}-[0-9]{2}(-[0-9]{2})?$")
 	protected String code;
 	
 	@NotNull
@@ -57,6 +58,7 @@ public class Pimpam extends AbstractEntity{
 	protected String link;
 	
 	@NotNull
+	@Future
 	@Temporal(TemporalType.TIMESTAMP)
 	protected Date finishingDate;
 	

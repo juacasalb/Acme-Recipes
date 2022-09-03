@@ -50,4 +50,8 @@ public interface ChefPimpamRepository extends AbstractRepository{
 	
 	@Query("select i from Item i where i.published = true and i.chef.id = :chefId")
 	Collection<Item> findManyAvailableItemsByChef(int chefId);
+	
+	@Query("SELECT x FROM Pimpam x WHERE x.code like :code")
+	Collection<Pimpam> findPimpamBySimilarCode(String code);
+
 }

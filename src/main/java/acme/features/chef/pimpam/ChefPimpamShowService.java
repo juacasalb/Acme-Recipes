@@ -40,7 +40,7 @@ public class ChefPimpamShowService implements AbstractShowService<Chef, Pimpam>{
 		assert entity != null;
 		assert model != null;
 		
-		request.unbind(entity, model, "title", "code", "description", "budget", "link", "instantationMoment", "item.name");
+		request.unbind(entity, model, "title", "code", "description", "budget", "link", "instantationMoment", "finishingDate", "item.name");
 		
 	}
 	
