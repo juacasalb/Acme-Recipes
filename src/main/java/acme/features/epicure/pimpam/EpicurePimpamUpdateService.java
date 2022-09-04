@@ -43,7 +43,7 @@ public class EpicurePimpamUpdateService implements AbstractUpdateService<Epicure
 		
 		this.repository.save(entity);
 		
-		request.bind(entity, errors, "title", "code", "description", "budget", "link", "instantationMoment", "item.name");
+		request.bind(entity, errors, "title", "code", "description", "budget", "link");
 		
 	}
 
@@ -54,7 +54,7 @@ public class EpicurePimpamUpdateService implements AbstractUpdateService<Epicure
 		assert entity != null;
 		assert model != null;
 		
-		request.unbind(entity, model, "title", "code", "description", "budget", "link", "instantationMoment", "item.name", "published");
+		request.unbind(entity, model, "title", "code", "description", "budget", "link");
 		
 	}
 
