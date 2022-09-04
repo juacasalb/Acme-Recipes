@@ -11,6 +11,7 @@ chef.pimpam.form.label.budget = Presupuesto
 chef.pimpam.form.label.link = Link
 chef.pimpam.form.label.item = Item
 chef.pimpam.form.label.instantationMoment = Momento creación
+chef.pimpam.form.label.finishingDate = Fecha fin
 chef.pimpam.form.label.published = Publicado
 
 chef.pimpam.form.button.create = Crear

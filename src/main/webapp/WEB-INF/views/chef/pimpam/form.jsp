@@ -13,15 +13,12 @@
 	
 	<jstl:choose>
 		<jstl:when test="${acme:anyOf(command, 'show, update, delete')}">
+			<acme:input-textbox code="chef.pimpam.form.label.code" path="code" readonly="true"/>
+			<acme:input-textbox code="chef.pimpam.form.label.item" path="item.name" readonly="true"/>
+			<acme:input-moment code="chef.pimpam.form.label.instantationMoment" path="instantationMoment" readonly="true"/>
 			<acme:submit code="chef.pimpam.form.button.update" action="/chef/pimpam/update"/>
 			<acme:submit code="chef.pimpam.form.button.delete" action="/chef/pimpam/delete"/>
 		</jstl:when>	
-		
-		<jstl:when test="${command == 'show'}">
-			<acme:input-textbox code="chef.pimpam.form.label.item" path="item.name" readonly="true"/>
-			<acme:input-moment code="chef.pimpam.form.label.instantationMoment" path="instantationMoment" readonly="true"/>
-			<acme:input-textbox code="chef.pimpam.form.label.code" path="code" readonly="true"/>
-		</jstl:when>
 
 		<jstl:when test="${command == 'create'}">
 		<acme:input-select code="chef.pimpam.form.label.item" path="itemId">

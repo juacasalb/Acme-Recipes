@@ -16,7 +16,6 @@ import org.hibernate.validator.constraints.URL;
 import acme.framework.datatypes.Money;
 import acme.framework.entities.AbstractEntity;
 import acme.roles.Chef;
-import acme.roles.Epicure;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -61,9 +60,10 @@ public class Item extends AbstractEntity{
 	@OnDelete(action = OnDeleteAction.CASCADE)
 	protected Chef chef;
 	
+	/*Descomentar esto y quitar dependencia de chef si es necesario
 	@NotNull
 	@Valid
 	@ManyToOne(optional=false)
 	@OnDelete(action = OnDeleteAction.CASCADE)
-	protected Epicure epicure;
+	protected Epicure epicure;*/
 }

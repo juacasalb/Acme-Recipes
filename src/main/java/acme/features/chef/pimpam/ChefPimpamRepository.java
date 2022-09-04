@@ -48,7 +48,7 @@ public interface ChefPimpamRepository extends AbstractRepository{
 	@Query("SELECT x.item FROM Pimpam x WHERE x.item is not null")
 	List<Item> findItemsWithPimpam();
 	
-	@Query("select i from Item i where i.published = true and i.chef.id = :chefId")
+	@Query("select i from Item i where i.published = false and i.chef.id = :chefId")
 	Collection<Item> findManyAvailableItemsByChef(int chefId);
 	
 	@Query("SELECT x FROM Pimpam x WHERE x.code like :code")
