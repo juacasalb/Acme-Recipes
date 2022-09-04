@@ -18,22 +18,22 @@ public class EpicurePimpamController extends AbstractController<Epicure, Pimpam>
 	@Autowired
 	protected EpicurePimpamShowService showService;
 	
-	/*@Autowired
-	protected EpicurePimpamCreateService createService;
+//	@Autowired
+//	protected EpicurePimpamCreateService createService;
 	
 	@Autowired
 	protected EpicurePimpamUpdateService updateService;
 	
 	@Autowired
-	protected EpicurePimpamDeleteService deleteService;*/
+	protected EpicurePimpamDeleteService deleteService;
 
 	@PostConstruct
 	protected void initialise() {
 		super.addCommand("list", this.listService);
 		super.addCommand("show", "show", this.showService);
-		/*super.addCommand("create", this.createService);
+		//super.addCommand("create", this.createService);
 		super.addCommand("update", this.updateService);
-		super.addCommand("delete", this.deleteService);*/
+		super.addCommand("delete", this.deleteService);
 	}
 	
 }

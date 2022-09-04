@@ -12,10 +12,9 @@
 	<acme:input-url code="epicure.pimpam.form.label.link" path="link"/>
 
 	<jstl:choose>
-		<jstl:when test="${acme:anyOf(command, 'show, update, delete, publish') && published == false}">
+		<jstl:when test="${acme:anyOf(command, 'show, update, delete')}">
 			<acme:submit code="epicure.pimpam.form.button.update" action="/epicure/pimpam/update"/>
 			<acme:submit code="epicure.pimpam.form.button.delete" action="/epicure/pimpam/delete"/>
-			<acme:submit code="epicure.pimpam.form.button.publish" action="/epicure/pimpam/publish"/>
 		</jstl:when>	
 		
 		<jstl:when test="${command == 'show'}">

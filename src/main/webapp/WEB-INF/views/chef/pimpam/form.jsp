@@ -12,10 +12,9 @@
 	<acme:input-moment code="chef.pimpam.form.label.finishingDate" path="finishingDate"/>
 	
 	<jstl:choose>
-		<jstl:when test="${acme:anyOf(command, 'show, update, delete, publish') && published == false}">
+		<jstl:when test="${acme:anyOf(command, 'show, update, delete')}">
 			<acme:submit code="chef.pimpam.form.button.update" action="/chef/pimpam/update"/>
 			<acme:submit code="chef.pimpam.form.button.delete" action="/chef/pimpam/delete"/>
-			<acme:submit code="chef.pimpam.form.button.publish" action="/chef/pimpam/publish"/>
 		</jstl:when>	
 		
 		<jstl:when test="${command == 'show'}">
