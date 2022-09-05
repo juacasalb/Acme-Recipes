@@ -3,6 +3,7 @@ package acme.features.chef.pimpam;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.entities.Item;
 import acme.entities.Pimpam;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Errors;
@@ -22,14 +23,17 @@ public class ChefPimpamUpdateService implements AbstractUpdateService<Chef, Pimp
 		assert request != null;
 		
 		boolean result;
-		int id;
+		int pimpamId;
 		Pimpam pimpam;
 		Chef chef;
+		Item item;
 		
-		id = request.getModel().getInteger("id");
-		pimpam = this.repository.findPimpamById(id);
-		chef = pimpam.getItem().getChef();
+		pimpamId = request.getModel().getInteger("id");
+		pimpam = this.repository.findPimpamById(pimpamId);
+		item = pimpam.getItem();
+		chef = item.getChef();
 		result = request.isPrincipal(chef);
+		result = result && !item.getPublished();		
 		
 		return result;
 	}
