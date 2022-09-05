@@ -3,6 +3,7 @@ package acme.features.chef.pimpam;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.entities.Item;
 import acme.entities.Pimpam;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Errors;
@@ -25,11 +26,14 @@ public class ChefPimpamDeleteService implements AbstractDeleteService<Chef, Pimp
 		int pimpamId;
 		Pimpam pimpam;
 		Chef chef;
+		Item item;
 		
 		pimpamId = request.getModel().getInteger("id");
 		pimpam = this.repository.findPimpamById(pimpamId);
-		chef = pimpam.getItem().getChef();
+		item = pimpam.getItem();
+		chef = item.getChef();
 		result = request.isPrincipal(chef);
+		result = result && !item.getPublished();		
 		
 		return result;
 		
