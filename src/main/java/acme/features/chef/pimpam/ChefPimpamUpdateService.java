@@ -47,7 +47,7 @@ public class ChefPimpamUpdateService implements AbstractUpdateService<Chef, Pimp
 		
 		this.repository.save(entity);
 		
-		request.bind(entity, errors, "title", "code", "description", "budget", "link", "instantationMoment", "item.name");
+		request.bind(entity, errors, "title", "code", "description", "budget", "link", "finishingDate", "instantationMoment", "item.name");
 		
 	}
 
@@ -58,7 +58,7 @@ public class ChefPimpamUpdateService implements AbstractUpdateService<Chef, Pimp
 		assert entity != null;
 		assert model != null;
 		
-		request.unbind(entity, model, "title", "code", "description", "budget", "link", "instantationMoment", "item.name", "published");
+		request.unbind(entity, model, "title", "code", "description", "budget", "link", "finishingDate", "instantationMoment", "item.name", "published");
 		
 	}
 
