@@ -1,0 +1,26 @@
+package acme.features.epicure.pimpam;
+
+import java.util.Collection;
+
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.stereotype.Repository;
+
+import acme.entities.Item;
+import acme.entities.Pimpam;
+import acme.framework.repositories.AbstractRepository;
+import acme.system.configuration.CurrencyConfiguration;
+
+@Repository
+public interface EpicurePimpamRepository extends AbstractRepository{
+	@Query("select p from Pimpam p where p.item.epicure.id =:id")
+	Collection<Pimpam> getPimpamOfUserId(int id);
+	
+	@Query("select p from Pimpam p where p.id =:id")
+	Pimpam getPimpamById(int id);
+		
+	@Query("select it from Item it where it.code =:code")
+	Item getItemFromCode(String code);
+	
+	@Query("select cc from CurrencyConfiguration cc")
+	CurrencyConfiguration getCurrencyConfiguration();
+}

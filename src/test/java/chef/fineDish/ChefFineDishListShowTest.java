@@ -29,7 +29,7 @@ public class ChefFineDishListShowTest extends TestHarness {
 		super.checkInputBoxHasValue("state", state);
 		super.checkInputBoxHasValue("code", code);
 		super.checkInputBoxHasValue("request", request);
-		//super.checkInputBoxHasValue("budget", budget);
+		super.checkInputBoxHasValue("budget", budget);
 		super.checkInputBoxHasValue("startPeriod", startPeriod);
 		super.checkInputBoxHasValue("endPeriod", endPeriod);
 		super.checkInputBoxHasValue("moreInfo", moreInfo);

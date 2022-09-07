@@ -36,6 +36,7 @@ public class AnyPeepListService implements AbstractListService<Any, Peep>{
 		Collection<Peep> aux;
 		
 		Date oneMonthOld;
+//		oneMonthOld = DateUtils.addMonths(Date.from(Instant.now()), -1);
 		oneMonthOld = Timestamp.valueOf(LocalDateTime.now().minusMonths(1));
 				
 		aux = this.repository.getAllPeeps();

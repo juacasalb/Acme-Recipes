@@ -1,0 +1,39 @@
+# messages-en.i18n
+#
+# Copyright (C) 2012-2022 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+
+chef.pimpam.list.label.instantiation-moment = Instantiation Moment
+chef.pimpam.list.label.item-code = Item Code
+chef.pimpam.list.label.code = Pimpam Code
+chef.pimpam.list.label.budget = Budget
+chef.pimpam.list.label.title = Title
+
+chef.pimpam.list.label.create-redirect-button = Create Pimpam
+
+chef.pimpam.form.label.instantiation-moment = Instantiation Moment
+chef.pimpam.form.label.code = Pimpam Code
+chef.pimpam.form.label.link = Optional Link
+chef.pimpam.form.label.budget = Pimpam Budget
+chef.pimpam.form.label.title = Title
+chef.pimpam.form.label.description = Description
+chef.pimpam.form.label.period-start = Period Start
+chef.pimpam.form.label.period-end = Period End
+chef.pimpam.form.label.item-code = Code of the Item associated to the Pimpam
+
+error.item-code.no-item-with-code = There is no Item with the provided code
+error.item.not-owner-of-item = You cannot associate a pimpam to an Item that isnt yours
+error.item.item-is-published = The specified Item is already published
+error.budget-negative-amount = The budget must be positive
+error.budget-invalid-currency = The selected currency is invalid
+error.period-too-short = The period must be at least a week long
+error.period-too-early = The period must start at least one month after the instantiation moment of the pimpam
+
+chef.pimpam.form.label.create.button = Create Pimpam
+chef.pimpam.form.label.update.button = Update Pimpam
+chef.pimpam.form.label.delete.button = Delete Pimpam

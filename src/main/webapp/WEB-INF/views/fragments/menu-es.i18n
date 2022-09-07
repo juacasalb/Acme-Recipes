@@ -15,6 +15,11 @@ master.menu.sign-up = Registrarse
 master.menu.sign-in = Entrar
 master.menu.sign-out = Salir
 
+# examen ######################################################################
+
+master.menu.examen.chef.pimpam.list = Listado de pimpamps asociados con mis Items
+master.menu.examen.epicure.pimpam.list = Listado de pimpamps asociados con mis Items
+
 # master.menu.any #############################################################
 
 master.menu.any = Cualquiera

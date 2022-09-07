@@ -27,7 +27,6 @@
 			<acme:menu-suboption code="master.menu.anonymous.link.juacasben" action="https://www.elmundo.es/"/>
 		</acme:menu-option>
 		
-
 		<acme:menu-option code="master.menu.chef" access="hasRole('Chef')">
 			<acme:menu-suboption code="master.menu.chef.memoranda.list" action="/chef/memorandum/list"/>
 			<acme:menu-suboption code="master.menu.chef.fine-dish.list" action="/chef/fine-dish/list"/>
@@ -36,7 +35,9 @@
 			<acme:menu-suboption code="master.menu.chef.ingredients-link" action="/chef/item/list-my-ingredients"/>
 			<acme:menu-suboption code="master.menu.chef.kitchenutensils-link" action="/chef/item/list-my-kitchenutensils"/>
 			<acme:menu-suboption code="master.menu.chef.recipe.list" action="/chef/recipe/list"/>		
-			<acme:menu-suboption code="master.menu.authenticated.chef" action="/authenticated/chef/update"/>	
+			<acme:menu-suboption code="master.menu.authenticated.chef" action="/authenticated/chef/update"/>
+			<acme:menu-separator/>
+			<acme:menu-suboption code="master.menu.examen.chef.pimpam.list" action="/chef/pimpam/list"/>
     	</acme:menu-option>
 		
 		<acme:menu-option code="master.menu.any.items">
@@ -86,6 +87,8 @@
 			<acme:menu-suboption code="master.menu.epicure.fine-dish.list-proposed" action="/epicure/fine-dish/list-proposed"/>
 			<acme:menu-suboption code="master.menu.epicure.epicure-dashboard.show" action="/epicure/epicure-dashboard/show"/>
 			<acme:menu-suboption code="master.menu.authenticated.epicure" action="/authenticated/epicure/update"/>
+			<acme:menu-separator/>
+			<acme:menu-suboption code="master.menu.examen.epicure.pimpam.list" action="/epicure/pimpam/list"/>
 		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.consumer" access="hasRole('Consumer')">

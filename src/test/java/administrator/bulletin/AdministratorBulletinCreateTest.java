@@ -29,10 +29,10 @@ public class AdministratorBulletinCreateTest extends TestHarness {
 		super.checkListingExists();
 		super.sortListing(0, "asc");
 		
-		super.checkColumnHasValue(testIndex+2, 1, heading);
-		super.checkColumnHasValue(testIndex+2, 2, flag);
+		super.checkColumnHasValue(testIndex+1, 1, heading);
+		super.checkColumnHasValue(testIndex+1, 2, flag);
 		
-		super.clickOnListingRecord(testIndex+2);
+		super.clickOnListingRecord(testIndex+1);
 		
 		super.checkFormExists();
 		super.checkInputBoxHasValue("heading", heading);

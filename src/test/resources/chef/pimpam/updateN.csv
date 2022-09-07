@@ -1,0 +1,4 @@
+testIndex,itemCode,title,description,link,budget,periodStart,periodEnd,updateBudget,updatePeriodStart,updatePeriodEnd,errorField
+0,"UT:AAB-111","Test title","Test description","https://www.testeo.com","EUR 50.00","2025/01/01 12:00","2025/03/04 15:00","EQUISDE 55.00","2024/02/02 12:00","2024/03/03 15:00",budget
+0,"UT:AAB-111","Test title","Test description","https://www.testeo.com","EUR 50.00","2025/01/01 12:00","2025/03/04 15:00","USD -55.00","2024/02/02 12:00","2024/03/03 15:00",budget
+0,"UT:AAB-111","Test title","Test description","https://www.testeo.com","EUR 50.00","2025/01/01 12:00","2025/03/04 15:00","USD 55.00","2024/02/02 12:00","2024/02/03 15:00",periodEnd

@@ -23,3 +23,9 @@ administrator.dashboard.form.label.minBudgetDishesByStatus = Presupuesto minimo 
 administrator.dashboard.form.label.maxRetailPriceIngredientsByCurrency = Precio al por menor maximo de Ingredientes por moneda
 administrator.dashboard.form.label.maxRetailPriceKitchenUtensilsByCurrency = Precio al por menor maximo de Utensilios de Cocina por moneda
 administrator.dashboard.form.label.maxBudgetDishesByStatus = Presupuesto maximo de Platos por Estado
+
+administrator.dashboard.form.label.pimpamRatio = Ratio de Items con un Pimpam asociado
+administrator.dashboard.form.label.averageBudgetPimpampsByCurrency = Presupuesto medio de Pimpamps por moneda
+administrator.dashboard.form.label.deviationBudgetPimpampsByCurrency = Desviación Estándar del Presupuesto de Pimpamps por moneda
+administrator.dashboard.form.label.minimumBudgetPimpampsByCurrency = Presupuesto mínimo de Pimpamps por moneda
+administrator.dashboard.form.label.maximumBudgetPimpampsByCurrency = Presupuesto máximo de Pimpamps por moneda

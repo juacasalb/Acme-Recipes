@@ -1,6 +1,7 @@
 package acme.features.chef.item;
 
 import java.util.Collection;
+import java.util.List;
 
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
@@ -8,6 +9,7 @@ import org.springframework.stereotype.Repository;
 import acme.entities.Item;
 import acme.framework.repositories.AbstractRepository;
 import acme.roles.Chef;
+import acme.roles.Epicure;
 
 @Repository
 public interface ChefItemRepository extends AbstractRepository{
@@ -32,6 +34,9 @@ public interface ChefItemRepository extends AbstractRepository{
 	
 	@Query("SELECT c FROM Chef c WHERE c.userAccount.id=:id")
 	Chef findChefByUserAccountId(int id);
+	
+	@Query("select e from Epicure e")
+	List<Epicure> findEpicures();
 	
 	@Query("SELECT s.acceptedCurrencies FROM SystemConfiguration s")
 	String findAvailableCurrencies();

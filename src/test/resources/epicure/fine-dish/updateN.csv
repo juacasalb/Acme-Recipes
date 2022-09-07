@@ -1,5 +1,5 @@
 recordIndex, code, budget, request, moreInfo, username, sDate, eDate
-0, "FD:JKL-151", "USD 100.00", "Corn", "https://www.example.com", "chef1","",""
+0, "FD:JKL-151", "USD 100.00", "Corn", "https://www.example.com", "chef1",null,null
 2, "FD:JKL-153", "USD -1.00", "Corn", "https://www.example.com", "chef1","",""
 3, "FD:JKL-153", "USD 100.00", "Corn", "https://www.example.com", "chef15","",""
 5, "FD:JKL-153", "USD 100.00", "Corn", "https://www.example.com", "chef1","2042/03/05 15:00","2010/03/05 15:00"

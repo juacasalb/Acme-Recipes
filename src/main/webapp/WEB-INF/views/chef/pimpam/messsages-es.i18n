@@ -1,0 +1,39 @@
+# messages-es.i18n
+#
+# Copyright (C) 2012-2022 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+
+chef.pimpam.list.label.instantiation-moment = Momento de Instanciación
+chef.pimpam.list.label.item-code = Código del Item
+chef.pimpam.list.label.code = Código del Pimpam
+chef.pimpam.list.label.budget = Presupuesto
+chef.pimpam.list.label.title = Título
+
+chef.pimpam.list.label.create-redirect-button = Crear Pimpam
+
+chef.pimpam.form.label.instantiation-moment = Momento de Instanciación del Pimpam
+chef.pimpam.form.label.code = Código del Pimpam
+chef.pimpam.form.label.link = Link opcional
+chef.pimpam.form.label.budget = Presupuesto del Pimpam
+chef.pimpam.form.label.title = Título del Pimpam
+chef.pimpam.form.label.description = Descripción del Pimpam
+chef.pimpam.form.label.period-start = Inicio del período
+chef.pimpam.form.label.period-end = Fin del período
+chef.pimpam.form.label.item-code = Código del Item asociado al Pimpam
+
+error.item-code.no-item-with-code = No existe un Item con el código especificado
+error.item.not-owner-of-item = No puedes crear un Pimpam asociado a un Item que no te pertenece
+error.item.item-is-published = El Item seleccionado ya está publicado
+error.budget-negative-amount = El presupuesto debe tener una cantidad positiva
+error.budget-invalid-currency = La moneda elegida es inválida
+error.period-too-short = El período debe durar como mínimo una semana
+error.period-too-early = El período debe empezar como mínimo un mes después de la creación del pimpam
+
+chef.pimpam.form.label.create.button = Crear Pimpam
+chef.pimpam.form.label.update.button = Actualizar Pimpam
+chef.pimpam.form.label.delete.button = Eliminar Pimpam

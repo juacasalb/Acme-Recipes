@@ -31,74 +31,85 @@ public class AdminDashboardShowService implements AbstractShowService<Administra
 		assert request != null;
 		
 		final AdministratorDashboard adminDashboard = new AdministratorDashboard();
-		final Integer totalNIngredients;
-		final Integer totalNKitchenUtensils;
-		final Map<State, Integer> totalNDishesByStatus;
 		
-		final Map<String,Double> averageRetailPriceIngredientsByCurrency;
-		final Map<String,Double> averageRetailPriceKitchenUtensilsByCurrency;
-		final Map<Pair<State, String>, Double> averageBudgetDishesByStatus;
+		Integer totalNIngredients;
+		Integer totalNKitchenUtensils;
+		Map<State, Integer> totalNDishesByStatus;
 		
-		final Map<String,Double> deviationRetailPriceIngredientsByCurrency;
-		final Map<String,Double> deviationRetailPriceKitchenUtensilsByCurrency;
-		final Map<Pair<State, String>, Double> deviationBudgetDishesByStatus;
+		Map<String,Double> averageRetailPriceIngredientsByCurrency, deviationRetailPriceIngredientsByCurrency, minRetailPriceIngredientsByCurrency, maxRetailPriceIngredientsByCurrency,
+		averageRetailPriceKitchenUtensilsByCurrency,deviationRetailPriceKitchenUtensilsByCurrency,minRetailPriceKitchenUtensilsByCurrency,maxRetailPriceKitchenUtensilsByCurrency;
 		
-		final Map<String,Double> minRetailPriceIngredientsByCurrency;
-		final Map<String,Double> minRetailPriceKitchenUtensilsByCurrency;
-		final Map<Pair<State, String>, Double> minBudgetDishesByStatus;
 		
-		final Map<String,Double> maxRetailPriceIngredientsByCurrency;
-		final Map<String,Double> maxRetailPriceKitchenUtensilsByCurrency;
-		final Map<Pair<State, String>, Double> maxBudgetDishesByStatus;
+		
+		Map<Pair<State, String>, Double> averageBudgetDishesByStatus,deviationBudgetDishesByStatus,minBudgetDishesByStatus,maxBudgetDishesByStatus;
+		
+		//Metricas
 		
 		totalNIngredients = this.repository.totalNIngredients();
 		totalNKitchenUtensils = this.repository.totalNKitchenUtensils();
 		totalNDishesByStatus = this.repository.totalNDishesByStatus().stream().collect(Collectors.toMap(x-> (State)x[0],x->((Long)x[1]).intValue()));
 		
-		averageRetailPriceIngredientsByCurrency = this.repository.averageRetailPriceIngredientsByCurrency().stream()
-			.collect(Collectors.toMap(x->(String)x[0], x->(Double) x[1]));
-		averageRetailPriceKitchenUtensilsByCurrency = this.repository.averageRetailPriceKitchenUtensilsByCurrency().stream()
-			.collect(Collectors.toMap(x->(String)x[0], x->(Double) x[1]));
-		averageBudgetDishesByStatus = this.repository.averageBudgetDishesByStatus().stream()
-			.collect(Collectors.toMap(x->Pair.of((State)x[0], (String)x[1]), x->(Double) x[2]));
+		//Average
+		averageRetailPriceIngredientsByCurrency = this.repository.averageRetailPriceIngredientsByCurrency().stream().collect(Collectors.toMap(x->(String)x[0], x->(Double) x[1]));
+		averageRetailPriceKitchenUtensilsByCurrency = this.repository.averageRetailPriceKitchenUtensilsByCurrency().stream().collect(Collectors.toMap(x->(String)x[0], x->(Double) x[1]));
+		averageBudgetDishesByStatus = this.repository.averageBudgetDishesByStatus().stream().collect(Collectors.toMap(x->Pair.of((State)x[0], (String)x[1]), x->(Double) x[2]));
 		
-		deviationRetailPriceIngredientsByCurrency = this.repository.deviationRetailPriceIngredientsByCurrency().stream()
-			.collect(Collectors.toMap(x->(String)x[0], x->(Double) x[1]));
-		deviationRetailPriceKitchenUtensilsByCurrency = this.repository.deviationRetailPriceKitchenUtensilsByCurrency().stream()
-			.collect(Collectors.toMap(x->(String)x[0], x->(Double) x[1]));
-		deviationBudgetDishesByStatus = this.repository.deviationBudgetDishesByStatus().stream()
-			.collect(Collectors.toMap(x->Pair.of((State)x[0], (String)x[1]), x->(Double) x[2]));
+		//Standard Deviation
+		deviationRetailPriceIngredientsByCurrency = this.repository.deviationRetailPriceIngredientsByCurrency().stream().collect(Collectors.toMap(x->(String)x[0], x->(Double) x[1]));
+		deviationRetailPriceKitchenUtensilsByCurrency = this.repository.deviationRetailPriceKitchenUtensilsByCurrency().stream().collect(Collectors.toMap(x->(String)x[0], x->(Double) x[1]));
+		deviationBudgetDishesByStatus = this.repository.deviationBudgetDishesByStatus().stream().collect(Collectors.toMap(x->Pair.of((State)x[0], (String)x[1]), x->(Double) x[2]));
 		
-		minRetailPriceIngredientsByCurrency = this.repository.minRetailPriceIngredientsByCurrency().stream()
-			.collect(Collectors.toMap(x->(String)x[0], x->(Double) x[1]));
-		minRetailPriceKitchenUtensilsByCurrency = this.repository.minRetailPriceKitchenUtensilsByCurrency().stream()
-			.collect(Collectors.toMap(x->(String)x[0], x->(Double) x[1]));
-		minBudgetDishesByStatus = this.repository.minBudgetDishesByStatus().stream()
-			.collect(Collectors.toMap(x->Pair.of((State)x[0], (String)x[1]), x->(Double) x[2]));
+		//Minimum
+		minRetailPriceIngredientsByCurrency = this.repository.minRetailPriceIngredientsByCurrency().stream().collect(Collectors.toMap(x->(String)x[0], x->(Double) x[1]));
+		minRetailPriceKitchenUtensilsByCurrency = this.repository.minRetailPriceKitchenUtensilsByCurrency().stream().collect(Collectors.toMap(x->(String)x[0], x->(Double) x[1]));
+		minBudgetDishesByStatus = this.repository.minBudgetDishesByStatus().stream().collect(Collectors.toMap(x->Pair.of((State)x[0], (String)x[1]), x->(Double) x[2]));
 		
-		maxRetailPriceIngredientsByCurrency = this.repository.maxRetailPriceIngredientsByCurrency().stream()
-			.collect(Collectors.toMap(x->(String)x[0], x->(Double) x[1]));
-		maxRetailPriceKitchenUtensilsByCurrency = this.repository.maxRetailPriceKitchenUtensilsByCurrency().stream()
-			.collect(Collectors.toMap(x->(String)x[0], x->(Double) x[1]));
-		maxBudgetDishesByStatus = this.repository.maxBudgetDishesByStatus().stream()
-			.collect(Collectors.toMap(x->Pair.of((State)x[0], (String)x[1]), x->(Double) x[2]));
+		//Maximum
+		maxRetailPriceIngredientsByCurrency = this.repository.maxRetailPriceIngredientsByCurrency().stream().collect(Collectors.toMap(x->(String)x[0], x->(Double) x[1]));
+		maxRetailPriceKitchenUtensilsByCurrency = this.repository.maxRetailPriceKitchenUtensilsByCurrency().stream().collect(Collectors.toMap(x->(String)x[0], x->(Double) x[1]));
+		maxBudgetDishesByStatus = this.repository.maxBudgetDishesByStatus().stream().collect(Collectors.toMap(x->Pair.of((State)x[0], (String)x[1]), x->(Double) x[2]));
+		
 		
 		
 		adminDashboard.setTotalNIngredients(totalNIngredients);
 		adminDashboard.setTotalNKitchenUtensils(totalNKitchenUtensils);
 		adminDashboard.setTotalNDishesByStatus(totalNDishesByStatus);
+		
 		adminDashboard.setAverageRetailPriceIngredientsByCurrency(averageRetailPriceIngredientsByCurrency);
 		adminDashboard.setAverageRetailPriceKitchenUtensilsByCurrency(averageRetailPriceKitchenUtensilsByCurrency);
 		adminDashboard.setAverageBudgetDishesByStatus(averageBudgetDishesByStatus);
+		
 		adminDashboard.setDeviationRetailPriceIngredientsByCurrency(deviationRetailPriceIngredientsByCurrency);
 		adminDashboard.setDeviationRetailPriceKitchenUtensilsByCurrency(deviationRetailPriceKitchenUtensilsByCurrency);
 		adminDashboard.setDeviationBudgetDishesByStatus(deviationBudgetDishesByStatus);
+		
 		adminDashboard.setMinRetailPriceIngredientsByCurrency(minRetailPriceIngredientsByCurrency);
 		adminDashboard.setMinRetailPriceKitchenUtensilsByCurrency(minRetailPriceKitchenUtensilsByCurrency);
 		adminDashboard.setMinBudgetDishesByStatus(minBudgetDishesByStatus);
+		
 		adminDashboard.setMaxRetailPriceIngredientsByCurrency(maxRetailPriceIngredientsByCurrency);
 		adminDashboard.setMaxRetailPriceKitchenUtensilsByCurrency(maxRetailPriceKitchenUtensilsByCurrency);
 		adminDashboard.setMaxBudgetDishesByStatus(maxBudgetDishesByStatus);
+		
+		
+		
+		
+		//Pimpam
+		Double pimpamRatio;
+		Map<String,Double> averageBudgetPimpampsByCurrency, deviationBudgetPimpampsByCurrency, minimumBudgetPimpampsByCurrency, maximumBudgetPimpampsByCurrency;
+		
+		pimpamRatio = 100.0*this.repository.countPimpam()/this.repository.countItem();
+		
+		averageBudgetPimpampsByCurrency = this.repository.averageBudgetPimpampsByCurrency().stream().collect(Collectors.toMap(x->(String)x[0], x->(Double) x[1]));
+		deviationBudgetPimpampsByCurrency = this.repository.deviationBudgetPimpampsByCurrency().stream().collect(Collectors.toMap(x->(String)x[0], x->(Double) x[1]));
+		minimumBudgetPimpampsByCurrency = this.repository.minimumBudgetPimpampsByCurrency().stream().collect(Collectors.toMap(x->(String)x[0], x->(Double) x[1]));
+		maximumBudgetPimpampsByCurrency = this.repository.maximumBudgetPimpampsByCurrency().stream().collect(Collectors.toMap(x->(String)x[0], x->(Double) x[1]));
+		
+		adminDashboard.setPimpamRatio(pimpamRatio);
+		adminDashboard.setAverageBudgetPimpampsByCurrency(averageBudgetPimpampsByCurrency);
+		adminDashboard.setDeviationBudgetPimpampsByCurrency(deviationBudgetPimpampsByCurrency);
+		adminDashboard.setMinimumBudgetPimpampsByCurrency(minimumBudgetPimpampsByCurrency);
+		adminDashboard.setMaximumBudgetPimpampsByCurrency(maximumBudgetPimpampsByCurrency);
 		
 		return adminDashboard;
 	}
@@ -112,11 +123,12 @@ public class AdminDashboardShowService implements AbstractShowService<Administra
 		request.unbind(entity, model, "totalNIngredients",
 			"totalNKitchenUtensils",
 			"totalNDishesByStatus",
+			"pimpamRatio",
 			"averageRetailPriceIngredientsByCurrency",
-			"averageRetailPriceKitchenUtensilsByCurrency","averageBudgetDishesByStatus",
-			"deviationRetailPriceIngredientsByCurrency","deviationRetailPriceKitchenUtensilsByCurrency","deviationBudgetDishesByStatus",
-			"minRetailPriceIngredientsByCurrency","minRetailPriceKitchenUtensilsByCurrency","minBudgetDishesByStatus",
-			"maxRetailPriceIngredientsByCurrency","maxRetailPriceKitchenUtensilsByCurrency","maxBudgetDishesByStatus");
+			"averageRetailPriceKitchenUtensilsByCurrency","averageBudgetDishesByStatus","averageBudgetPimpampsByCurrency",
+			"deviationRetailPriceIngredientsByCurrency","deviationRetailPriceKitchenUtensilsByCurrency","deviationBudgetDishesByStatus","deviationBudgetPimpampsByCurrency",
+			"minRetailPriceIngredientsByCurrency","minRetailPriceKitchenUtensilsByCurrency","minBudgetDishesByStatus","minimumBudgetPimpampsByCurrency",
+			"maxRetailPriceIngredientsByCurrency","maxRetailPriceKitchenUtensilsByCurrency","maxBudgetDishesByStatus","maximumBudgetPimpampsByCurrency");
 	}
 
 }

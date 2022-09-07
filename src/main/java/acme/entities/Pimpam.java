@@ -52,14 +52,14 @@ public class Pimpam extends AbstractEntity{
 	@NotNull
 	@Past
 	@Temporal(TemporalType.TIMESTAMP)
-	protected Date instantationMoment;
+	protected Date instantiationMoment;
 	
 	@NotBlank
-	@Length(min = 1, max = 101)
+	@Length(min = 1, max = 100)
 	protected String title;
 	
 	@NotBlank
-	@Length(min = 1, max = 256)
+	@Length(min = 1, max = 255)
 	protected String description;
 	
 	@NotNull
@@ -71,23 +71,13 @@ public class Pimpam extends AbstractEntity{
 	
 	@NotNull
 	@Temporal(TemporalType.TIMESTAMP)
-	protected Date startPeriod;
+	protected Date periodStart;
 	
 	@NotNull
 	@Temporal(TemporalType.TIMESTAMP)
-	protected Date endPeriod;
+	protected Date periodEnd;
 	
 	@Valid
-	@OneToOne(optional = false, mappedBy="pimpam")
+	@OneToOne(optional = false)
 	protected Item item;
-	
-//	@Valid
-//	@Temporal(TemporalType.TIMESTAMP)
-//	protected Date period;
-//	
-//	@Transient
-//	protected void setPeriod() {
-//		this.period = new Date(this.endPeriod.getTime() - this.instantationMoment.getTime());
-//	}
-	
 }

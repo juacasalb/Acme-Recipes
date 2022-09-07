@@ -14,6 +14,7 @@ import acme.framework.controllers.Request;
 import acme.framework.datatypes.Money;
 import acme.framework.services.AbstractCreateService;
 import acme.roles.Chef;
+import acme.roles.Epicure;
 
 @Service
 public class ChefItemCreateService implements AbstractCreateService<Chef, Item>{
@@ -35,8 +36,18 @@ public class ChefItemCreateService implements AbstractCreateService<Chef, Item>{
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
-	
+		
+		entity.setPublished(false);
+		
+		final Chef ch = this.repository.findChefByUserAccountId(request.getPrincipal().getAccountId());
+		final Epicure e = this.repository.findEpicures().get(2);
+//		System.out.println(ch);
+		
+		entity.setChef(ch);
+		entity.setEpicure(e);
 		request.bind(entity, errors, "name", "unit", "code", "description", "retailPrice", "link", "type");
+		
+		System.out.println(ch);
 		
 	}
 
@@ -82,6 +93,9 @@ public class ChefItemCreateService implements AbstractCreateService<Chef, Item>{
 		assert entity != null;
 		assert errors != null;
 		
+		
+		System.out.println("errores: " + errors.getErroneousAttributes().toString());
+		
 		if (!errors.hasErrors("code")) {
 			
 			final Item existing = this.repository.findItemByCode(entity.getCode());
@@ -109,8 +123,7 @@ public class ChefItemCreateService implements AbstractCreateService<Chef, Item>{
 		assert request != null;
 		assert entity != null;
 		
-		entity.setPublished(false);
-		entity.setChef(this.repository.findChefByUserAccountId(request.getPrincipal().getAccountId()));
+		
 		
 		this.repository.save(entity);
 		

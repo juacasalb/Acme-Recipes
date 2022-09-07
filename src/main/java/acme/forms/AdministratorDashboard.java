@@ -37,4 +37,13 @@ private static final long serialVersionUID = 1L;
 	Map<String,Double> maxRetailPriceIngredientsByCurrency;
 	Map<String,Double> maxRetailPriceKitchenUtensilsByCurrency;
 	Map<Pair<State, String>, Double> maxBudgetDishesByStatus;
+	
+	
+	//Individual deliverable
+	Double pimpamRatio;
+	Map<String, Double> averageBudgetPimpampsByCurrency;
+	Map<String, Double> deviationBudgetPimpampsByCurrency;
+	Map<String, Double> minimumBudgetPimpampsByCurrency;
+	Map<String, Double> maximumBudgetPimpampsByCurrency;
+	
 }

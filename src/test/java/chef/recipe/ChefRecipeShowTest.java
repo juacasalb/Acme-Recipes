@@ -34,7 +34,7 @@ public class ChefRecipeShowTest extends TestHarness{
 		super.checkInputBoxHasValue("preparationNotes", preparationNotes);
 		super.checkInputBoxHasValue("link", link);
 		super.checkInputBoxHasValue("published", published);
-		super.checkInputBoxHasValue("chef", chef);
+		super.checkInputBoxHasValue("chef.userAccount.username", chef);
 		
 		super.signOut();
 	
