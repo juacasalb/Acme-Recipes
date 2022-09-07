@@ -48,13 +48,10 @@ public class ChefPimpamCreateService implements AbstractCreateService<Chef, Pimp
 		
 		Date moment;
 		String code;
-		Collection<Pimpam> similarCodes;
-		
 		moment = new Date(System.currentTimeMillis() - 1);
-		code = moment.getYear() + "-" + (moment.getMonth()+1>10?moment.getMonth()+1:"0"+(moment.getMonth()+1)) + "-" +  (moment.getDate()>9?moment.getDate():"0"+moment.getDate());
-		similarCodes = this.repository.findPimpamBySimilarCode(code);
+		code = moment.getYear()-100 + "-" + ((moment.getMonth()+1)>9?moment.getMonth()+1:"0"+(moment.getMonth()+1)) + "-" +  (moment.getDate()>9?moment.getDate():"0"+moment.getDate());
 
-		code += "-" + (similarCodes.size()>9?similarCodes.size():"0"+similarCodes.size());
+		code += "-" + request.getModel().getInteger("itemId");
 		
 		request.bind(entity, errors, "title", "description", "budget", "link", "finishingDate");
 		entity.setInstantationMoment(moment);
