@@ -21,3 +21,5 @@ chef.item.form.button.publish = Publicar
 
 chef.item.form.error.retail-price-ingredient-positive = El precio debe ser mayor que 0
 chef.item.form.error.retail-price-kitchen-utensil-zero-or-positive = El precio debe ser mayor o igual a 0
+
+chef.item.form.error.currency-not-available = Moneda no disponible
