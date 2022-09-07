@@ -1,0 +1,20 @@
+chef.quantity.list.label.quantity = Cantidad
+chef.quantity.list.label.name = Nombre
+chef.quantity.list.label.code = Código
+chef.quantity.list.label.type = Tipo
+chef.quantity.list.label.unit = Unidad
+chef.quantity.list.label.retailPrice = Precio Unitario
+
+chef.quantity.form.label.quantity = Cantidad
+chef.quantity.form.label.item = Item
+chef.quantity.form.button.create = Crear
+chef.quantity.form.button.update = Actualizar cantidad
+chef.quantity.form.button.delete = Eliminar de la caja
+
+chef.quantity.button.addKitchenUtensil = Añadir Herramienta
+chef.quantity.button.addIngredient = Añadir Ingrediente
+chef.quantity.ingredient.button.create = Añadir Ingrediente
+chef.quantity.kitchenutensil.button.create = Añadir Herramienta
+chef.quantity.form.delete.ingredient = Borrar Ingrediente
+chef.quantity.form.delete.kitchenutensil = Borrar Herramienta
+chef.quantity.form.error.negative-number = La cantidad debe ser positiva

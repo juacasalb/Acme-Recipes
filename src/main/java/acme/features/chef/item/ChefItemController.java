@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
 import acme.entities.Item;
-import acme.features.chef.recipe.ChefRecipeItemListService;
 import acme.framework.controllers.AbstractController;
 import acme.roles.Chef;
 
@@ -26,15 +25,27 @@ public class ChefItemController extends AbstractController<Chef, Item>{
 	protected ChefItemShowService showService;
 	
 	@Autowired
-	protected ChefRecipeItemListService listRecipeService;
+	protected ChefItemCreateService createService;
 	
+	@Autowired
+	protected ChefItemUpdateService updateService;
+	
+	@Autowired
+	protected ChefItemPublishService publishService;
+	
+	@Autowired
+	protected ChefItemDeleteService deleteService;
+
 	@PostConstruct
 	protected void initialise() {
 		super.addCommand("list-my-kitchenutensils", "list", this.listMyKitchenUtensilsService);
 		super.addCommand("list-my-ingredients", "list", this.listMyIngredientsService);
-		super.addCommand("show", this.showService);
+		super.addCommand("create", this.createService);
+		super.addCommand("update", this.updateService);
+		super.addCommand("show", "show", this.showService);
+		super.addCommand("delete", this.deleteService);
 		super.addCommand("list", this.listService);
-		super.addCommand("list-item", "list", this.listRecipeService);
+		super.addCommand("publish","update",this.publishService);
 	}
 	
 }

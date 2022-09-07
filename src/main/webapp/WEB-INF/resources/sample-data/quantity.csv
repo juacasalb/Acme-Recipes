@@ -2,6 +2,9 @@ key,key:item,key:recipe,number
 quantity-01,item-01,recipe-01,1
 quantity-02,item-01,recipe-02,1
 quantity-03,item-02,recipe-03,1
-quantity-04,item-03,recipe-04,9
+quantity-04,item-03,recipe-04,1
 quantity-05,item-05,recipe-05,2
 quantity-06,item-05,recipe-01,23
+quantity-07,item-05,recipe-07,10
+quantity-08,item-01,recipe-07,1
+quantity-09,item-02,recipe-08,1

@@ -81,9 +81,10 @@ public class ChefRecipeShowService implements AbstractShowService<Chef, Recipe>{
 		
 		String chef;
 		chef = entity.getChef().getUserAccount().getUsername();
-		model.setAttribute("chef", chef);
+		model.setAttribute("chef.userAccount.username", chef);
 
-		request.unbind(entity, model, "code", "heading", "description", "preparationNotes", "link", "published");
+		request.unbind(entity, model, "code", "heading", "description", "preparationNotes",
+			"link", "published");
 	}
 
 }

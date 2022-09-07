@@ -52,7 +52,6 @@ public class Item extends AbstractEntity{
 	@URL
 	protected String link;
 	
-	@NotNull
 	protected Boolean published;
 	
 	@NotNull
@@ -60,9 +59,4 @@ public class Item extends AbstractEntity{
 	@ManyToOne(optional=false)
 	@OnDelete(action = OnDeleteAction.CASCADE)
 	protected Chef chef;
-	
-	@NotNull
-	@Valid
-	@ManyToOne(optional=true)
-	protected Recipe recipe;
 }

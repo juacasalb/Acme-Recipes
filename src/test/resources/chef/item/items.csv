@@ -1,0 +1,3 @@
+testIndex,name,unit,type,code,description,retail-price,link
+0,ingredient-70,grams,INGREDIENT,"IN:SSS-321","This is a good ingredient","EUR 80.00",https://www.plum.com
+1,utensil-70,gallons,KITCHENUTENSIL,"UT:EEE-123","This is a good kitchen utensil","EUR 180.00",https://www.plum.com

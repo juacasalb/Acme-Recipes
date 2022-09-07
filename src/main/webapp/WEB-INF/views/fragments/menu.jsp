@@ -31,9 +31,12 @@
 		<acme:menu-option code="master.menu.chef" access="hasRole('Chef')">
 			<acme:menu-suboption code="master.menu.chef.memoranda.list" action="/chef/memorandum/list"/>
 			<acme:menu-suboption code="master.menu.chef.fine-dish.list" action="/chef/fine-dish/list"/>
+			<acme:menu-suboption code="master.menu.chef.fine-dish.list-proposed" action="/chef/fine-dish/list-proposed"/>
+			<acme:menu-suboption code="master.menu.chef.fine-dish.list-accepted" action="/chef/fine-dish/list-accepted"/>
 			<acme:menu-suboption code="master.menu.chef.ingredients-link" action="/chef/item/list-my-ingredients"/>
 			<acme:menu-suboption code="master.menu.chef.kitchenutensils-link" action="/chef/item/list-my-kitchenutensils"/>
-			<acme:menu-suboption code="master.menu.chef.recipe.list" action="/chef/recipe/list"/>			
+			<acme:menu-suboption code="master.menu.chef.recipe.list" action="/chef/recipe/list"/>		
+			<acme:menu-suboption code="master.menu.authenticated.chef" action="/authenticated/chef/update"/>	
     	</acme:menu-option>
 		
 		<acme:menu-option code="master.menu.any.items">
@@ -64,6 +67,9 @@
 			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.administrator.admin-dashboard" action="/administrator/administrator-dashboard/show"/>
 			<acme:menu-suboption code="master.menu.administrator.sys-config" action="/administrator/system-configuration/show-config"/>
+			<acme:menu-separator/>
+			<acme:menu-suboption code="master.menu.administrator.bulletin.create" action="/administrator/bulletin/create"/>
+			<acme:menu-separator/>
 		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.provider" access="hasRole('Provider')">
@@ -73,7 +79,13 @@
 		<acme:menu-option code="master.menu.epicure" access="hasRole('Epicure')">
 			<acme:menu-suboption code="master.menu.epicure.memoranda.list" action="/epicure/memorandum/list"/>
 			<acme:menu-suboption code="master.menu.epicure.fine-dish.list" action="/epicure/fine-dish/list"/>
+			<acme:menu-suboption code="master.menu.epicure.fine-dish.list-published" action="/epicure/fine-dish/list-published"/>
+			<acme:menu-suboption code="master.menu.epicure.fine-dish.list-not-published" action="/epicure/fine-dish/list-not-published"/>
+			<acme:menu-suboption code="master.menu.epicure.fine-dish.list-accepted" action="/epicure/fine-dish/list-accepted"/>
+			<acme:menu-suboption code="master.menu.epicure.fine-dish.list-denied" action="/epicure/fine-dish/list-denied"/>
+			<acme:menu-suboption code="master.menu.epicure.fine-dish.list-proposed" action="/epicure/fine-dish/list-proposed"/>
 			<acme:menu-suboption code="master.menu.epicure.epicure-dashboard.show" action="/epicure/epicure-dashboard/show"/>
+			<acme:menu-suboption code="master.menu.authenticated.epicure" action="/authenticated/epicure/update"/>
 		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.consumer" access="hasRole('Consumer')">
@@ -92,10 +104,8 @@
 
 		<acme:menu-option code="master.menu.user-account" access="isAuthenticated()">
 			<acme:menu-suboption code="master.menu.user-account.general-data" action="/authenticated/user-account/update"/>
-			<acme:menu-suboption code="master.menu.user-account.become-provider" action="/authenticated/provider/create" access="!hasRole('Provider')"/>
-			<acme:menu-suboption code="master.menu.user-account.provider" action="/authenticated/provider/update" access="hasRole('Provider')"/>
-			<acme:menu-suboption code="master.menu.user-account.become-consumer" action="/authenticated/consumer/create" access="!hasRole('Consumer')"/>
-			<acme:menu-suboption code="master.menu.user-account.consumer" action="/authenticated/consumer/update" access="hasRole('Consumer')"/>
+			<acme:menu-suboption code="master.menu.user-account.become-chef" action="/authenticated/chef/create" access="!hasRole('Chef')"/>
+			<acme:menu-suboption code="master.menu.user-account.become-epicure" action="/authenticated/epicure/create" access="!hasRole('Epicure')"/>
 		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.sign-out" action="/master/sign-out" access="isAuthenticated()"/>

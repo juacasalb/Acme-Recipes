@@ -13,6 +13,9 @@ import acme.roles.Chef;
 public class ChefMemorandaController extends AbstractController<Chef, Memorandum>{
 	
 	@Autowired
+	protected ChefMemorandaCreateService createService;
+	
+	@Autowired
 	protected ChefMemorandaListService listService;
 	
 	@Autowired
@@ -22,5 +25,6 @@ public class ChefMemorandaController extends AbstractController<Chef, Memorandum
 	protected void initialise() {
 		super.addCommand("list", this.listService);
 		super.addCommand("show", this.showService);
+		super.addCommand("create", this.createService);
 	}
 }

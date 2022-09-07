@@ -40,7 +40,7 @@ public class ChefItemShowService implements AbstractShowService<Chef, Item>{
 		assert entity != null;
 		assert model != null;
 		
-		request.unbind(entity, model, "name", "unit", "code", "description", "retailPrice", "link", "type");
+		request.unbind(entity, model, "name", "unit", "code", "description", "retailPrice", "link", "type", "published");
 		
 	}
 	

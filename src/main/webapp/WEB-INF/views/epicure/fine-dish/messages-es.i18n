@@ -2,9 +2,11 @@ list.epicure.fine-dish.code = Código
 list.epicure.fine-dish.budget = Presupuesto
 list.epicure.fine-dish.startPeriod = Comienzo de período
 list.epicure.fine-dish.endPeriod = Fin de período
+list.epicure.fine-dish.create = Crear
 
 form.epicure.fine-dish.code = Código
 form.epicure.fine-dish.request = Petición
+form.epicure.fine.dish.budget = Presupuesto
 form.epicure.fine.dish.startPeriod = Comienzo de período
 form.epicure.fine.dish.endPeriod = Fin de período
 form.epicure.fine-dish.moreInfo = Más información
@@ -12,7 +14,18 @@ form.epicure.fine-dish.state = Estado
 form.epicure.fine-dish.state.PROPOSED = Propuesto
 form.epicure.fine-dish.state.DENIED = Denegado
 form.epicure.fine-dish.state.ACCEPTED = Aceptado
-
+form.epicure.fine-dish.chef.find = Nombre de usuario del chef
+form.epicure.fine-dish.create = Crear
+form.epicure.fine-dish.update = Actualizar
 form.epicure.fine-dish.chef.identity.name = Nombre del chef
 form.epicure.fine-dish.chef.identity.surname = Apellido del chef
 form.epicure.fine-dish.chef.identity.email = Email del chef
+form.epicure.fine-dish.delete = Eliminar
+form.epicure.fine-dish.publish = Publish
+
+error.budget-amount = Cantidad debe ser mayor que 0
+error.budget-currency = Moneda debe estar entre divisas aceptadas
+error.code-exists = Codigo en uso
+error.startPeriodTooSoon = Debe ser al menos un mes despues del momento de creacion
+error.endPeriodTooSoon = Debe ser al menos un mes despues del comienzo de periodo
+error.chef-username-not-found = Chef no encontrado

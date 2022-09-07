@@ -13,3 +13,13 @@ chef.recipe.list.label.code = Código
 chef.recipe.list.label.heading = Cabecera
 chef.recipe.list.label.description = Descripción
 chef.recipe.list.label.published = Publicado
+
+chef.recipe.form.button.create = Crear
+chef.recipe.form.button.delete = Borrar
+chef.recipe.form.button.update = Actualizar
+chef.recipe.form.button.publish = Publicar
+
+chef.recipe.list.button.create = Crear
+chef.recipe.list.button.delete = Borrar
+chef.recipe.list.button.update = Actualizar
+chef.recipe.list.button.publish = Publicar

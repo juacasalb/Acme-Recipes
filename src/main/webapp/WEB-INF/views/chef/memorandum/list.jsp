@@ -21,3 +21,4 @@
 	<acme:list-column code="chef.memoranda.list.label.fine-dish.code" path="fineDishCode"/>
 	<acme:list-column code="chef.memoranda.list.label.fine-dish.epicure-username" path="fineDishEpicureUsername"/>
 </acme:list>
+<acme:button code="chef.memoranda.list.label.create-redirect-button" action="/chef/memorandum/create"/>
