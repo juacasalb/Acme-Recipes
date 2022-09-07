@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import acme.entities.Item;
 import acme.entities.ItemType;
+import acme.features.administrator.systemConfiguration.AdministratorSystemConfigurationRepository;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Errors;
 import acme.framework.controllers.Request;
@@ -20,6 +21,9 @@ public class ChefItemCreateService implements AbstractCreateService<Chef, Item>{
 
 	@Autowired
 	protected ChefItemRepository repository;
+	
+	@Autowired
+	protected AdministratorSystemConfigurationRepository currencyRepository;
 	
 	@Override
 	public boolean authorise(final Request<Item> request) {
@@ -100,7 +104,17 @@ public class ChefItemCreateService implements AbstractCreateService<Chef, Item>{
 				errors.state(request, retailPriceToolZeroOrPositive, "retailPrice", "chef.item.form.error.retail-price-kitchen-utensil-zero-or-positive");
 
 			}
+				
 		}
+		
+		if(!errors.hasErrors("retailPrice")) {
+			
+			final boolean availableCurrency = this.validateAvailableCurrency(entity.getRetailPrice().toString().substring(2,5));
+			errors.state(request, availableCurrency, "retailPrice", "chef.item.form.error.currency-not-available");
+			
+		}
+		
+		
 	}
 
 	@Override
@@ -114,6 +128,14 @@ public class ChefItemCreateService implements AbstractCreateService<Chef, Item>{
 		
 		this.repository.save(entity);
 		
+	}
+	
+	public boolean validateAvailableCurrency(final String currency) {
+
+		final String currencies = this.currencyRepository.findAvailableCurrencies();
+		final List<Object> listOfAvailableCurrencies = Arrays.asList((Object[]) currencies.split(","));
+
+		return listOfAvailableCurrencies.contains(currency);
 	}
 
 	
