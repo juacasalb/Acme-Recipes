@@ -54,4 +54,22 @@ public interface AdminDashboardRepository extends AbstractRepository{
 	@Query("select fd.state, fd.budget.currency, max(fd.budget.amount) from FineDish fd group by fd.state, fd.budget.currency")
 	List<Object[]> maxBudgetDishesByStatus();
 	
+	//CC
+
+	//average
+	@Query("select x.budget.currency, avg(x.budget.amount) from Pimpam x group by x.budget.currency")
+	List<Object[]> averageBudgetByCurrency();
+
+	//deviation
+	@Query("select x.budget.currency, stddev(x.budget.amount) from Pimpam x group by x.budget.currency")
+	List<Object[]> deviationBudgetByCurrency();
+
+	//minimum
+	@Query("select x.budget.currency, min(x.budget.amount) from Pimpam x group by x.budget.currency")
+	List<Object[]> minBudgetByCurrency();
+
+	//maximum
+	@Query("select x.budget.currency, max(x.budget.amount) from Pimpam x group by x.budget.currency")
+	List<Object[]> maxBudgetByCurrency();
+		
 }

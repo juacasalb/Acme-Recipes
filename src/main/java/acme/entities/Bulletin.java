@@ -40,7 +40,6 @@ public class Bulletin extends AbstractEntity{
 	protected boolean flag;  //to indicate whether they are critical or not
 	
 	@URL
-	protected String link;
-	
+	protected String link;	
 	
 }

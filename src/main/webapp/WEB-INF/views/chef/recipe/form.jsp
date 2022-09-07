@@ -7,7 +7,7 @@
 	<acme:input-textbox code="chef.recipe.form.label.code" path="code"/>
 	<acme:input-textbox code="chef.recipe.form.label.heading" path="heading"/>
 	<acme:input-textarea code="chef.recipe.form.label.description" path="description"/>
-	<acme:input-money code="chef.recipe.form.label.preparationNotes" path="preparationNotes"/>
+	<acme:input-textbox code="chef.recipe.form.label.preparationNotes" path="preparationNotes"/>
 	<acme:input-textbox code="chef.recipe.form.label.link" path="link"/>
 	<acme:input-textbox code="chef.recipe.form.label.chef" path="chef.userAccount.username" readonly="true"/>
 	<acme:input-textbox code="chef.recipe.form.label.published" path="published" readonly="true"/>

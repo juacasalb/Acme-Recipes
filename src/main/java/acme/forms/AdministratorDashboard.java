@@ -37,4 +37,12 @@ private static final long serialVersionUID = 1L;
 	Map<String,Double> maxRetailPriceIngredientsByCurrency;
 	Map<String,Double> maxRetailPriceKitchenUtensilsByCurrency;
 	Map<Pair<State, String>, Double> maxBudgetDishesByStatus;
+	
+	//CC
+
+	Double ratio;
+	Map<String,Double> averageBudgetByCurrency;
+	Map<String,Double> deviationBudgetByCurrency;
+	Map<String,Double> minBudgetByCurrency;
+	Map<String,Double> maxBudgetByCurrency;
 }

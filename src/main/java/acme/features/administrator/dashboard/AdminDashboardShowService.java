@@ -8,6 +8,8 @@ import org.springframework.data.util.Pair;
 import org.springframework.stereotype.Service;
 
 import acme.entities.fineDish.State;
+import acme.features.any.item.AnyItemRepository;
+import acme.features.chef.pimpam.ChefPimpamRepository;
 import acme.forms.AdministratorDashboard;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
@@ -19,6 +21,18 @@ public class AdminDashboardShowService implements AbstractShowService<Administra
 	
 	@Autowired
 	protected AdminDashboardRepository repository;
+	
+	@Autowired
+	protected AnyItemRepository itemRepository;
+
+
+	//si es chef
+	@Autowired
+	protected ChefPimpamRepository pimpamRepository;
+
+	//si es epicure
+//	@Autowired
+//	protected EpicurePimpamRepository pimpamRepository;
 	
 	@Override
 	public boolean authorise(final Request<AdministratorDashboard> request) {
@@ -100,6 +114,42 @@ public class AdminDashboardShowService implements AbstractShowService<Administra
 		adminDashboard.setMaxRetailPriceKitchenUtensilsByCurrency(maxRetailPriceKitchenUtensilsByCurrency);
 		adminDashboard.setMaxBudgetDishesByStatus(maxBudgetDishesByStatus);
 		
+		
+		//CC -------------------------------------------------------------------------------------------------------------
+
+		//si es Ingredient
+//		final Double ratio = ((double)this.pimpamRepository.findIngredientWithPimpam().size()/(double)this.itemRepository.findAllIngredients().size());
+
+		//si es kitchenUtensil
+//		final Double ratio = ((double)this.pimpamRepository.findKitchenUtensilWithPimpam().size()/(double)this.itemRepository.findAllKitchenUtensils().size());
+		
+		//si es item
+		final Double ratio = ((double)this.pimpamRepository.findItemsWithPimpam().size()/(double)this.pimpamRepository.findAllItems().size());
+
+		final Map<String,Double> averageBudgetByCurrency;
+		final Map<String,Double> deviationBudgetByCurrency;
+		final Map<String,Double> minBudgetByCurrency;
+		final Map<String,Double> maxBudgetByCurrency;
+
+		averageBudgetByCurrency = this.repository.averageBudgetByCurrency().stream()
+			.collect(Collectors.toMap(x->(String)x[0], x->(Double) x[1]));
+
+		deviationBudgetByCurrency = this.repository.deviationBudgetByCurrency().stream()
+			.collect(Collectors.toMap(x->(String)x[0], x->(Double) x[1]));
+
+		minBudgetByCurrency = this.repository.minBudgetByCurrency().stream()
+			.collect(Collectors.toMap(x->(String)x[0], x->(Double) x[1]));
+
+		maxBudgetByCurrency = this.repository.maxBudgetByCurrency().stream()
+			.collect(Collectors.toMap(x->(String)x[0], x->(Double) x[1]));
+
+		adminDashboard.setRatio(ratio);
+		adminDashboard.setAverageBudgetByCurrency(averageBudgetByCurrency);
+		adminDashboard.setDeviationBudgetByCurrency(deviationBudgetByCurrency);
+		adminDashboard.setMinBudgetByCurrency(minBudgetByCurrency);
+		adminDashboard.setMaxBudgetByCurrency(maxBudgetByCurrency);
+
+		//----------------------------------------------------------------------------------------------------------------
 		return adminDashboard;
 	}
 
@@ -116,7 +166,8 @@ public class AdminDashboardShowService implements AbstractShowService<Administra
 			"averageRetailPriceKitchenUtensilsByCurrency","averageBudgetDishesByStatus",
 			"deviationRetailPriceIngredientsByCurrency","deviationRetailPriceKitchenUtensilsByCurrency","deviationBudgetDishesByStatus",
 			"minRetailPriceIngredientsByCurrency","minRetailPriceKitchenUtensilsByCurrency","minBudgetDishesByStatus",
-			"maxRetailPriceIngredientsByCurrency","maxRetailPriceKitchenUtensilsByCurrency","maxBudgetDishesByStatus");
+			"maxRetailPriceIngredientsByCurrency","maxRetailPriceKitchenUtensilsByCurrency","maxBudgetDishesByStatus",
+			"ratio", "averageBudgetByCurrency", "deviationBudgetByCurrency", "minBudgetByCurrency", "maxBudgetByCurrency");
 	}
 
 }

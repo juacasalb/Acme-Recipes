@@ -221,6 +221,88 @@
     </td>
   </tr>
   
+  <!-- ------------------------------ Control check ----------------------- -->
+  <tr>
+    <th scope="row">
+      <acme:message
+        code="administrator.dashboard.form.label.ratio"
+      />
+    </th>
+    <td>
+      <acme:print value="${ratio}" />
+    </td>
+  </tr>
+  <tr>
+  	<tr>
+    <th scope="row">
+      <acme:message
+        code="administrator.dashboard.form.label.averageBudgetByCurrency"
+      />
+    </th>
+    <td>
+      <jstl:forEach
+        var="entry"
+        items="${averageBudgetByCurrency}"
+      >
+        <acme:print value="${entry.key}:${entry.value} " />
+      </jstl:forEach>
+    </td>
+  </tr>
+  <tr>
+  	<tr>
+    <th scope="row">
+      <acme:message
+        code="administrator.dashboard.form.label.deviationBudgetByCurrency"
+      />
+    </th>
+    <td>
+      <jstl:forEach
+        var="entry"
+        items="${deviationBudgetByCurrency}"
+      >
+        <acme:print value="${entry.key}:${entry.value} " />
+      </jstl:forEach>
+    </td>
+  </tr>
+  <tr>
+    <tr>
+    <th scope="row">
+      <acme:message
+        code="administrator.dashboard.form.label.minBudgetByCurrency"
+      />
+    </th>
+    <td>
+      <jstl:forEach
+        var="entry"
+        items="${minBudgetByCurrency}"
+      >
+        <acme:print value="${entry.key}:${entry.value} " />
+      </jstl:forEach>
+    </td>
+  </tr>
+  <tr>
+    <tr>
+    <th scope="row">
+      <acme:message
+        code="administrator.dashboard.form.label.maxBudgetByCurrency"
+      />
+    </th>
+    <td>
+      <jstl:forEach
+        var="entry"
+        items="${maxBudgetByCurrency}"
+      >
+        <acme:print value="${entry.key}:${entry.value} " />
+      </jstl:forEach>
+    </td>
+  </tr>
+  <tr>
+
+
+
+<!-- ------------------------------ Control check ----------------------- -->
+
+  
   </table>
 
 

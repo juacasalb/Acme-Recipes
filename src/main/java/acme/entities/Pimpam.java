@@ -1,11 +1,18 @@
 package acme.entities;
 
+import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+import javax.persistence.Transient;
 import javax.validation.Valid;
+import javax.validation.constraints.Future;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Past;
 import javax.validation.constraints.Pattern;
 
 import org.hibernate.annotations.OnDelete;
@@ -15,31 +22,29 @@ import org.hibernate.validator.constraints.URL;
 
 import acme.framework.datatypes.Money;
 import acme.framework.entities.AbstractEntity;
-import acme.roles.Chef;
 import lombok.Getter;
 import lombok.Setter;
 
 @Entity
 @Getter
 @Setter
-public class Item extends AbstractEntity{
+public class Pimpam extends AbstractEntity{
 
 	private static final long serialVersionUID = 1L;
 	
 	@NotBlank
-	@Length(min = 1, max = 101)
-	protected String name;
+	@Column(unique=true)
+	@Pattern(regexp="^[0-9]{2}-[0-9]{2}-[0-9]{2}(-[0-9]{2})?$")
+	protected String code;
 	
 	@NotNull
-	protected ItemType type;
-	
-	@Length(min = 1, max = 15)
-	protected String unit;
+	@Past
+	@Temporal(TemporalType.TIMESTAMP)
+	protected Date instantationMoment;
 	
 	@NotBlank
-	@Column(unique=true)
-	@Pattern(regexp="^([A-Z]{2}:)?[A-Z]{3}-[0-9]{3}$")
-	protected String code;
+	@Length(min = 1, max = 101)
+	protected String title;
 	
 	@NotBlank
 	@Length(min = 1, max = 256)
@@ -47,23 +52,28 @@ public class Item extends AbstractEntity{
 	
 	@NotNull
 	@Valid
-	protected Money retailPrice;
+	protected Money budget;
 	
 	@URL
 	protected String link;
 	
-	protected Boolean published;
-	
 	@NotNull
-	@Valid
-	@ManyToOne(optional=false)
-	@OnDelete(action = OnDeleteAction.CASCADE)
-	protected Chef chef;
+	@Future
+	@Temporal(TemporalType.TIMESTAMP)
+	protected Date finishingDate;
 	
-	/*Descomentar esto y quitar dependencia de chef si es necesario
-	@NotNull
 	@Valid
-	@ManyToOne(optional=false)
+	@OneToOne(optional = false)
 	@OnDelete(action = OnDeleteAction.CASCADE)
-	protected Epicure epicure;*/
+	protected Item item;
+	
+	@Valid
+	@Temporal(TemporalType.TIMESTAMP)	
+	protected Date period;
+	
+	@Transient
+	protected void getPeriod() {
+		this.period = new Date(this.finishingDate.getTime() - this.instantationMoment.getTime());
+	}
+	
 }
