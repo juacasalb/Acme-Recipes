@@ -1,11 +1,11 @@
 list.chef.fine-dish.code = Code
-list.chef.fine-dish.budget = Budget
+list.chef.fine-dish.helping = Helping
 list.chef.fine-dish.startPeriod = Start of period
 list.chef.fine-dish.endPeriod = End of period
 
 form.chef.fine-dish.code = Code
 form.chef.fine-dish.request = Request
-form.chef.fine-dish.budget = Budget
+form.chef.fine-dish.helping = Helping
 form.chef.fine.dish.startPeriod = Start of period
 form.chef.fine.dish.endPeriod = End of period
 form.chef.fine-dish.moreInfo = More info

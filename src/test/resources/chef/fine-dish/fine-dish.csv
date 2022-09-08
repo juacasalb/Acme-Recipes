@@ -1,2 +1,2 @@
-recordIndex,code,budget,startPeriod,endPeriod,request,moreInfo,epName,epSurname,epEmail,state
+recordIndex,code,helping,startPeriod,endPeriod,request,moreInfo,epName,epSurname,epEmail,state
 0,"FD:TST-001","EUR 75.00","2010/02/03 12:00","2010/03/05 15:00","Gold steak","https://www.a.com","E2","Acme","e2@acme.com","ACCEPTED"

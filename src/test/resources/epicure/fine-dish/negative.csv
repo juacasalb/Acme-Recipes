@@ -1,4 +1,4 @@
-recordIndex, code, budget, request, moreInfo, username, sDate, eDate
+recordIndex, code, helping, request, moreInfo, username, sDate, eDate
 0, "FD:JKL-151", "USD 100.00", "Corn", "https://www.example.com", "chef1","",""
 1, "FD:JKL-153", "GTT 100.00", "Corn", "https://www.example.com", "chef1","",""
 2, "FD:JKL-153", "USD -1.00", "Corn", "https://www.example.com", "chef1","",""

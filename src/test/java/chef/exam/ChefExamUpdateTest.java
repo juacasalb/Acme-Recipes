@@ -12,10 +12,10 @@ public class ChefExamUpdateTest extends TestHarness{
 	@ParameterizedTest
 	@CsvFileSource(resources = "/chef/exam/examupdatepositive.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(10)
-	public void positiveTest(final int recordIndex, final String title,  final String description,final String budget, final String link, final String finishingDate) {
+	public void positiveTest(final int recordIndex, final String title,  final String description,final String helping, final String link, final String finishingDate) {
 		super.signIn("chef1", "chef1");
 
-		super.clickOnMenu("Chef", "List Pimpams");
+		super.clickOnMenu("Chef", "List Quittels");
 		super.checkListingExists();
 		super.sortListing(0, "asc");
 
@@ -24,19 +24,19 @@ public class ChefExamUpdateTest extends TestHarness{
 		
 		super.fillInputBoxIn("title", title);
 		super.fillInputBoxIn("description", description);
-		super.fillInputBoxIn("budget", budget);
+		super.fillInputBoxIn("helping", helping);
 		super.fillInputBoxIn("link", link);
 		super.fillInputBoxIn("finishingDate", finishingDate);
 		super.clickOnSubmit("Update");
 		
-		super.clickOnMenu("Chef", "List Pimpams");
+		super.clickOnMenu("Chef", "List Quittels");
 		super.checkListingExists();
 		super.sortListing(0, "asc");
 		super.clickOnListingRecord(recordIndex);
 		
 		super.checkInputBoxHasValue("title", title);
 		super.checkInputBoxHasValue("description", description);
-		super.checkInputBoxHasValue("budget", budget);
+		super.checkInputBoxHasValue("helping", helping);
 		super.checkInputBoxHasValue("link", link);
 		super.checkInputBoxHasValue("finishingDate", finishingDate);
 
@@ -46,10 +46,10 @@ public class ChefExamUpdateTest extends TestHarness{
 	@ParameterizedTest
 	@CsvFileSource(resources = "/chef/exam/examupdatenegative.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(20)
-	public void negativeTest(final int recordIndex, final String title,  final String description,final String budget, final String link, final String finishingDate) {
+	public void negativeTest(final int recordIndex, final String title,  final String description,final String helping, final String link, final String finishingDate) {
 		super.signIn("chef1", "chef1");
 
-		super.clickOnMenu("Chef", "List Pimpams");
+		super.clickOnMenu("Chef", "List Quittels");
 		super.checkListingExists();
 		super.sortListing(0, "asc");
 		super.clickOnListingRecord(recordIndex);
@@ -57,7 +57,7 @@ public class ChefExamUpdateTest extends TestHarness{
 	
 		super.fillInputBoxIn("title", title);
 		super.fillInputBoxIn("description", description);
-		super.fillInputBoxIn("budget", budget);
+		super.fillInputBoxIn("helping", helping);
 		super.fillInputBoxIn("link", link);
 		super.fillInputBoxIn("finishingDate", finishingDate);
 		super.clickOnSubmit("Update");

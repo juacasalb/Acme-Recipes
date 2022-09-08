@@ -1,46 +1,46 @@
-//package acme.features.epicure.pimpam;
+//package acme.features.epicure.quittel;
 //
 //import org.springframework.beans.factory.annotation.Autowired;
 //import org.springframework.stereotype.Service;
 //
-//import acme.entities.Pimpam;
+//import acme.entities.Quittel;
 //import acme.framework.components.models.Model;
 //import acme.framework.controllers.Request;
 //import acme.framework.services.AbstractShowService;
 //import acme.roles.Epicure;
 //
 //@Service
-//public class EpicurePimpamShowService implements AbstractShowService<Epicure, Pimpam>{
+//public class EpicureQuittelShowService implements AbstractShowService<Epicure, Quittel>{
 //
 //	@Autowired
-//	protected EpicurePimpamRepository repository;
+//	protected EpicureQuittelRepository repository;
 //	
 //	@Override
-//	public boolean authorise(final Request<Pimpam> request) {
+//	public boolean authorise(final Request<Quittel> request) {
 //		assert request != null;
 //		
 //		return true;
 //	}
 //
 //	@Override
-//	public Pimpam findOne(final Request<Pimpam> request) {
+//	public Quittel findOne(final Request<Quittel> request) {
 //		assert request != null;
 //	
 //		Integer id;
-//		Pimpam item;
+//		Quittel item;
 //		id = request.getModel().getInteger("id");
-//		item = this.repository.findPimpamById(id);
+//		item = this.repository.findQuittelById(id);
 //		
 //		return item;
 //	}
 //
 //	@Override
-//	public void unbind(final Request<Pimpam> request, final Pimpam entity, final Model model) {
+//	public void unbind(final Request<Quittel> request, final Quittel entity, final Model model) {
 //		assert request != null;
 //		assert entity != null;
 //		assert model != null;
 //		
-//		request.unbind(entity, model, "title", "code", "description", "budget", "link", "instantationMoment", "item.name");
+//		request.unbind(entity, model, "title", "code", "description", "helping", "link", "instantationMoment", "item.name");
 //		
 //	}
 //	

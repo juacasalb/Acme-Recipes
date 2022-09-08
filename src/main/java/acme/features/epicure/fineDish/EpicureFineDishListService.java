@@ -38,7 +38,7 @@ public class EpicureFineDishListService implements AbstractListService<Epicure,F
 		assert entity != null;
 		assert model != null;
 		
-		request.unbind(entity, model, "code", "budget","startPeriod", "endPeriod");
+		request.unbind(entity, model, "code", "helping","startPeriod", "endPeriod");
 		
 	}
 

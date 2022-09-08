@@ -28,13 +28,13 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-public class Pimpam extends AbstractEntity{
+public class Quittel extends AbstractEntity{
 
 	private static final long serialVersionUID = 1L;
 	
 	@NotBlank
 	@Column(unique=true)
-	@Pattern(regexp="^[0-9]{2}-[0-9]{2}-[0-9]{2}(-[0-9]{2})?$")
+	@Pattern(regexp="^[a-zA-Z0-9_]{3}[0-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{2}$")
 	protected String code;
 	
 	@NotNull
@@ -52,7 +52,7 @@ public class Pimpam extends AbstractEntity{
 	
 	@NotNull
 	@Valid
-	protected Money budget;
+	protected Money helping;
 	
 	@URL
 	protected String link;

@@ -44,13 +44,13 @@ public class EpicureFineDishDeleteService implements AbstractDeleteService<Epicu
 			model.setAttribute("chef", chef);
 		}
 		request.setModel(model);
-		request.bind(entity, errors, "state","code","request","budget","startPeriod","endPeriod","moreInfo","chef");
+		request.bind(entity, errors, "state","code","request","helping","startPeriod","endPeriod","moreInfo","chef");
 		
 	}
 
 	@Override
 	public void unbind(final Request<FineDish> request, final FineDish entity, final Model model) {
-		request.unbind(entity, model, "state","code","request","budget","startPeriod","endPeriod","moreInfo","chef.userAccount.username");
+		request.unbind(entity, model, "state","code","request","helping","startPeriod","endPeriod","moreInfo","chef.userAccount.username");
 		
 	}
 

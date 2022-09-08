@@ -36,7 +36,7 @@ public class EpicureFineDishShowService implements AbstractShowService<Epicure, 
 		assert request != null;
 		assert entity != null;
 		assert model != null;
-		request.unbind(entity, model, "state", "code", "request","budget","startPeriod","endPeriod","moreInfo", "published", "chef", "chef.userAccount.username");
+		request.unbind(entity, model, "state", "code", "request","helping","startPeriod","endPeriod","moreInfo", "published", "chef", "chef.userAccount.username");
 	}
 
 }

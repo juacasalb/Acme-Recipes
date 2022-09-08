@@ -12,7 +12,7 @@ public class EpicureFineDishCreateUpdateTest extends TestHarness {
 	@ParameterizedTest
 	@CsvFileSource(resources = "/epicure/fine-dish/create.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(10)
-	public void createTestPositive(final int recordIndex, final String code, final String budget, final String request,
+	public void createTestPositive(final int recordIndex, final String code, final String helping, final String request,
 		final String moreInfo, final String username) {
 		super.signIn("epicure1", "epicure1");
 		super.clickOnMenu("Epicure", "My fine dishes");
@@ -22,7 +22,7 @@ public class EpicureFineDishCreateUpdateTest extends TestHarness {
 
 		super.fillInputBoxIn("code", code);
 		super.fillInputBoxIn("request", request);
-		super.fillInputBoxIn("budget", budget);
+		super.fillInputBoxIn("helping", helping);
 		super.fillInputBoxIn("moreInfo", moreInfo);
 		super.fillInputBoxIn("chef.userAccount.username", username);
 		
@@ -34,7 +34,7 @@ public class EpicureFineDishCreateUpdateTest extends TestHarness {
 	@ParameterizedTest
 	@CsvFileSource(resources = "/epicure/fine-dish/negative.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(20)
-	public void createTestNegative(final int recordIndex, final String code, final String budget, final String request,
+	public void createTestNegative(final int recordIndex, final String code, final String helping, final String request,
 		final String moreInfo, final String username, final String sDate, final String eDate) {
 		super.signIn("epicure1", "epicure1");
 		super.clickOnMenu("Epicure", "My fine dishes");
@@ -44,7 +44,7 @@ public class EpicureFineDishCreateUpdateTest extends TestHarness {
 
 		super.fillInputBoxIn("code", code);
 		super.fillInputBoxIn("request", request);
-		super.fillInputBoxIn("budget", budget);
+		super.fillInputBoxIn("helping", helping);
 		if(sDate.length()!=0||eDate.length()!=0) {
 			super.fillInputBoxIn("startPeriod", sDate);
 			super.fillInputBoxIn("endPeriod", eDate);
@@ -60,7 +60,7 @@ public class EpicureFineDishCreateUpdateTest extends TestHarness {
 	@ParameterizedTest
 	@CsvFileSource(resources = "/epicure/fine-dish/updateN.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(30)
-	public void updateTestPositive(final int recordIndex,  final String code, final String budget, final String request,
+	public void updateTestPositive(final int recordIndex,  final String code, final String helping, final String request,
 		final String moreInfo, final String username, final String sDate, final String eDate) {
 		super.signIn("epicure1", "epicure1");
 		super.clickOnMenu("Epicure", "My fine dishes");
@@ -70,7 +70,7 @@ public class EpicureFineDishCreateUpdateTest extends TestHarness {
 		
 		super.fillInputBoxIn("code", code);
 		super.fillInputBoxIn("request", request);
-		super.fillInputBoxIn("budget", budget);
+		super.fillInputBoxIn("helping", helping);
 		if(sDate.length()!=0||eDate.length()!=0) {
 			super.fillInputBoxIn("startPeriod", sDate);
 			super.fillInputBoxIn("endPeriod", eDate);

@@ -17,7 +17,7 @@
 
 <acme:list>
 	<acme:list-column code="list.epicure.fine-dish.code" path="code"/>
-	<acme:list-column code="list.epicure.fine-dish.budget" path="budget"/>
+	<acme:list-column code="list.epicure.fine-dish.helping" path="helping"/>
 	<acme:list-column code="list.epicure.fine-dish.startPeriod" path="startPeriod"/>
 	<acme:list-column code="list.epicure.fine-dish.endPeriod" path="endPeriod"/>
 </acme:list>

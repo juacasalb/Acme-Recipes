@@ -33,7 +33,7 @@ public class ChefAcceptDenyTest extends TestHarness {
 	@ParameterizedTest
 	@CsvFileSource(resources = "/chef/fine-dish/action.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(20)
-	public void test(final int recordIndex, final String code, final String budget, final String request,
+	public void test(final int recordIndex, final String code, final String helping, final String request,
 		final String moreInfo, final String username) {
 		super.signIn("epicure47", ChefAcceptDenyTest.PSSWRD);
 		super.clickOnMenu("Epicure", "My fine dishes");
@@ -41,7 +41,7 @@ public class ChefAcceptDenyTest extends TestHarness {
 		
 		super.fillInputBoxIn("code", code);
 		super.fillInputBoxIn("request", request);
-		super.fillInputBoxIn("budget", budget);
+		super.fillInputBoxIn("helping", helping);
 		super.fillInputBoxIn("moreInfo", moreInfo);
 		super.fillInputBoxIn("chef.userAccount.username", username);
 		super.clickOnSubmit("Create");

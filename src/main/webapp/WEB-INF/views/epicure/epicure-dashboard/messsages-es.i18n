@@ -11,7 +11,7 @@
 epicure.epicure-dashboard.form.title = Estadísticas de platos finos
 epicure.epicure-dashboard.form.count-fine-dishes = Número total de platos finos por estado y moneda
 
-epicure.epicure-dashboard.form.average-budget-fine-dishes = Presupuesto medio de los platos finos por estado y moneda
-epicure.epicure-dashboard.form.deviation-budget-fine-dishes = Desviación típica de los presupuestos de los platos finos por estado y moneda
-epicure.epicure-dashboard.form.min-budget-fine-dishes = Presupuesto mínimo de los platos finos por estado y moneda
-epicure.epicure-dashboard.form.max-budget-fine-dishes = Presupuesto máximo de los platos finos por estado y moneda
+epicure.epicure-dashboard.form.average-helping-fine-dishes = Presupuesto medio de los platos finos por estado y moneda
+epicure.epicure-dashboard.form.deviation-helping-fine-dishes = Desviación típica de los presupuestos de los platos finos por estado y moneda
+epicure.epicure-dashboard.form.min-helping-fine-dishes = Presupuesto mínimo de los platos finos por estado y moneda
+epicure.epicure-dashboard.form.max-helping-fine-dishes = Presupuesto máximo de los platos finos por estado y moneda

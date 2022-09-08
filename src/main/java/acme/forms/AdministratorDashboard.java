@@ -24,25 +24,25 @@ private static final long serialVersionUID = 1L;
 
 	Map<String,Double> averageRetailPriceIngredientsByCurrency;
 	Map<String,Double> averageRetailPriceKitchenUtensilsByCurrency;
-	Map<Pair<State, String>, Double> averageBudgetDishesByStatus;
+	Map<Pair<State, String>, Double> averageHelpingDishesByStatus;
 	
 	Map<String,Double> deviationRetailPriceIngredientsByCurrency;
 	Map<String,Double> deviationRetailPriceKitchenUtensilsByCurrency;
-	Map<Pair<State, String>, Double> deviationBudgetDishesByStatus;
+	Map<Pair<State, String>, Double> deviationHelpingDishesByStatus;
 	
 	Map<String,Double> minRetailPriceIngredientsByCurrency;
 	Map<String,Double> minRetailPriceKitchenUtensilsByCurrency;
-	Map<Pair<State, String>, Double> minBudgetDishesByStatus;
+	Map<Pair<State, String>, Double> minHelpingDishesByStatus;
 	
 	Map<String,Double> maxRetailPriceIngredientsByCurrency;
 	Map<String,Double> maxRetailPriceKitchenUtensilsByCurrency;
-	Map<Pair<State, String>, Double> maxBudgetDishesByStatus;
+	Map<Pair<State, String>, Double> maxHelpingDishesByStatus;
 	
 	//CC
 
 	Double ratio;
-	Map<String,Double> averageBudgetByCurrency;
-	Map<String,Double> deviationBudgetByCurrency;
-	Map<String,Double> minBudgetByCurrency;
-	Map<String,Double> maxBudgetByCurrency;
+	Map<String,Double> averageHelpingByCurrency;
+	Map<String,Double> deviationHelpingByCurrency;
+	Map<String,Double> minHelpingByCurrency;
+	Map<String,Double> maxHelpingByCurrency;
 }

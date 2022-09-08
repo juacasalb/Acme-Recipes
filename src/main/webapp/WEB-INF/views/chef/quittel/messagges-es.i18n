@@ -1,0 +1,25 @@
+chef.quittel.list.label.title = Título
+chef.quittel.list.label.helping = Helping
+chef.quittel.list.label.instantationMoment = Momento creación
+
+chef.quittel.list.button.create = Crear
+
+chef.quittel.form.label.title = Título
+chef.quittel.form.label.code = Codigo
+chef.quittel.form.label.description = Descripcion
+chef.quittel.form.label.helping = Presupuesto
+chef.quittel.form.label.link = Link
+chef.quittel.form.label.item = Item
+chef.quittel.form.label.instantationMoment = Momento creación
+chef.quittel.form.label.finishingDate = Fecha fin
+chef.quittel.form.label.published = Publicado
+
+chef.quittel.form.button.create = Crear
+chef.quittel.form.button.update = Actualizar
+chef.quittel.form.button.delete = Borrar
+chef.quittel.form.button.publish = Publicar
+
+chef.quittel.form.error.retail-price-ingredient-positive = El precio debe ser mayor que 0
+chef.quittel.form.error.retail-price-kitchen-utensil-zero-or-positive = El precio debe ser mayor o igual a 0
+
+chef.quittel.form.error.currency-not-available = Moneda no disponible

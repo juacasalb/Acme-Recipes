@@ -11,7 +11,7 @@ public class ChefFineDishListShowTest extends TestHarness {
 	@ParameterizedTest
 	@CsvFileSource(resources = "/chef/fine-dish/fine-dish.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(10)
-	public void chefListAndShowFineDish(final int recorIndex, final String code, final String budget, final String startPeriod, 
+	public void chefListAndShowFineDish(final int recorIndex, final String code, final String helping, final String startPeriod, 
 		final String endPeriod, final String request, final String moreInfo,final String epName, final String epSurname, final String epEmail,
 		final String state) {
 		super.signIn("chef1", "chef1");
@@ -20,7 +20,7 @@ public class ChefFineDishListShowTest extends TestHarness {
 		super.sortListing(0, "asc");
 		
 		super.checkColumnHasValue(recorIndex, 0, code);
-		super.checkColumnHasValue(recorIndex, 1, budget);
+		super.checkColumnHasValue(recorIndex, 1, helping);
 		super.checkColumnHasValue(recorIndex, 2, startPeriod);
 		super.checkColumnHasValue(recorIndex, 3, endPeriod);
 		

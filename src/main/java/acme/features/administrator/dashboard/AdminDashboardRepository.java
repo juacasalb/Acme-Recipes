@@ -24,8 +24,8 @@ public interface AdminDashboardRepository extends AbstractRepository{
 	List<Object[]> averageRetailPriceIngredientsByCurrency();
 	@Query("select i.retailPrice.currency, avg(i.retailPrice.amount) from Item i where i.type=1 group by i.retailPrice.currency")
 	List<Object[]> averageRetailPriceKitchenUtensilsByCurrency();
-	@Query("select fd.state, fd.budget.currency, avg(fd.budget.amount) from FineDish fd group by fd.state, fd.budget.currency")
-	List<Object[]> averageBudgetDishesByStatus();
+	@Query("select fd.state, fd.helping.currency, avg(fd.helping.amount) from FineDish fd group by fd.state, fd.helping.currency")
+	List<Object[]> averageHelpingDishesByStatus();
 	
 	//deviation
 	
@@ -33,8 +33,8 @@ public interface AdminDashboardRepository extends AbstractRepository{
 	List<Object[]> deviationRetailPriceIngredientsByCurrency();
 	@Query("select i.retailPrice.currency, stddev(i.retailPrice.amount) from Item i where i.type=1 group by i.retailPrice.currency")
 	List<Object[]> deviationRetailPriceKitchenUtensilsByCurrency();
-	@Query("select fd.state, fd.budget.currency, stddev(fd.budget.amount) from FineDish fd group by fd.state, fd.budget.currency")
-	List<Object[]> deviationBudgetDishesByStatus();
+	@Query("select fd.state, fd.helping.currency, stddev(fd.helping.amount) from FineDish fd group by fd.state, fd.helping.currency")
+	List<Object[]> deviationHelpingDishesByStatus();
 	
 	//minimum
 	
@@ -42,8 +42,8 @@ public interface AdminDashboardRepository extends AbstractRepository{
 	List<Object[]> minRetailPriceIngredientsByCurrency();
 	@Query("select i.retailPrice.currency, min(i.retailPrice.amount) from Item i where i.type=1 group by i.retailPrice.currency")
 	List<Object[]> minRetailPriceKitchenUtensilsByCurrency();
-	@Query("select fd.state, fd.budget.currency, min(fd.budget.amount) from FineDish fd group by fd.state, fd.budget.currency")
-	List<Object[]> minBudgetDishesByStatus();
+	@Query("select fd.state, fd.helping.currency, min(fd.helping.amount) from FineDish fd group by fd.state, fd.helping.currency")
+	List<Object[]> minHelpingDishesByStatus();
 	
 	//maximum
 	
@@ -51,25 +51,25 @@ public interface AdminDashboardRepository extends AbstractRepository{
 	List<Object[]> maxRetailPriceIngredientsByCurrency();
 	@Query("select i.retailPrice.currency, max(i.retailPrice.amount) from Item i where i.type=1 group by i.retailPrice.currency")
 	List<Object[]> maxRetailPriceKitchenUtensilsByCurrency();
-	@Query("select fd.state, fd.budget.currency, max(fd.budget.amount) from FineDish fd group by fd.state, fd.budget.currency")
-	List<Object[]> maxBudgetDishesByStatus();
+	@Query("select fd.state, fd.helping.currency, max(fd.helping.amount) from FineDish fd group by fd.state, fd.helping.currency")
+	List<Object[]> maxHelpingDishesByStatus();
 	
 	//CC
 
 	//average
-	@Query("select x.budget.currency, avg(x.budget.amount) from Pimpam x group by x.budget.currency")
-	List<Object[]> averageBudgetByCurrency();
+	@Query("select x.helping.currency, avg(x.helping.amount) from Quittel x group by x.helping.currency")
+	List<Object[]> averageHelpingByCurrency();
 
 	//deviation
-	@Query("select x.budget.currency, stddev(x.budget.amount) from Pimpam x group by x.budget.currency")
-	List<Object[]> deviationBudgetByCurrency();
+	@Query("select x.helping.currency, stddev(x.helping.amount) from Quittel x group by x.helping.currency")
+	List<Object[]> deviationHelpingByCurrency();
 
 	//minimum
-	@Query("select x.budget.currency, min(x.budget.amount) from Pimpam x group by x.budget.currency")
-	List<Object[]> minBudgetByCurrency();
+	@Query("select x.helping.currency, min(x.helping.amount) from Quittel x group by x.helping.currency")
+	List<Object[]> minHelpingByCurrency();
 
 	//maximum
-	@Query("select x.budget.currency, max(x.budget.amount) from Pimpam x group by x.budget.currency")
-	List<Object[]> maxBudgetByCurrency();
+	@Query("select x.helping.currency, max(x.helping.amount) from Quittel x group by x.helping.currency")
+	List<Object[]> maxHelpingByCurrency();
 		
 }

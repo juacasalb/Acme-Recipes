@@ -1,24 +1,24 @@
-//package acme.features.epicure.pimpam;
+//package acme.features.epicure.quittel;
 //
 //import java.util.Collection;
 //
 //import org.springframework.beans.factory.annotation.Autowired;
 //import org.springframework.stereotype.Service;
 //
-//import acme.entities.Pimpam;
+//import acme.entities.Quittel;
 //import acme.framework.components.models.Model;
 //import acme.framework.controllers.Request;
 //import acme.framework.services.AbstractListService;
 //import acme.roles.Epicure;
 //
 //@Service
-//public class EpicurePimpamListService implements AbstractListService<Epicure, Pimpam>{
+//public class EpicureQuittelListService implements AbstractListService<Epicure, Quittel>{
 //
 //	@Autowired
-//	protected EpicurePimpamRepository repository;
+//	protected EpicureQuittelRepository repository;
 //	
 //	@Override
-//	public boolean authorise(final Request<Pimpam> request) {
+//	public boolean authorise(final Request<Quittel> request) {
 //		
 //		assert request != null;
 //		
@@ -27,26 +27,26 @@
 //	}
 //	
 //	@Override
-//	public Collection<Pimpam> findMany(final Request<Pimpam> request){
+//	public Collection<Quittel> findMany(final Request<Quittel> request){
 //		
 //		assert request != null;
 //		
 //		final int getId = request.getPrincipal().getActiveRoleId();
-//		Collection<Pimpam> result;
-//		result = this.repository.findPimpamsByEpicureId(getId);
+//		Collection<Quittel> result;
+//		result = this.repository.findQuittelsByEpicureId(getId);
 //		
 //		return result;
 //		
 //	}
 //	
 //	@Override
-//	public void unbind(final Request<Pimpam> request, final Pimpam entity, final Model model) {
+//	public void unbind(final Request<Quittel> request, final Quittel entity, final Model model) {
 //		
 //		assert request != null;
 //		assert entity != null;
 //		assert model != null;
 //		
-//		request.unbind(entity, model, "title", "budget", "instantationMoment");
+//		request.unbind(entity, model, "title", "helping", "instantationMoment");
 //		
 //	}
 //	

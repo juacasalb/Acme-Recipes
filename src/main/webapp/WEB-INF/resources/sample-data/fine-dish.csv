@@ -1,4 +1,4 @@
-key,state,code,request,budget,startPeriod,endPeriod,moreInfo,published,creationMomment,key:chef,key:epicure
+key,state,code,request,helping,startPeriod,endPeriod,moreInfo,published,creationMomment,key:chef,key:epicure
 fine-dish-01,ACCEPTED,"FD:TST-001","Gold steak","EUR 75.00","2010/02/03 12:00","2010/03/05 15:00",https://www.a.com,true,"2010/01/03 12:00",chef-01,epicure-02
 fine-dish-02,DENIED,"FD:ABC-123","Caviar pizza","USD 314.15","2010/02/03 13:17","2010/03/05 15:48",https://www.b.com,true,"2010/01/03 12:00",chef-02,epicure-03
 fine-dish-03,ACCEPTED,"FD:DEF-456","Meatball sandwich","GBP 10.00","2015/02/03 18:43","2015/06/05 15:37",https://www.c.com,true,"2010/01/03 12:00",chef-03,epicure-04

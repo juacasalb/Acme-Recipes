@@ -1,4 +1,4 @@
-package acme.features.chef.pimpam;
+package acme.features.chef.quittel;
 
 import java.util.Arrays;
 import java.util.Collection;
@@ -9,7 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.Item;
-import acme.entities.Pimpam;
+import acme.entities.Quittel;
 import acme.features.administrator.systemConfiguration.AdministratorSystemConfigurationRepository;
 import acme.features.chef.item.ChefItemRepository;
 import acme.framework.components.models.Model;
@@ -20,10 +20,10 @@ import acme.framework.services.AbstractCreateService;
 import acme.roles.Chef;
 
 @Service
-public class ChefPimpamCreateService implements AbstractCreateService<Chef, Pimpam>{
+public class ChefQuittelCreateService implements AbstractCreateService<Chef, Quittel>{
 
 	@Autowired
-	protected ChefPimpamRepository repository;
+	protected ChefQuittelRepository repository;
 	
 	@Autowired
 	protected ChefItemRepository itemRepository;
@@ -32,7 +32,7 @@ public class ChefPimpamCreateService implements AbstractCreateService<Chef, Pimp
 	protected AdministratorSystemConfigurationRepository currencyRepository;
 	
 	@Override
-	public boolean authorise(final Request<Pimpam> request) {
+	public boolean authorise(final Request<Quittel> request) {
 
 		assert request != null;
 		
@@ -41,7 +41,7 @@ public class ChefPimpamCreateService implements AbstractCreateService<Chef, Pimp
 
 	@SuppressWarnings("deprecation")
 	@Override
-	public void bind(final Request<Pimpam> request, final Pimpam entity, final Errors errors) {
+	public void bind(final Request<Quittel> request, final Quittel entity, final Errors errors) {
 
 		assert request != null;
 		assert entity != null;
@@ -49,18 +49,19 @@ public class ChefPimpamCreateService implements AbstractCreateService<Chef, Pimp
 		
 		Date moment;
 		String code;
+		String fecha;
 		moment = new Date(System.currentTimeMillis() - 1);
-		code = moment.getYear()-100 + "-" + ((moment.getMonth()+1)>9?moment.getMonth()+1:"0"+(moment.getMonth()+1)) + "-" +  (moment.getDate()>9?moment.getDate():"0"+moment.getDate());
+		fecha = moment.getYear()-100 + "-" + ((moment.getMonth()+1)>9?moment.getMonth()+1:"0"+(moment.getMonth()+1)) + "-" +  (moment.getDate()>9?moment.getDate():"0"+moment.getDate());
 
-		code += "-" + request.getModel().getInteger("itemId");
+		code = "A3A" + request.getModel().getInteger("itemId") + "-" + fecha;
 		
-		request.bind(entity, errors, "title", "description", "budget", "link", "finishingDate");
+		request.bind(entity, errors, "title", "description", "helping", "link", "finishingDate");
 		entity.setInstantationMoment(moment);
 		entity.setCode(code);
 	}
 
 	@Override
-	public void unbind(final Request<Pimpam> request, final Pimpam entity, final Model model) {
+	public void unbind(final Request<Quittel> request, final Quittel entity, final Model model) {
 
 		assert request != null;
 		assert entity != null;
@@ -70,48 +71,48 @@ public class ChefPimpamCreateService implements AbstractCreateService<Chef, Pimp
 
 		principal = request.getPrincipal();
 		
-		//si es ingredient
-		final Collection<Item> li = this.repository.findIngredientsByChefId(principal.getActiveRoleId());
-		model.setAttribute("items", li);
+//		//si es ingredient
+//		final Collection<Item> li = this.repository.findIngredientsByChefId(principal.getActiveRoleId());
+//		model.setAttribute("items", li);
 				
-//		//si es component
-//		final Collection<Item> li = this.repository.findKitchenUtensilsByChefId(principal.getActiveRoleId());
-//		model.setAttribute("allItems", li);
+		//si es component
+		final Collection<Item> li = this.repository.findKitchenUtensilsByChefId(principal.getActiveRoleId());
+		model.setAttribute("items", li);
 		
-		request.unbind(entity, model, "title", "code", "description", "budget", "link", "finishingDate", "instantationMoment");
+		request.unbind(entity, model, "title", "code", "description", "helping", "link", "finishingDate", "instantationMoment");
 	}
 
 	@Override
-	public Pimpam instantiate(final Request<Pimpam> request) {
+	public Quittel instantiate(final Request<Quittel> request) {
 
 		assert request != null;
 		
-		Pimpam pimpam;
+		Quittel quittel;
 		
-		pimpam = new Pimpam();
+		quittel = new Quittel();
 		
-		return pimpam;
+		return quittel;
 	}
 
 	@Override
-	public void validate(final Request<Pimpam> request, final Pimpam entity, final Errors errors) {
+	public void validate(final Request<Quittel> request, final Quittel entity, final Errors errors) {
 
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
 	
 		
-		if (!errors.hasErrors("budget")) {
+		if (!errors.hasErrors("helping")) {
 			
 			
-			final boolean availableCurrency = this.validateAvailableCurrency(entity.getBudget().toString().substring(2,5));
-			errors.state(request, availableCurrency, "budget", "chef.pimpam.form.error.currency-not-available");
+			final boolean availableCurrency = this.validateAvailableCurrency(entity.getHelping().toString().substring(2,5));
+			errors.state(request, availableCurrency, "helping", "chef.quittel.form.error.currency-not-available");
 
 		}
 	}
 
 	@Override
-	public void create(final Request<Pimpam> request, final Pimpam entity) {
+	public void create(final Request<Quittel> request, final Quittel entity) {
 
 		assert request != null;
 		assert entity != null;

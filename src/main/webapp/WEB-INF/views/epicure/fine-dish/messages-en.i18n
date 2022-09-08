@@ -1,12 +1,12 @@
 list.epicure.fine-dish.code = Code
-list.epicure.fine-dish.budget = Budget
+list.epicure.fine-dish.helping = Helping
 list.epicure.fine-dish.startPeriod = Start of period
 list.epicure.fine-dish.endPeriod = End of period
 list.epicure.fine-dish.create = Create
 
 form.epicure.fine-dish.code = Code
 form.epicure.fine-dish.request = Request
-form.epicure.fine.dish.budget = Budget
+form.epicure.fine.dish.helping = Helping
 form.epicure.fine.dish.startPeriod = Start of period
 form.epicure.fine.dish.endPeriod = End of period
 form.epicure.fine-dish.moreInfo = More info
@@ -23,8 +23,8 @@ form.epicure.fine-dish.chef.identity.email = Chef's email
 form.epicure.fine-dish.delete = Delete
 form.epicure.fine-dish.publish = Publish
 
-error.budget-amount = Amount must be greater than 0
-error.budget-currency = Cuurency must be among accepted currencies
+error.helping-amount = Amount must be greater than 0
+error.helping-currency = Cuurency must be among accepted currencies
 error.code-exists = Code already in use
 error.startPeriodTooSoon = Must be at least a month after momment of creation
 error.endPeriodTooSoon = Must be at least a month after start period

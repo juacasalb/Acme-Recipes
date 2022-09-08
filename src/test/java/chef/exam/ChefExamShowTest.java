@@ -16,16 +16,16 @@ public class ChefExamShowTest extends TestHarness{
 	@ParameterizedTest
 	@CsvFileSource(resources = "/chef/exam/exam.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(10)
-	public void positiveTest(final int recordIndex, final String title, final String code, final String description,final String budget,
+	public void positiveTest(final int recordIndex, final String title, final String code, final String description,final String helping,
 		final String instantationMoment, final String finishingDate, final String link) {
 		
 		super.signIn("chef1", "chef1");
 		
-		super.clickOnMenu("Chef", "List Pimpams");
+		super.clickOnMenu("Chef", "List Quittels");
 		super.checkListingExists();
 		
 		super.checkColumnHasValue(recordIndex, 0, title);
-		super.checkColumnHasValue(recordIndex, 1, budget);
+		super.checkColumnHasValue(recordIndex, 1, helping);
 		super.checkColumnHasValue(recordIndex, 2, instantationMoment);
 		
 		super.clickOnListingRecord(recordIndex);
@@ -34,7 +34,7 @@ public class ChefExamShowTest extends TestHarness{
 		super.checkInputBoxHasValue("title", title);
 		super.checkInputBoxHasValue("code", code);
 		super.checkInputBoxHasValue("description", description);
-		super.checkInputBoxHasValue("budget", budget);
+		super.checkInputBoxHasValue("helping", helping);
 		super.checkInputBoxHasValue("instantationMoment", instantationMoment);
 		super.checkInputBoxHasValue("finishingDate", finishingDate);
 		super.checkInputBoxHasValue("link", link);
@@ -50,16 +50,16 @@ public class ChefExamShowTest extends TestHarness{
 	public void hackingTest() {
 		
 		super.checkNotLinkExists("Account");
-		super.navigate("/chef/pimpam/list");
+		super.navigate("/chef/quittel/list");
 		super.checkPanicExists();
 		
 		super.signIn("epicure1", "epicure1");
-		super.navigate("/chef/pimpam/list");
+		super.navigate("/chef/quittel/list");
 		super.checkPanicExists();
 		super.signOut();
 		
 		super.signIn("administrator", "administrator");
-		super.navigate("/chef/pimpam/list");
+		super.navigate("/chef/quittel/list");
 		super.checkPanicExists();
 		super.signOut();
 		

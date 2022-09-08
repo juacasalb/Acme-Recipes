@@ -73,13 +73,13 @@
   <tr>
     <th scope="row">
       <acme:message
-        code="administrator.dashboard.form.label.averageBudgetDishesByStatus"
+        code="administrator.dashboard.form.label.averageHelpingDishesByStatus"
       />
     </th>
     <td>
       <jstl:forEach
         var="entry"
-        items="${averageBudgetDishesByStatus}"
+        items="${averageHelpingDishesByStatus}"
       >
         <acme:print value="${entry.key}:${entry.value} " />
       </jstl:forEach>
@@ -118,13 +118,13 @@
   <tr>
     <th scope="row">
       <acme:message
-        code="administrator.dashboard.form.label.deviationBudgetDishesByStatus"
+        code="administrator.dashboard.form.label.deviationHelpingDishesByStatus"
       />
     </th>
     <td>
       <jstl:forEach
         var="entry"
-        items="${deviationBudgetDishesByStatus}"
+        items="${deviationHelpingDishesByStatus}"
       >
         <acme:print value="${entry.key}:${entry.value} " />
       </jstl:forEach>
@@ -163,13 +163,13 @@
   <tr>
     <th scope="row">
       <acme:message
-        code="administrator.dashboard.form.label.minBudgetDishesByStatus"
+        code="administrator.dashboard.form.label.minHelpingDishesByStatus"
       />
     </th>
     <td>
       <jstl:forEach
         var="entry"
-        items="${minBudgetDishesByStatus}"
+        items="${minHelpingDishesByStatus}"
       >
         <acme:print value="${entry.key}:${entry.value} " />
       </jstl:forEach>
@@ -208,13 +208,13 @@
    <tr>
     <th scope="row">
       <acme:message
-        code="administrator.dashboard.form.label.maxBudgetDishesByStatus"
+        code="administrator.dashboard.form.label.maxHelpingDishesByStatus"
       />
     </th>
     <td>
       <jstl:forEach
         var="entry"
-        items="${maxBudgetDishesByStatus}"
+        items="${maxHelpingDishesByStatus}"
       >
         <acme:print value="${entry.key}:${entry.value} " />
       </jstl:forEach>
@@ -236,13 +236,13 @@
   	<tr>
     <th scope="row">
       <acme:message
-        code="administrator.dashboard.form.label.averageBudgetByCurrency"
+        code="administrator.dashboard.form.label.averageHelpingByCurrency"
       />
     </th>
     <td>
       <jstl:forEach
         var="entry"
-        items="${averageBudgetByCurrency}"
+        items="${averageHelpingByCurrency}"
       >
         <acme:print value="${entry.key}:${entry.value} " />
       </jstl:forEach>
@@ -252,13 +252,13 @@
   	<tr>
     <th scope="row">
       <acme:message
-        code="administrator.dashboard.form.label.deviationBudgetByCurrency"
+        code="administrator.dashboard.form.label.deviationHelpingByCurrency"
       />
     </th>
     <td>
       <jstl:forEach
         var="entry"
-        items="${deviationBudgetByCurrency}"
+        items="${deviationHelpingByCurrency}"
       >
         <acme:print value="${entry.key}:${entry.value} " />
       </jstl:forEach>
@@ -268,13 +268,13 @@
     <tr>
     <th scope="row">
       <acme:message
-        code="administrator.dashboard.form.label.minBudgetByCurrency"
+        code="administrator.dashboard.form.label.minHelpingByCurrency"
       />
     </th>
     <td>
       <jstl:forEach
         var="entry"
-        items="${minBudgetByCurrency}"
+        items="${minHelpingByCurrency}"
       >
         <acme:print value="${entry.key}:${entry.value} " />
       </jstl:forEach>
@@ -284,13 +284,13 @@
     <tr>
     <th scope="row">
       <acme:message
-        code="administrator.dashboard.form.label.maxBudgetByCurrency"
+        code="administrator.dashboard.form.label.maxHelpingByCurrency"
       />
     </th>
     <td>
       <jstl:forEach
         var="entry"
-        items="${maxBudgetByCurrency}"
+        items="${maxHelpingByCurrency}"
       >
         <acme:print value="${entry.key}:${entry.value} " />
       </jstl:forEach>

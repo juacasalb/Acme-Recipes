@@ -11,7 +11,7 @@
 epicure.epicure-dashboard.form.title = Statistics of fine dishes
 epicure.epicure-dashboard.form.count-fine-dishes = Total number of fine dishes by State and currency
 
-epicure.epicure-dashboard.form.average-budget-fine-dishes = Average budget of the fine dishes by state and currency
-epicure.epicure-dashboard.form.deviation-budget-fine-dishes = Standard deviation of the budgets of the fine dishes by state and currency
-epicure.epicure-dashboard.form.min-budget-fine-dishes = Minimum budget of the fine dishes by state and currency
-epicure.epicure-dashboard.form.max-budget-fine-dishes = Maximum budget of the fine dishes by state and currency
+epicure.epicure-dashboard.form.average-helping-fine-dishes = Average helping of the fine dishes by state and currency
+epicure.epicure-dashboard.form.deviation-helping-fine-dishes = Standard deviation of the helpings of the fine dishes by state and currency
+epicure.epicure-dashboard.form.min-helping-fine-dishes = Minimum helping of the fine dishes by state and currency
+epicure.epicure-dashboard.form.max-helping-fine-dishes = Maximum helping of the fine dishes by state and currency

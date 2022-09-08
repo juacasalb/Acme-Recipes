@@ -29,7 +29,7 @@
 		readonly="${readOnly}" />
 	<acme:input-textarea code="form.epicure.fine-dish.request"
 		path="request" readonly="${readOnly}" />
-	<acme:input-money code="form.epicure.fine.dish.budget" path="budget" />
+	<acme:input-money code="form.epicure.fine.dish.helping" path="helping" />
 	<acme:input-moment code="form.epicure.fine.dish.startPeriod"
 		path="startPeriod" readonly="${readOnly}" />
 	<acme:input-moment code="form.epicure.fine.dish.endPeriod"

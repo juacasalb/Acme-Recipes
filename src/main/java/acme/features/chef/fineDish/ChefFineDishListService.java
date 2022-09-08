@@ -38,7 +38,7 @@ public class ChefFineDishListService implements AbstractListService<Chef,FineDis
 		assert entity != null;
 		assert model != null;
 		
-		request.unbind(entity, model, "code", "budget","startPeriod", "endPeriod");
+		request.unbind(entity, model, "code", "helping","startPeriod", "endPeriod");
 		
 	}
 

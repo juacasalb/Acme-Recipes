@@ -75,7 +75,7 @@ FineDish
 + status: PatronageStatus {NotNull}
 + code: String {Pattern(“^([A-Z]{2}:)?[A-Z]{3}-[0-9]{3}$”),Unique)}
 + request: String {NotBlank, Length(0,255)}
-+ budget: double {Positive}
++ helping: double {Positive}
 + startingDate: Date {Temporal(TIMESTAMP)}
 + finishingDate: Date {Temporal(TIMESTAMP)}
 + link: String {URL}
@@ -314,10 +314,10 @@ EpìcureDashboard
 --
 + totalNDishesOfState: Map&lt;String,Integer&gt;;
 
-+ averageBudgetFineDishesOfStateByCurrency: Map&lt;Pair&lt;String, String&gt;,Double&gt;;
-+ deviationBudgetFineDishesOfStateByCurrency: Map&lt;Pair&lt;String, String&gt;,Double&gt;;
-+ minBudgetFineDishesOfStateByCurrency: Map&lt;Pair&lt;String, String&gt;,Double&gt;;
-+ maxBudgetFineDishesOfStateByCurrency: Map&lt;Pair&lt;String, String&gt;,Double&gt;;
++ averageHelpingFineDishesOfStateByCurrency: Map&lt;Pair&lt;String, String&gt;,Double&gt;;
++ deviationHelpingFineDishesOfStateByCurrency: Map&lt;Pair&lt;String, String&gt;,Double&gt;;
++ minHelpingFineDishesOfStateByCurrency: Map&lt;Pair&lt;String, String&gt;,Double&gt;;
++ maxHelpingFineDishesOfStateByCurrency: Map&lt;Pair&lt;String, String&gt;,Double&gt;;
 bg=yellow</panel_attributes>
     <additional_attributes/>
   </element>
@@ -338,19 +338,19 @@ AdministratorDashboard
 
 + averageRetailPriceIngredientsByCurrency: Map&lt;String, Double&gt;;
 + averageRetailPriceKitchenUtensilsByCurrency: Map&lt;String, Double&gt;;
-+ averageBudgetDishesByStatus: Map&lt;String, Double&gt;;
++ averageHelpingDishesByStatus: Map&lt;String, Double&gt;;
 
 + deviationRetailPriceIngredientsByCurrency: Map&lt;String, Double&gt;;
 + deviationRetailPriceKitchenUtensilsByCurrency: Map&lt;String, Double&gt;;
-+ deviationBudgetDishesByStatus: Map&lt;String, Double&gt;;
++ deviationHelpingDishesByStatus: Map&lt;String, Double&gt;;
 
 + minRetailPriceIngredientsByCurrency: Map&lt;String, Double&gt;;
 + minRetailPriceKitchenUtensilsByCurrency: Map&lt;String, Double&gt;;
-+ minBudgetDishesByStatus: Map&lt;String, Double&gt;;
++ minHelpingDishesByStatus: Map&lt;String, Double&gt;;
 
 + maxRetailPriceIngredientsByCurrency: Map&lt;String, Double&gt;;
 + maxRetailPriceKitchenUtensilsByCurrency: Map&lt;String, Double&gt;;
-+ maxBudgetDishesByStatus: Map&lt;String, Double&gt;;
++ maxHelpingDishesByStatus: Map&lt;String, Double&gt;;
 
 bg=yellow</panel_attributes>
     <additional_attributes/>

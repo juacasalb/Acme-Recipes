@@ -1,31 +1,31 @@
-//package acme.features.epicure.pimpam;
+//package acme.features.epicure.quittel;
 //
 //import javax.annotation.PostConstruct;
 //
 //import org.springframework.beans.factory.annotation.Autowired;
 //import org.springframework.stereotype.Controller;
 //
-//import acme.entities.Pimpam;
+//import acme.entities.Quittel;
 //import acme.framework.controllers.AbstractController;
 //import acme.roles.Epicure;
 //
 //@Controller
-//public class EpicurePimpamController extends AbstractController<Epicure, Pimpam>{
+//public class EpicureQuittelController extends AbstractController<Epicure, Quittel>{
 //	
 //	@Autowired
-//	protected EpicurePimpamListService listService;
+//	protected EpicureQuittelListService listService;
 //	
 //	@Autowired
-//	protected EpicurePimpamShowService showService;
+//	protected EpicureQuittelShowService showService;
 //	
 ////	@Autowired
-////	protected EpicurePimpamCreateService createService;
+////	protected EpicureQuittelCreateService createService;
 //	
 //	@Autowired
-//	protected EpicurePimpamUpdateService updateService;
+//	protected EpicureQuittelUpdateService updateService;
 //	
 //	@Autowired
-//	protected EpicurePimpamDeleteService deleteService;
+//	protected EpicureQuittelDeleteService deleteService;
 //
 //	@PostConstruct
 //	protected void initialise() {

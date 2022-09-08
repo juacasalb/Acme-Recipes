@@ -23,7 +23,7 @@
 	</acme:input-select>
 	<acme:input-textbox code="form.chef.fine-dish.code" path="code" readonly="${readOnly}"/>
 	<acme:input-textarea code="form.chef.fine-dish.request" path="request" readonly="${readOnly}"/>
-	<acme:input-money code="form.chef.fine-dish.budget" path="budget" readonly="${readOnly}"/>
+	<acme:input-money code="form.chef.fine-dish.helping" path="helping" readonly="${readOnly}"/>
 	<acme:input-moment code="form.chef.fine.dish.startPeriod" path="startPeriod" readonly="${readOnly}"/>
 	<acme:input-moment code="form.chef.fine.dish.endPeriod" path="endPeriod" readonly="${readOnly}"/>
 	<acme:input-url code="form.chef.fine-dish.moreInfo" path="moreInfo" readonly="${readOnly}"/>

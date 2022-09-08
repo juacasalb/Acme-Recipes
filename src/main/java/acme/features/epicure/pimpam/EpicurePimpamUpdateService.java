@@ -1,9 +1,9 @@
-//package acme.features.epicure.pimpam;
+//package acme.features.epicure.quittel;
 //
 //import org.springframework.beans.factory.annotation.Autowired;
 //import org.springframework.stereotype.Service;
 //
-//import acme.entities.Pimpam;
+//import acme.entities.Quittel;
 //import acme.framework.components.models.Model;
 //import acme.framework.controllers.Errors;
 //import acme.framework.controllers.Request;
@@ -11,31 +11,31 @@
 //import acme.roles.Epicure;
 //
 //@Service
-//public class EpicurePimpamUpdateService implements AbstractUpdateService<Epicure, Pimpam>{
+//public class EpicureQuittelUpdateService implements AbstractUpdateService<Epicure, Quittel>{
 //
 //	@Autowired
-//	protected EpicurePimpamRepository repository;
+//	protected EpicureQuittelRepository repository;
 //	
 //	@Override
-//	public boolean authorise(final Request<Pimpam> request) {
+//	public boolean authorise(final Request<Quittel> request) {
 //		
 //		assert request != null;
 //		
 //		boolean result;
 //		int id;
-//		Pimpam pimpam;
+//		Quittel quittel;
 //		Epicure epicure;
 //		
 //		id = request.getModel().getInteger("id");
-//		pimpam = this.repository.findPimpamById(id);
-//		epicure = pimpam.getItem().getEpicure();
+//		quittel = this.repository.findQuittelById(id);
+//		epicure = quittel.getItem().getEpicure();
 //		result = request.isPrincipal(epicure);
 //		
 //		return result;
 //	}
 //
 //	@Override
-//	public void bind(final Request<Pimpam> request, final Pimpam entity, final Errors errors) {
+//	public void bind(final Request<Quittel> request, final Quittel entity, final Errors errors) {
 //
 //		assert request != null;
 //		assert entity != null;
@@ -43,37 +43,37 @@
 //		
 //		this.repository.save(entity);
 //		
-//		request.bind(entity, errors, "title", "code", "description", "budget", "link");
+//		request.bind(entity, errors, "title", "code", "description", "helping", "link");
 //		
 //	}
 //
 //	@Override
-//	public void unbind(final Request<Pimpam> request, final Pimpam entity, final Model model) {
+//	public void unbind(final Request<Quittel> request, final Quittel entity, final Model model) {
 //
 //		assert request != null;
 //		assert entity != null;
 //		assert model != null;
 //		
-//		request.unbind(entity, model, "title", "code", "description", "budget", "link");
+//		request.unbind(entity, model, "title", "code", "description", "helping", "link");
 //		
 //	}
 //
 //	@Override
-//	public Pimpam findOne(final Request<Pimpam> request) {
+//	public Quittel findOne(final Request<Quittel> request) {
 //
 //		assert request != null;
 //		
-//		Pimpam result;
+//		Quittel result;
 //		int id;
 //		
 //		id = request.getModel().getInteger("id");
-//		result = this.repository.findPimpamById(id);
+//		result = this.repository.findQuittelById(id);
 //		
 //		return result;
 //	}
 //
 //	@Override
-//	public void validate(final Request<Pimpam> request, final Pimpam entity, final Errors errors) {
+//	public void validate(final Request<Quittel> request, final Quittel entity, final Errors errors) {
 //
 //		assert request != null;
 //		assert entity != null;
@@ -82,7 +82,7 @@
 //	}
 //
 //	@Override
-//	public void update(final Request<Pimpam> request, final Pimpam entity) {
+//	public void update(final Request<Quittel> request, final Quittel entity) {
 //
 //		assert request != null;
 //		assert entity != null;

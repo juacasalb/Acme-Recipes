@@ -34,12 +34,12 @@
 
 <table class="table table-sm">
 	<caption>
-		<acme:message code="epicure.epicure-dashboard.form.average-budget-fine-dishes"/>
+		<acme:message code="epicure.epicure-dashboard.form.average-helping-fine-dishes"/>
 	</caption>
-	<jstl:forEach var="budgets" items="${averageBudgetFineDishesOfStateByCurrency}">
+	<jstl:forEach var="helpings" items="${averageHelpingFineDishesOfStateByCurrency}">
 		<tr>
 			<th scope="row">
-				<acme:print value=" - ${budgets.key.first} / ${budgets.key.second} : ${budgets.value}"/>
+				<acme:print value=" - ${helpings.key.first} / ${helpings.key.second} : ${helpings.value}"/>
 			</th>
 		</tr>
 	</jstl:forEach>
@@ -47,12 +47,12 @@
 
 <table class="table table-sm">
 	<caption>
-		<acme:message code="epicure.epicure-dashboard.form.deviation-budget-fine-dishes"/>
+		<acme:message code="epicure.epicure-dashboard.form.deviation-helping-fine-dishes"/>
 	</caption>
-	<jstl:forEach var="budgets" items="${deviationBudgetFineDishesOfStateByCurrency}">
+	<jstl:forEach var="helpings" items="${deviationHelpingFineDishesOfStateByCurrency}">
 		<tr>
 			<th scope="row">
-				<acme:print value=" - ${budgets.key.first} / ${budgets.key.second} : ${budgets.value}"/>
+				<acme:print value=" - ${helpings.key.first} / ${helpings.key.second} : ${helpings.value}"/>
 			</th>
 		</tr>
 	</jstl:forEach>
@@ -60,12 +60,12 @@
 
 <table class="table table-sm">
 	<caption>
-		<acme:message code="epicure.epicure-dashboard.form.min-budget-fine-dishes"/>
+		<acme:message code="epicure.epicure-dashboard.form.min-helping-fine-dishes"/>
 	</caption>
-	<jstl:forEach var="budgets" items="${minBudgetFineDishesOfStateByCurrency}">
+	<jstl:forEach var="helpings" items="${minHelpingFineDishesOfStateByCurrency}">
 		<tr>
 			<th scope="row">
-				<acme:print value=" - ${budgets.key.first} / ${budgets.key.second} : ${budgets.value}"/>
+				<acme:print value=" - ${helpings.key.first} / ${helpings.key.second} : ${helpings.value}"/>
 			</th>
 		</tr>
 	</jstl:forEach>
@@ -73,12 +73,12 @@
 
 <table class="table table-sm">
 	<caption>
-		<acme:message code="epicure.epicure-dashboard.form.max-budget-fine-dishes"/>
+		<acme:message code="epicure.epicure-dashboard.form.max-helping-fine-dishes"/>
 	</caption>
-	<jstl:forEach var="budgets" items="${maxBudgetFineDishesOfStateByCurrency}">
+	<jstl:forEach var="helpings" items="${maxHelpingFineDishesOfStateByCurrency}">
 		<tr>
 			<th scope="row">
-				<acme:print value=" - ${budgets.key.first} / ${budgets.key.second} : ${budgets.value}"/>
+				<acme:print value=" - ${helpings.key.first} / ${helpings.key.second} : ${helpings.value}"/>
 			</th>
 		</tr>
 	</jstl:forEach>

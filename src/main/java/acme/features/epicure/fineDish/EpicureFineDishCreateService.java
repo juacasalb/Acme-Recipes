@@ -44,13 +44,13 @@ public class EpicureFineDishCreateService implements AbstractCreateService<Epicu
 			model.setAttribute("chef", chef);
 		}
 		request.setModel(model);
-		request.bind(entity, errors,"code","request","budget","startPeriod","endPeriod","moreInfo","chef");
+		request.bind(entity, errors,"code","request","helping","startPeriod","endPeriod","moreInfo","chef");
 		
 	}
 
 	@Override
 	public void unbind(final Request<FineDish> request, final FineDish entity, final Model model) {
-		request.unbind(entity, model, "state","code","request","budget","startPeriod","endPeriod","moreInfo","chef.userAccount.username");
+		request.unbind(entity, model, "state","code","request","helping","startPeriod","endPeriod","moreInfo","chef.userAccount.username");
 		
 	}
 
@@ -74,17 +74,17 @@ public class EpicureFineDishCreateService implements AbstractCreateService<Epicu
 
 	@Override
 	public void validate(final Request<FineDish> request, final FineDish entity, final Errors errors) {
-		if(!errors.hasErrors("budget")) {
-			final Money budget = entity.getBudget();
+		if(!errors.hasErrors("helping")) {
+			final Money helping = entity.getHelping();
 			final String currencies = this.repository.findCurrencyConiguration().getAcceptedCurrencies();
-			final String budgetCurrency = budget.getCurrency();
-			final double amount = budget.getAmount();
-			errors.state(request, amount>0 ,"budget", "error.budget-amount");
+			final String helpingCurrency = helping.getCurrency();
+			final double amount = helping.getAmount();
+			errors.state(request, amount>0 ,"helping", "error.helping-amount");
 			boolean isRealCurrency = false;
-			if(currencies.contains(budgetCurrency)) {
+			if(currencies.contains(helpingCurrency)) {
 				isRealCurrency = true;
 			}
-			errors.state(request, isRealCurrency ,"budget", "error.budget-currency");
+			errors.state(request, isRealCurrency ,"helping", "error.helping-currency");
 		}
 		if(!errors.hasErrors("code")) {
 			final FineDish dish = this.repository.findDishByCode(entity.getCode()); 

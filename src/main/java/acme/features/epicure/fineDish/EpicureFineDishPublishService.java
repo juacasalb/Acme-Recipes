@@ -35,7 +35,7 @@ public class EpicureFineDishPublishService implements AbstractUpdateService<Epic
 	public void unbind(final Request<FineDish> request, final FineDish entity, final Model model) {
 		assert request != null;
 		assert entity != null;
-		request.unbind(entity, model, "code", "request", "budget","startPeriod","endPeriod", "moreInfo", "chef", "chef.userAccount.username");
+		request.unbind(entity, model, "code", "request", "helping","startPeriod","endPeriod", "moreInfo", "chef", "chef.userAccount.username");
 	}
 
 	@Override

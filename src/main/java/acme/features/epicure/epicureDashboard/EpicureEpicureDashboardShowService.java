@@ -53,25 +53,25 @@ public class EpicureEpicureDashboardShowService implements AbstractShowService<E
 		}
 		result.setTotalNDishesOfState(countMap);
 		
-		//Average budgets
-		fineDishesList = this.repository.averageBudgetFineDishesOfStateByCurrency(epicureId);
+		//Average helpings
+		fineDishesList = this.repository.averageHelpingFineDishesOfStateByCurrency(epicureId);
 		valueMap = this.getMapFromList(fineDishesList);
-		result.setAverageBudgetFineDishesOfStateByCurrency(valueMap);
+		result.setAverageHelpingFineDishesOfStateByCurrency(valueMap);
 		
-		//Deviation budgets
-		fineDishesList = this.repository.deviationBudgetFineDishesOfStateByCurrency(epicureId);
+		//Deviation helpings
+		fineDishesList = this.repository.deviationHelpingFineDishesOfStateByCurrency(epicureId);
 		valueMap = this.getMapFromList(fineDishesList);
-		result.setDeviationBudgetFineDishesOfStateByCurrency(valueMap);
+		result.setDeviationHelpingFineDishesOfStateByCurrency(valueMap);
 		
-		//Min budget
-		fineDishesList = this.repository.minBudgetFineDishesOfStateByCurrency(epicureId);
+		//Min helping
+		fineDishesList = this.repository.minHelpingFineDishesOfStateByCurrency(epicureId);
 		valueMap = this.getMapFromList(fineDishesList);
-		result.setMinBudgetFineDishesOfStateByCurrency(valueMap);
+		result.setMinHelpingFineDishesOfStateByCurrency(valueMap);
 		
-		//Max budget
-		fineDishesList = this.repository.maxBudgetFineDishesOfStateByCurrency(epicureId);
+		//Max helping
+		fineDishesList = this.repository.maxHelpingFineDishesOfStateByCurrency(epicureId);
 		valueMap = this.getMapFromList(fineDishesList);
-		result.setMaxBudgetFineDishesOfStateByCurrency(valueMap);
+		result.setMaxHelpingFineDishesOfStateByCurrency(valueMap);
 		
 		return result;
 	}
@@ -102,10 +102,10 @@ public class EpicureEpicureDashboardShowService implements AbstractShowService<E
 		assert model != null;
 				
 		request.unbind(entity, model, "totalNDishesOfState",
-			"averageBudgetFineDishesOfStateByCurrency",
-			"deviationBudgetFineDishesOfStateByCurrency",
-			"minBudgetFineDishesOfStateByCurrency",
-			"maxBudgetFineDishesOfStateByCurrency");
+			"averageHelpingFineDishesOfStateByCurrency",
+			"deviationHelpingFineDishesOfStateByCurrency",
+			"minHelpingFineDishesOfStateByCurrency",
+			"maxHelpingFineDishesOfStateByCurrency");
 	}
 
 }

@@ -38,7 +38,7 @@ assert request != null;
 		assert request != null;
 		assert entity != null;
 		assert model != null;
-		request.unbind(entity, model,"state","code","request","budget","startPeriod","endPeriod","moreInfo","epicure.identity.name","epicure.identity.surname","epicure.identity.email");
+		request.unbind(entity, model,"state","code","request","helping","startPeriod","endPeriod","moreInfo","epicure.identity.name","epicure.identity.surname","epicure.identity.email");
 		model.setAttribute("readOnly", true);
 		
 	}

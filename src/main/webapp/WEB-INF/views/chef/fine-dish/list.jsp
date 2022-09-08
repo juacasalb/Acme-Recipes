@@ -17,7 +17,7 @@
 
 <acme:list>
 	<acme:list-column code="list.chef.fine-dish.code" path="code"/>
-	<acme:list-column code="list.chef.fine-dish.budget" path="budget"/>
+	<acme:list-column code="list.chef.fine-dish.helping" path="helping"/>
 	<acme:list-column code="list.chef.fine-dish.startPeriod" path="startPeriod"/>
 	<acme:list-column code="list.chef.fine-dish.endPeriod" path="endPeriod"/>
 </acme:list>

@@ -13,17 +13,17 @@ public class ChefExamCreateTest extends TestHarness{
 	@CsvFileSource(resources = "/chef/exam/createPositive.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(10)
 	public void chefCreateRecipePositive(final int testIndex, final String title, final String description,
-		final String budget, final String finishingDate, final String link) {
+		final String helping, final String finishingDate, final String link) {
 		
 		super.signIn("chef4", "chef4");
 		
-		super.clickOnMenu("Chef", "List Pimpams");
+		super.clickOnMenu("Chef", "List Quittels");
 		super.checkListingExists();
 		
 		super.clickOnButton("Create");
 		super.fillInputBoxIn("title", title);
 		super.fillInputBoxIn("description", description);
-		super.fillInputBoxIn("budget", budget);
+		super.fillInputBoxIn("helping", helping);
 		super.fillInputBoxIn("finishingDate", finishingDate);
 		super.fillInputBoxIn("link", link);
 		super.clickOnSubmit("Create");
@@ -32,7 +32,7 @@ public class ChefExamCreateTest extends TestHarness{
 		super.checkFormExists();
 		super.checkInputBoxHasValue("title", title);
 		super.checkInputBoxHasValue("description", description);
-		super.checkInputBoxHasValue("budget", budget);
+		super.checkInputBoxHasValue("helping", helping);
 		super.checkInputBoxHasValue("finishingDate", finishingDate);
 		super.checkInputBoxHasValue("link", link);
 
@@ -42,17 +42,17 @@ public class ChefExamCreateTest extends TestHarness{
 	@CsvFileSource(resources = "/chef/exam/createNegative.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(20)
 	public void chefCreateRecipeNegative(final int testIndex, final String title, final String description,
-		final String budget, final String finishingDate, final String link) {
+		final String helping, final String finishingDate, final String link) {
 		
 		super.signIn("chef1", "chef1");
 		
-		super.clickOnMenu("Chef", "List Pimpams");
+		super.clickOnMenu("Chef", "List Quittels");
 		super.checkListingExists();
 		
 		super.clickOnButton("Create");
 		super.fillInputBoxIn("title", title);
 		super.fillInputBoxIn("description", description);
-		super.fillInputBoxIn("budget", budget);
+		super.fillInputBoxIn("helping", helping);
 		super.fillInputBoxIn("finishingDate", finishingDate);
 		super.fillInputBoxIn("link", link);
 		super.clickOnSubmit("Create");
@@ -66,16 +66,16 @@ public class ChefExamCreateTest extends TestHarness{
 	public void hackingTest() {
 		
 		super.checkNotLinkExists("Account");
-		super.navigate("/chef/pimpam/create");
+		super.navigate("/chef/quittel/create");
 		super.checkPanicExists();
 		
 		super.signIn("administrator", "administrator");
-		super.navigate("/chef/pimpam/create");
+		super.navigate("/chef/quittel/create");
 		super.checkPanicExists();
 		super.signOut();
 		
 		super.signIn("epicure1", "epicure1");
-		super.navigate("/chef/pimpam/create");
+		super.navigate("/chef/quittel/create");
 		super.checkPanicExists();
 		super.signOut();
 	
