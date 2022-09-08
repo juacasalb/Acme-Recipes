@@ -23,15 +23,7 @@ public interface ChefPimpamRepository extends AbstractRepository{
 	
 	@Query("SELECT x FROM Pimpam x WHERE x.item.chef.id = :id")
 	Collection<Pimpam> findPimpamsByChefId(int id);
-	
-	//CC//
-	@Query("SELECT x FROM Pimpam x WHERE x.item.chef.id = :id and x.item.type = 0")
-	Collection<Pimpam> findPimpamsByChefIdWithIngredient(int id);
-	
-	@Query("SELECT x FROM Pimpam x WHERE x.item.chef.id = :id and x.item.type = 1")
-	Collection<Pimpam> findPimpamsByChefIdWithKitUt(int id);
-	//
-	
+
 	@Query("SELECT c FROM Chef c WHERE c.id=:id")
 	Chef findChefById(int id);
 	
@@ -58,5 +50,11 @@ public interface ChefPimpamRepository extends AbstractRepository{
 	
 	@Query("select i from Item i where i.published = false and i.chef.id = :chefId and i not in (select x.item from Pimpam x)")
 	Collection<Item> findManyAvailableItemsByChef(int chefId);
+	
+	@Query("select i from Item i where i.published = false and i.chef.id = :chefId and i.type = 0 and i not in (select x.item from Pimpam x)")
+	Collection<Item> findManyAvailableIngredientsByChef(int chefId);
+	
+	@Query("select i from Item i where i.published = false and i.chef.id = :chefId and i.type = 1 and i not in (select x.item from Pimpam x)")
+	Collection<Item> findManyAvailableKitUtensilByChef(int chefId);
 
 }
