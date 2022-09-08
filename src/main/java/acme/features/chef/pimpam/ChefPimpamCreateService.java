@@ -76,7 +76,7 @@ public class ChefPimpamCreateService implements AbstractCreateService<Chef, Pimp
 				
 //		//si es component
 //		final Collection<Item> li = this.repository.findKitchenUtensilsByChefId(principal.getActiveRoleId());
-//		model.setAttribute("allItems", li);
+//		model.setAttribute("items", li);
 		
 		request.unbind(entity, model, "title", "code", "description", "budget", "link", "finishingDate", "instantationMoment");
 	}
