@@ -24,6 +24,14 @@ public interface ChefPimpamRepository extends AbstractRepository{
 	@Query("SELECT x FROM Pimpam x WHERE x.item.chef.id = :id")
 	Collection<Pimpam> findPimpamsByChefId(int id);
 	
+	//CC//
+	@Query("SELECT x FROM Pimpam x WHERE x.item.chef.id = :id and x.item.type = 0")
+	Collection<Pimpam> findPimpamsByChefIdWithIngredient(int id);
+	
+	@Query("SELECT x FROM Pimpam x WHERE x.item.chef.id = :id and x.item.type = 1")
+	Collection<Pimpam> findPimpamsByChefIdWithKitUt(int id);
+	//
+	
 	@Query("SELECT c FROM Chef c WHERE c.id=:id")
 	Chef findChefById(int id);
 	
