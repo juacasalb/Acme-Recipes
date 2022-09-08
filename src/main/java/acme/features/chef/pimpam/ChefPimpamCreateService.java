@@ -15,6 +15,7 @@ import acme.features.chef.item.ChefItemRepository;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Errors;
 import acme.framework.controllers.Request;
+import acme.framework.entities.Principal;
 import acme.framework.services.AbstractCreateService;
 import acme.roles.Chef;
 
@@ -65,10 +66,17 @@ public class ChefPimpamCreateService implements AbstractCreateService<Chef, Pimp
 		assert entity != null;
 		assert model != null;
 		
-		final int chefId = this.repository.findChefById(request.getPrincipal().getActiveRoleId()).getId();
-		final Collection<Item> items =  this.repository.findManyAvailableItemsByChef(chefId);
+		Principal principal;
+
+		principal = request.getPrincipal();
 		
-		model.setAttribute("items", items);
+		//si es ingredient
+		final Collection<Item> li = this.repository.findIngredientsByChefId(principal.getActiveRoleId());
+		model.setAttribute("items", li);
+				
+//		//si es component
+//		final Collection<Item> li = this.repository.findKitchenUtensilsByChefId(principal.getActiveRoleId());
+//		model.setAttribute("allItems", li);
 		
 		request.unbind(entity, model, "title", "code", "description", "budget", "link", "finishingDate", "instantationMoment");
 	}

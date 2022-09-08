@@ -5,3 +5,8 @@ item-03,ingredient-03,INGREDIENT,cm3,"IN:AAD-113","This is a ingredient","EUR 10
 item-04,utensil-01,KITCHENUTENSIL,gallons,"UT:AAB-111","This is a kitchen utensil","EUR 120.00",https://www.plum.com,chef-01,false
 item-05,utensil-02,KITCHENUTENSIL,tea spoons,"UT:AAC-112","This is a kitchen utensil","EUR 65.00",https://www.plum.com,chef-02,true
 item-06,utensil-03,KITCHENUTENSIL,spoons,"UT:AAC-113","This is a kitchen utensil","EUR 55.00",https://www.plum.com,chef-02,false
+item-07,ingredient-04,INGREDIENT,spoons,"IN:AAD-117","This is a kitchen utensil","EUR 55.00",https://www.plum.com,chef-01,false
+item-08,ingredient-05,INGREDIENT,spoons,"IN:AAE-117","This is a kitchen utensil","EUR 55.00",https://www.plum.com,chef-01,false
+item-09,utensil-04,KITCHENUTENSIL,spoons,"UT:ADD-117","This is a kitchen utensil","EUR 55.00",https://www.plum.com,chef-01,false
+item-10,utensil-05,KITCHENUTENSIL,spoons,"UT:AEE-117","This is a kitchen utensil","EUR 55.00",https://www.plum.com,chef-01,false
+item-11,ingredient-06,KITCHENUTENSIL,cm3,"IN:AAO-119","This is a ingredient","EUR 100.00",https://www.plum.com,chef-04,false

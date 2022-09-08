@@ -44,7 +44,7 @@ public class ChefExamCreateTest extends TestHarness{
 	public void chefCreateRecipeNegative(final int testIndex, final String title, final String description,
 		final String budget, final String finishingDate, final String link) {
 		
-		super.signIn("chef4", "chef4");
+		super.signIn("chef1", "chef1");
 		
 		super.clickOnMenu("Chef", "List Pimpams");
 		super.checkListingExists();

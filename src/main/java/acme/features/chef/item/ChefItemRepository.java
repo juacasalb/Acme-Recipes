@@ -11,6 +11,8 @@ import acme.roles.Chef;
 
 @Repository
 public interface ChefItemRepository extends AbstractRepository{
+	
+	
 
 	@Query("SELECT a FROM Item a WHERE a.chef.id = :id AND a.type = 0")
 	Collection<Item> findIngredientsByChefId(int id);
