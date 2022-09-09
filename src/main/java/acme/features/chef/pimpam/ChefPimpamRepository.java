@@ -13,7 +13,7 @@ import acme.system.configuration.CurrencyConfiguration;
 
 @Repository
 public interface ChefPimpamRepository extends AbstractRepository{
-		
+	
 	@Query("select p from Pimpam p where p.item.chef.id =:id")
 	Collection<Pimpam> getPimpamOfUserId(int id);
 	
@@ -25,4 +25,7 @@ public interface ChefPimpamRepository extends AbstractRepository{
 	
 	@Query("select cc from CurrencyConfiguration cc")
 	CurrencyConfiguration getCurrencyConfiguration();
+	
+	@Query("select p.code from Pimpam p")
+	Collection<String> getPimpamCodes();
 }

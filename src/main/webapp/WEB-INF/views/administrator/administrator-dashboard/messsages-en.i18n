@@ -24,8 +24,8 @@ administrator.dashboard.form.label.maxRetailPriceIngredientsByCurrency = Maximum
 administrator.dashboard.form.label.maxRetailPriceKitchenUtensilsByCurrency = Maximum of Retail Price of Kitchen Utensils by Currency
 administrator.dashboard.form.label.maxBudgetDishesByStatus = Maximum of Budget of Dishes by Status
 
-administrator.dashboard.form.label.pimpamRatio = Ratio of Items with an associated Pimpam
-administrator.dashboard.form.label.averageBudgetPimpampsByCurrency = Average Budget of Pimpamps by Currency
-administrator.dashboard.form.label.deviationBudgetPimpampsByCurrency = Standard Deviation of Budgets of Pimpamps by Currency
-administrator.dashboard.form.label.minimumBudgetPimpampsByCurrency = Minimum Budget of Pimpamps by Currency
-administrator.dashboard.form.label.maximumBudgetPimpampsByCurrency = Maximum Budget of Pimpamps by Currency
+administrator.dashboard.form.label.pimpamRatio = Ratio of Items with an associated Delor
+administrator.dashboard.form.label.averageBudgetPimpampsByCurrency = Average Income of Delors by Currency
+administrator.dashboard.form.label.deviationBudgetPimpampsByCurrency = Standard Deviation of Incomes of Delors by Currency
+administrator.dashboard.form.label.minimumBudgetPimpampsByCurrency = Minimum Income of Delors by Currency
+administrator.dashboard.form.label.maximumBudgetPimpampsByCurrency = Maximum Income of Delors by Currency

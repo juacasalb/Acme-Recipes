@@ -31,7 +31,8 @@ public class Pimpam extends AbstractEntity{
 	
 	@NotBlank
 	@Column(unique=true)
-	@Pattern(regexp="[0-9]{2}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$")
+	@Pattern(regexp="^[0-9]{6}:[0-9]{2}(0[1-9]|1[0-2])(0[1-9]|[1-2][0-9]|3[0-1])$")
+//	@Pattern(regexp="[0-9]{2}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$")
 	/* yy-mm-dd (fecha de instantiationMoment)
 	 * yy: [0-9]{2} (caracter entre 0 y 9 inclusive, 2 veces)
 	 * mm: (0[1-9]|1[0-2])

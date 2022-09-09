@@ -2,7 +2,9 @@ package acme.features.chef.pimpam;
 
 import java.time.Instant;
 import java.time.LocalDate;
+import java.util.Comparator;
 import java.util.Date;
+import java.util.List;
 
 import org.apache.commons.lang3.time.DateUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -65,14 +67,14 @@ public class ChefPimpamCreateService implements AbstractCreateService<Chef, Pimp
 		result.setInstantiationMoment(instantiationMoment);
 		
 		final String[] componentesCode = this.getDateComponents(instantiationMoment);
-		
+		final List<String> codigosDelor = (List<String>) this.repository.getPimpamCodes();
+		final Integer nuevoCodigo = codigosDelor.stream().map(x->Integer.valueOf(x.split(":")[0])).max(Comparator.naturalOrder()).get()+1;
 		String dd, mm, yy;
 		dd = componentesCode[0];
 		mm = componentesCode[1];
 		yy = componentesCode[2];
-		final String separador = "-";
 		
-		final String code = yy + separador + mm + separador + dd;
+		final String code = nuevoCodigo.toString() + ":" + yy + mm + dd;
 		
 		result.setCode(code);
 		
