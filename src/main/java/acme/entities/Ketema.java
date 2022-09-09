@@ -28,14 +28,15 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-public class Pimpam extends AbstractEntity{
+public class Ketema extends AbstractEntity{
 
 	private static final long serialVersionUID = 1L;
 	
 	@NotBlank
 	@Column(unique=true)
-	@Pattern(regexp="^[0-9]{2}-[0-9]{2}-[0-9]{2}(-[0-9]{2})?$")
-	protected String code;
+	//Lo del final es para que si se crean dos Ketema o más en un día, lo diferencie de los otros, ya que el código sesría el mismo
+	@Pattern(regexp="^[a-zA-Z0-9]{6}:[0-9]{2}[0-9]{2}:[0-9]{2}(-[0-9]{2})?$")
+	protected String keylet;
 	
 	@NotNull
 	@Past
@@ -44,18 +45,18 @@ public class Pimpam extends AbstractEntity{
 	
 	@NotBlank
 	@Length(min = 1, max = 101)
-	protected String title;
+	protected String theme;
 	
 	@NotBlank
 	@Length(min = 1, max = 256)
-	protected String description;
+	protected String statement;
 	
 	@NotNull
 	@Valid
-	protected Money budget;
+	protected Money allotment;
 	
 	@URL
-	protected String link;
+	protected String moreInfo;
 	
 	@NotNull
 	@Future
@@ -69,11 +70,11 @@ public class Pimpam extends AbstractEntity{
 	
 	@Valid
 	@Temporal(TemporalType.TIMESTAMP)	
-	protected Date period;
+	protected Date timeInterval;
 	
 	@Transient
 	protected void getPeriod() {
-		this.period = new Date(this.finishingDate.getTime() - this.instantationMoment.getTime());
+		this.timeInterval = new Date(this.finishingDate.getTime() - this.instantationMoment.getTime());
 	}
 	
 }

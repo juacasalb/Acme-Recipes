@@ -1,4 +1,4 @@
-package acme.features.chef.pimpam;
+package acme.features.chef.ketema;
 
 import java.util.Arrays;
 import java.util.Collection;
@@ -9,7 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.Item;
-import acme.entities.Pimpam;
+import acme.entities.Ketema;
 import acme.features.administrator.systemConfiguration.AdministratorSystemConfigurationRepository;
 import acme.features.chef.item.ChefItemRepository;
 import acme.framework.components.models.Model;
@@ -19,10 +19,10 @@ import acme.framework.services.AbstractCreateService;
 import acme.roles.Chef;
 
 @Service
-public class ChefPimpamCreateService implements AbstractCreateService<Chef, Pimpam>{
+public class ChefKetemaCreateService implements AbstractCreateService<Chef, Ketema>{
 
 	@Autowired
-	protected ChefPimpamRepository repository;
+	protected ChefKetemaRepository repository;
 	
 	@Autowired
 	protected ChefItemRepository itemRepository;
@@ -31,7 +31,7 @@ public class ChefPimpamCreateService implements AbstractCreateService<Chef, Pimp
 	protected AdministratorSystemConfigurationRepository currencyRepository;
 	
 	@Override
-	public boolean authorise(final Request<Pimpam> request) {
+	public boolean authorise(final Request<Ketema> request) {
 
 		assert request != null;
 		
@@ -40,7 +40,7 @@ public class ChefPimpamCreateService implements AbstractCreateService<Chef, Pimp
 
 	@SuppressWarnings("deprecation")
 	@Override
-	public void bind(final Request<Pimpam> request, final Pimpam entity, final Errors errors) {
+	public void bind(final Request<Ketema> request, final Ketema entity, final Errors errors) {
 
 		assert request != null;
 		assert entity != null;
@@ -49,61 +49,60 @@ public class ChefPimpamCreateService implements AbstractCreateService<Chef, Pimp
 		Date moment;
 		String code;
 		moment = new Date(System.currentTimeMillis() - 1);
-		code = moment.getYear()-100 + "-" + ((moment.getMonth()+1)>9?moment.getMonth()+1:"0"+(moment.getMonth()+1)) + "-" +  (moment.getDate()>9?moment.getDate():"0"+moment.getDate());
+		code = "K3t3MA:" + ((moment.getMonth()+1)>9?moment.getMonth()+1:"0"+(moment.getMonth()+1)) + (moment.getYear()-100) + ":" + (moment.getDate()>9?moment.getDate():"0"+moment.getDate());
 
 		code += "-" + request.getModel().getInteger("itemId");
 		
-		request.bind(entity, errors, "title", "description", "budget", "link", "finishingDate");
+		request.bind(entity, errors, "theme", "statement", "allotment", "moreInfo", "finishingDate");
 		entity.setInstantationMoment(moment);
-		entity.setCode(code);
+		entity.setKeylet(code);
 	}
 
 	@Override
-	public void unbind(final Request<Pimpam> request, final Pimpam entity, final Model model) {
+	public void unbind(final Request<Ketema> request, final Ketema entity, final Model model) {
 
 		assert request != null;
 		assert entity != null;
 		assert model != null;
 		
 		final int chefId = this.repository.findChefById(request.getPrincipal().getActiveRoleId()).getId();
-		final Collection<Item> items =  this.repository.findManyAvailableItemsByChef(chefId);
+		final Collection<Item> items =  this.repository.findManyAvailableIngredientsByChef(chefId);
 		
 		model.setAttribute("items", items);
 		
-		request.unbind(entity, model, "title", "code", "description", "budget", "link", "finishingDate", "instantationMoment");
+		request.unbind(entity, model, "theme", "keylet", "statement", "allotment", "moreInfo", "finishingDate", "instantationMoment");
 	}
 
 	@Override
-	public Pimpam instantiate(final Request<Pimpam> request) {
+	public Ketema instantiate(final Request<Ketema> request) {
 
 		assert request != null;
 		
-		Pimpam pimpam;
+		Ketema ketema;
 		
-		pimpam = new Pimpam();
+		ketema = new Ketema();
 		
-		return pimpam;
+		return ketema;
 	}
 
 	@Override
-	public void validate(final Request<Pimpam> request, final Pimpam entity, final Errors errors) {
+	public void validate(final Request<Ketema> request, final Ketema entity, final Errors errors) {
 
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
 	
 		
-		if (!errors.hasErrors("budget")) {
-			
-			
-			final boolean availableCurrency = this.validateAvailableCurrency(entity.getBudget().toString().substring(2,5));
-			errors.state(request, availableCurrency, "budget", "chef.pimpam.form.error.currency-not-available");
+		if (!errors.hasErrors("allotment")) {
+
+			final boolean availableCurrency = this.validateAvailableCurrency(entity.getAllotment().toString().substring(2,5));
+			errors.state(request, availableCurrency, "allotment", "chef.ketema.form.error.currency-not-available");
 
 		}
 	}
 
 	@Override
-	public void create(final Request<Pimpam> request, final Pimpam entity) {
+	public void create(final Request<Ketema> request, final Ketema entity) {
 
 		assert request != null;
 		assert entity != null;

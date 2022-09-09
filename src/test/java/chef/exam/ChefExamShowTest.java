@@ -16,28 +16,29 @@ public class ChefExamShowTest extends TestHarness{
 	@ParameterizedTest
 	@CsvFileSource(resources = "/chef/exam/exam.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(10)
-	public void positiveTest(final int recordIndex, final String title, final String code, final String description,final String budget,
-		final String instantationMoment, final String finishingDate, final String link) {
+	public void positiveTest(final int recordIndex, final String theme, final String keylet, final String statement,final String allotment,
+		final String instantationMoment, final String finishingDate, final String moreInfo) {
 		
-		super.signIn("chef1", "chef1");
+		super.signIn("chef4", "chef4");
 		
-		super.clickOnMenu("Chef", "List Pimpams");
+		super.clickOnMenu("Chef", "List Ketemas");
 		super.checkListingExists();
 		
-		super.checkColumnHasValue(recordIndex, 0, title);
-		super.checkColumnHasValue(recordIndex, 1, budget);
+		super.sortListing(0, "asc");
+		super.checkColumnHasValue(recordIndex, 0, theme);
+		super.checkColumnHasValue(recordIndex, 1, allotment);
 		super.checkColumnHasValue(recordIndex, 2, instantationMoment);
 		
 		super.clickOnListingRecord(recordIndex);
 		super.checkFormExists();
 		
-		super.checkInputBoxHasValue("title", title);
-		super.checkInputBoxHasValue("code", code);
-		super.checkInputBoxHasValue("description", description);
-		super.checkInputBoxHasValue("budget", budget);
+		super.checkInputBoxHasValue("theme", theme);
+		super.checkInputBoxHasValue("keylet", keylet);
+		super.checkInputBoxHasValue("statement", statement);
+		super.checkInputBoxHasValue("allotment", allotment);
 		super.checkInputBoxHasValue("instantationMoment", instantationMoment);
 		super.checkInputBoxHasValue("finishingDate", finishingDate);
-		super.checkInputBoxHasValue("link", link);
+		super.checkInputBoxHasValue("moreInfo", moreInfo);
 		
 		super.signOut();
 	
@@ -50,16 +51,16 @@ public class ChefExamShowTest extends TestHarness{
 	public void hackingTest() {
 		
 		super.checkNotLinkExists("Account");
-		super.navigate("/chef/pimpam/list");
+		super.navigate("/chef/ketema/list");
 		super.checkPanicExists();
 		
 		super.signIn("epicure1", "epicure1");
-		super.navigate("/chef/pimpam/list");
+		super.navigate("/chef/ketema/list");
 		super.checkPanicExists();
 		super.signOut();
 		
 		super.signIn("administrator", "administrator");
-		super.navigate("/chef/pimpam/list");
+		super.navigate("/chef/ketema/list");
 		super.checkPanicExists();
 		super.signOut();
 		

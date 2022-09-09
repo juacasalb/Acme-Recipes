@@ -1,0 +1,25 @@
+chef.ketema.list.label.theme = Theme
+chef.ketema.list.label.allotment = Allotment
+chef.ketema.list.label.instantationMoment = Instantation moment
+
+chef.ketema.list.button.create = Create
+
+chef.ketema.form.label.theme = Theme
+chef.ketema.form.label.keylet = Keylet
+chef.ketema.form.label.statement = Statement
+chef.ketema.form.label.allotment = Allotment
+chef.ketema.form.label.moreInfo = More Info
+chef.ketema.form.label.item = Item
+chef.ketema.form.label.instantationMoment = Instantation moment
+chef.ketema.form.label.finishingDate = Finishing date
+chef.ketema.form.label.published = Published
+
+chef.ketema.form.button.create = Create
+chef.ketema.form.button.update = Update
+chef.ketema.form.button.delete = Delete
+chef.ketema.form.button.publish = Publish
+
+chef.ketema.form.error.retail-price-ingredient-positive = The retail price must be greater than 0
+chef.ketema.form.error.retail-price-kitchen-utensil-zero-or-positive = The retail price must be greater or equals than 0
+
+chef.ketema.form.error.currency-not-available = Currency not available

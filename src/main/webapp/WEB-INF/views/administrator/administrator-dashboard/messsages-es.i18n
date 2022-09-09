@@ -25,8 +25,8 @@ administrator.dashboard.form.label.maxRetailPriceKitchenUtensilsByCurrency = Pre
 administrator.dashboard.form.label.maxBudgetDishesByStatus = Presupuesto maximo de Platos por Estado
 
 
-administrator.dashboard.form.label.ratio = Ratio de herramientas y componentes con pimpam
-administrator.dashboard.form.label.averageBudgetByCurrency = Media del presupuesto de pimpam 
-administrator.dashboard.form.label.deviationBudgetByCurrency = Desviacion del presupuesto de pimpam 
-administrator.dashboard.form.label.minBudgetByCurrency = Minimo del presupuesto de pimpam 
-administrator.dashboard.form.label.maxBudgetByCurrency = Maximp del presupuesto de pimpam 
+administrator.dashboard.form.label.ratio = Ratio de ingredientes con ketema
+administrator.dashboard.form.label.averageAllotmentByCurrency = Media del presupuesto de ketema 
+administrator.dashboard.form.label.deviationAllotmentByCurrency = Desviacion del presupuesto de ketema 
+administrator.dashboard.form.label.minAllotmentByCurrency = Minimo del presupuesto de ketema 
+administrator.dashboard.form.label.maxAllotmentByCurrency = Maximp del presupuesto de ketema 

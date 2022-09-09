@@ -1,4 +1,4 @@
-package acme.features.chef.pimpam;
+package acme.features.chef.ketema;
 
 import java.util.Arrays;
 import java.util.List;
@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.Item;
-import acme.entities.Pimpam;
+import acme.entities.Ketema;
 import acme.features.administrator.systemConfiguration.AdministratorSystemConfigurationRepository;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Errors;
@@ -16,28 +16,28 @@ import acme.framework.services.AbstractUpdateService;
 import acme.roles.Chef;
 
 @Service
-public class ChefPimpamUpdateService implements AbstractUpdateService<Chef, Pimpam>{
+public class ChefKetemaUpdateService implements AbstractUpdateService<Chef, Ketema>{
 
 	@Autowired
-	protected ChefPimpamRepository repository;
+	protected ChefKetemaRepository repository;
 	
 	@Autowired
 	protected AdministratorSystemConfigurationRepository currencyRepository;
 	
 	@Override
-	public boolean authorise(final Request<Pimpam> request) {
+	public boolean authorise(final Request<Ketema> request) {
 		
 		assert request != null;
 		
 		boolean result;
-		int pimpamId;
-		Pimpam pimpam;
+		int ketemaId;
+		Ketema ketema;
 		Chef chef;
 		Item item;
 		
-		pimpamId = request.getModel().getInteger("id");
-		pimpam = this.repository.findPimpamById(pimpamId);
-		item = pimpam.getItem();
+		ketemaId = request.getModel().getInteger("id");
+		ketema = this.repository.findKetemaById(ketemaId);
+		item = ketema.getItem();
 		chef = item.getChef();
 		result = request.isPrincipal(chef);
 		result = result && !item.getPublished();		
@@ -46,7 +46,7 @@ public class ChefPimpamUpdateService implements AbstractUpdateService<Chef, Pimp
 	}
 
 	@Override
-	public void bind(final Request<Pimpam> request, final Pimpam entity, final Errors errors) {
+	public void bind(final Request<Ketema> request, final Ketema entity, final Errors errors) {
 
 		assert request != null;
 		assert entity != null;
@@ -54,53 +54,53 @@ public class ChefPimpamUpdateService implements AbstractUpdateService<Chef, Pimp
 		
 		this.repository.save(entity);
 		
-		request.bind(entity, errors, "title", "code", "description", "budget", "link", "finishingDate", "instantationMoment", "item.name");
+		request.bind(entity, errors, "theme", "keylet", "statement", "allotment", "moreInfo", "finishingDate", "instantationMoment", "item.name");
 		
 	}
 
 	@Override
-	public void unbind(final Request<Pimpam> request, final Pimpam entity, final Model model) {
+	public void unbind(final Request<Ketema> request, final Ketema entity, final Model model) {
 
 		assert request != null;
 		assert entity != null;
 		assert model != null;
 		
-		request.unbind(entity, model, "title", "code", "description", "budget", "link", "finishingDate", "instantationMoment", "item.name");
+		request.unbind(entity, model, "theme", "keylet", "statement", "allotment", "moreInfo", "finishingDate", "instantationMoment", "item.name");
 		
 	}
 
 	@Override
-	public Pimpam findOne(final Request<Pimpam> request) {
+	public Ketema findOne(final Request<Ketema> request) {
 
 		assert request != null;
 		
-		Pimpam result;
+		Ketema result;
 		int id;
 		
 		id = request.getModel().getInteger("id");
-		result = this.repository.findPimpamById(id);
+		result = this.repository.findKetemaById(id);
 		
 		return result;
 	}
 
 	@Override
-	public void validate(final Request<Pimpam> request, final Pimpam entity, final Errors errors) {
+	public void validate(final Request<Ketema> request, final Ketema entity, final Errors errors) {
 
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
 		
-		if (!errors.hasErrors("budget")) {
+		if (!errors.hasErrors("allotment")) {
 			
 			
-			final boolean availableCurrency = this.validateAvailableCurrency(entity.getBudget().toString().substring(2,5));
-			errors.state(request, availableCurrency, "budget", "chef.pimpam.form.error.currency-not-available");
+			final boolean availableCurrency = this.validateAvailableCurrency(entity.getAllotment().toString().substring(2,5));
+			errors.state(request, availableCurrency, "allotment", "chef.ketema.form.error.currency-not-available");
 
 		}
 	}
 
 	@Override
-	public void update(final Request<Pimpam> request, final Pimpam entity) {
+	public void update(final Request<Ketema> request, final Ketema entity) {
 
 		assert request != null;
 		assert entity != null;

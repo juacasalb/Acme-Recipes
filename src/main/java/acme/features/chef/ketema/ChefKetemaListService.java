@@ -1,24 +1,24 @@
-package acme.features.chef.pimpam;
+package acme.features.chef.ketema;
 
 import java.util.Collection;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import acme.entities.Pimpam;
+import acme.entities.Ketema;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
 import acme.framework.services.AbstractListService;
 import acme.roles.Chef;
 
 @Service
-public class ChefPimpamListService implements AbstractListService<Chef, Pimpam>{
+public class ChefKetemaListService implements AbstractListService<Chef, Ketema>{
 
 	@Autowired
-	protected ChefPimpamRepository repository;
+	protected ChefKetemaRepository repository;
 	
 	@Override
-	public boolean authorise(final Request<Pimpam> request) {
+	public boolean authorise(final Request<Ketema> request) {
 		
 		assert request != null;
 		
@@ -27,26 +27,26 @@ public class ChefPimpamListService implements AbstractListService<Chef, Pimpam>{
 	}
 	
 	@Override
-	public Collection<Pimpam> findMany(final Request<Pimpam> request){
+	public Collection<Ketema> findMany(final Request<Ketema> request){
 		
 		assert request != null;
 		
 		final int getId = request.getPrincipal().getActiveRoleId();
-		Collection<Pimpam> result;
-		result = this.repository.findPimpamsByChefId(getId);
+		Collection<Ketema> result;
+		result = this.repository.findKetemasByChefId(getId);
 		
 		return result;
 		
 	}
 	
 	@Override
-	public void unbind(final Request<Pimpam> request, final Pimpam entity, final Model model) {
+	public void unbind(final Request<Ketema> request, final Ketema entity, final Model model) {
 		
 		assert request != null;
 		assert entity != null;
 		assert model != null;
 		
-		request.unbind(entity, model, "title", "budget", "instantationMoment");
+		request.unbind(entity, model, "theme", "allotment", "instantationMoment");
 		
 	}
 	

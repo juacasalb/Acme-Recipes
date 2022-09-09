@@ -29,7 +29,7 @@
 		
 
 		<acme:menu-option code="master.menu.chef" access="hasRole('Chef')">
-			<acme:menu-suboption code="master.menu.chef.pimpam.list" action="/chef/pimpam/list"/>
+			<acme:menu-suboption code="master.menu.chef.ketema.list" action="/chef/ketema/list"/>
 			<acme:menu-suboption code="master.menu.chef.memoranda.list" action="/chef/memorandum/list"/>
 			<acme:menu-suboption code="master.menu.chef.fine-dish.list" action="/chef/fine-dish/list"/>
 			<acme:menu-suboption code="master.menu.chef.fine-dish.list-proposed" action="/chef/fine-dish/list-proposed"/>
@@ -78,7 +78,6 @@
 		</acme:menu-option>
 		
 		<acme:menu-option code="master.menu.epicure" access="hasRole('Epicure')">
-			<acme:menu-suboption code="master.menu.epicure.pimpam.list" action="/epicure/pimpam/list"/>
 			<acme:menu-suboption code="master.menu.epicure.memoranda.list" action="/epicure/memorandum/list"/>
 			<acme:menu-suboption code="master.menu.epicure.fine-dish.list" action="/epicure/fine-dish/list"/>
 			<acme:menu-suboption code="master.menu.epicure.fine-dish.list-published" action="/epicure/fine-dish/list-published"/>

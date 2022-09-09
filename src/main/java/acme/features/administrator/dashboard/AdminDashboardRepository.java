@@ -57,19 +57,19 @@ public interface AdminDashboardRepository extends AbstractRepository{
 	//CC
 
 	//average
-	@Query("select x.budget.currency, avg(x.budget.amount) from Pimpam x group by x.budget.currency")
+	@Query("select x.allotment.currency, avg(x.allotment.amount) from Ketema x group by x.allotment.currency")
 	List<Object[]> averageBudgetByCurrency();
 
 	//deviation
-	@Query("select x.budget.currency, stddev(x.budget.amount) from Pimpam x group by x.budget.currency")
+	@Query("select x.allotment.currency, stddev(x.allotment.amount) from Ketema x group by x.allotment.currency")
 	List<Object[]> deviationBudgetByCurrency();
 
 	//minimum
-	@Query("select x.budget.currency, min(x.budget.amount) from Pimpam x group by x.budget.currency")
+	@Query("select x.allotment.currency, min(x.allotment.amount) from Ketema x group by x.allotment.currency")
 	List<Object[]> minBudgetByCurrency();
 
 	//maximum
-	@Query("select x.budget.currency, max(x.budget.amount) from Pimpam x group by x.budget.currency")
+	@Query("select x.allotment.currency, max(x.allotment.amount) from Ketema x group by x.allotment.currency")
 	List<Object[]> maxBudgetByCurrency();
 		
 }

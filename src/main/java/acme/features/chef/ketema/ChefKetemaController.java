@@ -1,31 +1,31 @@
-package acme.features.chef.pimpam;
+package acme.features.chef.ketema;
 
 import javax.annotation.PostConstruct;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
-import acme.entities.Pimpam;
+import acme.entities.Ketema;
 import acme.framework.controllers.AbstractController;
 import acme.roles.Chef;
 
 @Controller
-public class ChefPimpamController extends AbstractController<Chef, Pimpam>{
+public class ChefKetemaController extends AbstractController<Chef, Ketema>{
 	
 	@Autowired
-	protected ChefPimpamListService listService;
+	protected ChefKetemaListService listService;
 	
 	@Autowired
-	protected ChefPimpamShowService showService;
+	protected ChefKetemaShowService showService;
 	
 	@Autowired
-	protected ChefPimpamCreateService createService;
+	protected ChefKetemaCreateService createService;
 	
 	@Autowired
-	protected ChefPimpamUpdateService updateService;
+	protected ChefKetemaUpdateService updateService;
 	
 	@Autowired
-	protected ChefPimpamDeleteService deleteService;
+	protected ChefKetemaDeleteService deleteService;
 
 	@PostConstruct
 	protected void initialise() {

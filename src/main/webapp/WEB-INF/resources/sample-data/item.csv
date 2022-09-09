@@ -11,3 +11,4 @@ item-09,ingredient-06,INGREDIENT,grams,"IN:EXM-014","This is a ingredient","EUR 
 item-10,utensil-04,KITCHENUTENSIL,grams,"IN:EXM-154","This is a kitchen utensil","EUR 30.00",https://www.plum.com,chef-01,false
 item-11,utensil-05,KITCHENUTENSIL,grams,"IN:EXM-155","This is a kitchen utensil","EUR 30.00",https://www.plum.com,chef-01,false
 item-12,utensil-06,KITCHENUTENSIL,grams,"IN:EXM-156","This is a kitchen utensil","EUR 30.00",https://www.plum.com,chef-01,false
+item-13,ingredient-07,INGREDIENT,grams,"IN:EXM-500","This is an ingredient","EUR 20.00",https://www.plum.com,chef-04,false

@@ -12,32 +12,33 @@ public class ChefExamUpdateTest extends TestHarness{
 	@ParameterizedTest
 	@CsvFileSource(resources = "/chef/exam/examupdatepositive.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(10)
-	public void positiveTest(final int recordIndex, final String title,  final String description,final String budget, final String link, final String finishingDate) {
+	public void positiveTest(final int recordIndex, final String theme,  final String statement,final String allotment,
+		final String moreInfo, final String finishingDate) {
 		super.signIn("chef1", "chef1");
 
-		super.clickOnMenu("Chef", "List Pimpams");
+		super.clickOnMenu("Chef", "List Ketemas");
 		super.checkListingExists();
 		super.sortListing(0, "asc");
 
 		super.clickOnListingRecord(recordIndex);
 		super.checkFormExists();
 		
-		super.fillInputBoxIn("title", title);
-		super.fillInputBoxIn("description", description);
-		super.fillInputBoxIn("budget", budget);
-		super.fillInputBoxIn("link", link);
+		super.fillInputBoxIn("theme", theme);
+		super.fillInputBoxIn("statement", statement);
+		super.fillInputBoxIn("allotment", allotment);
+		super.fillInputBoxIn("moreInfo", moreInfo);
 		super.fillInputBoxIn("finishingDate", finishingDate);
 		super.clickOnSubmit("Update");
 		
-		super.clickOnMenu("Chef", "List Pimpams");
+		super.clickOnMenu("Chef", "List Ketemas");
 		super.checkListingExists();
 		super.sortListing(0, "asc");
 		super.clickOnListingRecord(recordIndex);
 		
-		super.checkInputBoxHasValue("title", title);
-		super.checkInputBoxHasValue("description", description);
-		super.checkInputBoxHasValue("budget", budget);
-		super.checkInputBoxHasValue("link", link);
+		super.checkInputBoxHasValue("theme", theme);
+		super.checkInputBoxHasValue("statement", statement);
+		super.checkInputBoxHasValue("allotment", allotment);
+		super.checkInputBoxHasValue("moreInfo", moreInfo);
 		super.checkInputBoxHasValue("finishingDate", finishingDate);
 
 		super.signOut();
@@ -46,19 +47,20 @@ public class ChefExamUpdateTest extends TestHarness{
 	@ParameterizedTest
 	@CsvFileSource(resources = "/chef/exam/examupdatenegative.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(20)
-	public void negativeTest(final int recordIndex, final String title,  final String description,final String budget, final String link, final String finishingDate) {
+	public void negativeTest(final int recordIndex, final String theme,  final String statement,final String allotment,
+		final String moreInfo, final String finishingDate) {
 		super.signIn("chef1", "chef1");
 
-		super.clickOnMenu("Chef", "List Pimpams");
+		super.clickOnMenu("Chef", "List Ketemas");
 		super.checkListingExists();
 		super.sortListing(0, "asc");
 		super.clickOnListingRecord(recordIndex);
 		super.checkFormExists();
 	
-		super.fillInputBoxIn("title", title);
-		super.fillInputBoxIn("description", description);
-		super.fillInputBoxIn("budget", budget);
-		super.fillInputBoxIn("link", link);
+		super.fillInputBoxIn("theme", theme);
+		super.fillInputBoxIn("statement", statement);
+		super.fillInputBoxIn("allotment", allotment);
+		super.fillInputBoxIn("moreInfo", moreInfo);
 		super.fillInputBoxIn("finishingDate", finishingDate);
 		super.clickOnSubmit("Update");
 		

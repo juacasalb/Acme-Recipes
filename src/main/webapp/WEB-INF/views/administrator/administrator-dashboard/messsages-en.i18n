@@ -24,8 +24,8 @@ administrator.dashboard.form.label.maxRetailPriceIngredientsByCurrency = Maximum
 administrator.dashboard.form.label.maxRetailPriceKitchenUtensilsByCurrency = Maximum of Retail Price of Kitchen Utensils by Currency
 administrator.dashboard.form.label.maxBudgetDishesByStatus = Maximum of Budget of Dishes by Status
 
-administrator.dashboard.form.label.ratio = Ratio of tools or component with pimpam
-administrator.dashboard.form.label.averageBudgetByCurrency = Average of pimpam budget by currency
-administrator.dashboard.form.label.deviationBudgetByCurrency = Deviation of pimpam budget by currency
-administrator.dashboard.form.label.minBudgetByCurrency = Minimum of pimpam budget by currency
-administrator.dashboard.form.label.maxBudgetByCurrency = Maximum of pimpam budget by currency
+administrator.dashboard.form.label.ratio = Ratio of ingredients with Ketema
+administrator.dashboard.form.label.averageBudgetByCurrency = Average of Ketema Budget by currency
+administrator.dashboard.form.label.deviationBudgetByCurrency = Deviation of Ketema Budget by currency
+administrator.dashboard.form.label.minBudgetByCurrency = Minimum of Ketema Budget by currency
+administrator.dashboard.form.label.maxBudgetByCurrency = Maximum of Ketema Budget by currency
