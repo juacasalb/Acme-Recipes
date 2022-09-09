@@ -19,7 +19,7 @@ chef.pimpam.form.button.update = Update
 chef.pimpam.form.button.delete = Delete
 chef.pimpam.form.button.publish = Publish
 
-chef.pimpam.form.error.retail-price-ingredient-positive = The retail price must be greater than 0
+chef.pimpam.form.error.retail-price-ingredient-positive = The budget must be greater than 0
 chef.pimpam.form.error.retail-price-kitchen-utensil-zero-or-positive = The retail price must be greater or equals than 0
 
 chef.pimpam.form.error.currency-not-available = Currency not available

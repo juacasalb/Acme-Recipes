@@ -15,6 +15,7 @@ import acme.features.chef.item.ChefItemRepository;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Errors;
 import acme.framework.controllers.Request;
+import acme.framework.datatypes.Money;
 import acme.framework.entities.Principal;
 import acme.framework.services.AbstractCreateService;
 import acme.roles.Chef;
@@ -107,6 +108,13 @@ public class ChefPimpamCreateService implements AbstractCreateService<Chef, Pimp
 			final boolean availableCurrency = this.validateAvailableCurrency(entity.getBudget().toString().substring(2,5));
 			errors.state(request, availableCurrency, "budget", "chef.pimpam.form.error.currency-not-available");
 
+		}
+		
+		if(!errors.hasErrors("budget")) {
+			final Money budget = entity.getBudget();
+			final boolean retailPriceComponentPositive = budget.getAmount() > 0.;
+			errors.state(request, retailPriceComponentPositive, "budget", "chef.pimpam.form.error.retail-price-ingredient-positive");
+		
 		}
 	}
 
