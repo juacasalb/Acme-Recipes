@@ -1,4 +1,4 @@
-package chef.exam;
+package chef.ketema;
 
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
@@ -7,10 +7,10 @@ import org.junit.jupiter.params.provider.CsvFileSource;
 
 import acme.testing.TestHarness;
 
-public class ChefExamUpdateTest extends TestHarness{
+public class ChefKetemaUpdateTest extends TestHarness{
 	
 	@ParameterizedTest
-	@CsvFileSource(resources = "/chef/exam/examupdatepositive.csv", encoding = "utf-8", numLinesToSkip = 1)
+	@CsvFileSource(resources = "/chef/ketema/ketemaUpdatepositive.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(10)
 	public void positiveTest(final int recordIndex, final String theme,  final String statement,final String allotment,
 		final String moreInfo, final String finishingDate) {
@@ -45,7 +45,7 @@ public class ChefExamUpdateTest extends TestHarness{
 	}
 	
 	@ParameterizedTest
-	@CsvFileSource(resources = "/chef/exam/examupdatenegative.csv", encoding = "utf-8", numLinesToSkip = 1)
+	@CsvFileSource(resources = "/chef/ketema/ketemaUpdatenegative.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(20)
 	public void negativeTest(final int recordIndex, final String theme,  final String statement,final String allotment,
 		final String moreInfo, final String finishingDate) {

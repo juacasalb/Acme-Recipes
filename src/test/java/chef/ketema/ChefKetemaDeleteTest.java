@@ -1,11 +1,11 @@
-package chef.exam;
+package chef.ketema;
 
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 
 import acme.testing.TestHarness;
 
-public class ChefExamDeleteTest extends TestHarness{
+public class ChefKetemaDeleteTest extends TestHarness{
 	
 	@Test
 	@Order(10)
