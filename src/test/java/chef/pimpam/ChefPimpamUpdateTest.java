@@ -13,11 +13,11 @@ public class ChefPimpamUpdateTest extends TestHarness {
 	public void chefPimpamUpdateTestPositive(final int testIndex, final String itemCode, final String title, final String description, final String link, final String budget, final String periodStart, final String periodEnd, final String updateTitle, final String updateDescription, final String updateLink, final String updateBudget, final String updatePeriodStart, final String updatePeriodEnd) {
 		super.signIn("chef1", "chef1");
 		
-		super.clickOnMenu("Chef", "List of pimpamps associated with my items");
+		super.clickOnMenu("Chef", "List of delors associated with my items");
 		super.checkListingExists();
 		super.sortListing(0, "asc");
 		
-		super.clickOnButton("Create Pimpam");
+		super.clickOnButton("Create Delor");
 		super.checkFormExists();
 		super.fillInputBoxIn("itemCode", itemCode);
 		super.fillInputBoxIn("title", title);
@@ -26,7 +26,7 @@ public class ChefPimpamUpdateTest extends TestHarness {
 		super.fillInputBoxIn("budget", budget);
 		super.fillInputBoxIn("periodStart", periodStart);
 		super.fillInputBoxIn("periodEnd", periodEnd);
-		super.clickOnSubmit("Create Pimpam");
+		super.clickOnSubmit("Create Delor");
 	
 		super.checkNotErrorsExist();
 		
@@ -34,7 +34,7 @@ public class ChefPimpamUpdateTest extends TestHarness {
 		super.sortListing(0, "asc");
 		super.clickOnListingRecord(testIndex);
 		super.checkFormExists();
-		super.checkSubmitExists("Update Pimpam");
+		super.checkSubmitExists("Update delor");
 		
 		super.fillInputBoxIn("title", updateTitle);
 		super.fillInputBoxIn("description", updateDescription);
@@ -42,7 +42,7 @@ public class ChefPimpamUpdateTest extends TestHarness {
 		super.fillInputBoxIn("link", updateLink);
 		super.fillInputBoxIn("periodStart", updatePeriodStart);
 		super.fillInputBoxIn("periodEnd", updatePeriodEnd);
-		super.clickOnSubmit("Update Pimpam");
+		super.clickOnSubmit("Update Delor");
 		
 		super.checkNotErrorsExist();
 	
@@ -59,8 +59,8 @@ public class ChefPimpamUpdateTest extends TestHarness {
 		super.checkInputBoxHasValue("periodStart", updatePeriodStart);
 		super.checkInputBoxHasValue("periodEnd", updatePeriodEnd);
 		
-		super.checkSubmitExists("Delete Pimpam");
-		super.clickOnSubmit("Delete Pimpam");
+		super.checkSubmitExists("Delete Delor");
+		super.clickOnSubmit("Delete Delor");
 		
 		super.signOut();
 	}
@@ -71,11 +71,11 @@ public class ChefPimpamUpdateTest extends TestHarness {
 	public void chefPimpamUpdateTestNegative(final int testIndex, final String itemCode, final String title, final String description, final String link, final String budget, final String periodStart, final String periodEnd, final String updateBudget, final String updatePeriodStart, final String updatePeriodEnd, final String errorField) {
 		super.signIn("chef1", "chef1");
 		
-		super.clickOnMenu("Chef", "List of pimpamps associated with my items");
+		super.clickOnMenu("Chef", "List of delors associated with my items");
 		super.checkListingExists();
 		super.sortListing(0, "asc");
 		
-		super.clickOnButton("Create Pimpam");
+		super.clickOnButton("Create Delor");
 		super.checkFormExists();
 		super.fillInputBoxIn("itemCode", itemCode);
 		super.fillInputBoxIn("title", title);
@@ -84,7 +84,7 @@ public class ChefPimpamUpdateTest extends TestHarness {
 		super.fillInputBoxIn("budget", budget);
 		super.fillInputBoxIn("periodStart", periodStart);
 		super.fillInputBoxIn("periodEnd", periodEnd);
-		super.clickOnSubmit("Create Pimpam");
+		super.clickOnSubmit("Create Delor");
 		
 		super.checkNotErrorsExist();
 		
@@ -93,7 +93,7 @@ public class ChefPimpamUpdateTest extends TestHarness {
 		super.clickOnListingRecord(testIndex);
 		
 		super.checkFormExists();
-		super.checkSubmitExists("Update Pimpam");
+		super.checkSubmitExists("Update Delor");
 		
 		super.fillInputBoxIn("budget", updateBudget);
 		super.fillInputBoxIn("periodStart", updatePeriodStart);
@@ -102,8 +102,8 @@ public class ChefPimpamUpdateTest extends TestHarness {
 		
 		super.checkErrorsExist(errorField);
 		
-		super.checkSubmitExists("Delete Pimpam");
-		super.clickOnSubmit("Delete Pimpam");
+		super.checkSubmitExists("Delete Delor");
+		super.clickOnSubmit("Delete Delor");
 		
 		super.signOut();
 	}

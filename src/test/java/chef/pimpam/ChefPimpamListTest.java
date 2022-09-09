@@ -15,7 +15,7 @@ public class ChefPimpamListTest extends TestHarness{
 	public void chefPimpamListTest(final int testIndex, final String title, final String pimpamCode, final String budget, final String itemCode, final String instantiationMoment) {
 		super.signIn("chef1", "chef1");
 		
-		super.clickOnMenu("Chef", "List of pimpamps associated with my items");
+		super.clickOnMenu("Chef", "List of delors associated with my items");
 		super.checkListingExists();
 		super.sortListing(0, "asc");
 		

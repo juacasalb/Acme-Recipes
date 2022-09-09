@@ -13,11 +13,11 @@ public class ChefPimpamDeleteTest extends TestHarness {
 	public void chefPimpamDeleteTestPositive(final int testIndex, final String itemCode, final String title, final String description, final String link, final String budget, final String periodStart, final String periodEnd) {
 		super.signIn("chef1", "chef1");
 		
-		super.clickOnMenu("Chef", "List of pimpamps associated with my items");
+		super.clickOnMenu("Chef", "List of delors associated with my items");
 		super.checkListingExists();
 		super.sortListing(0, "asc");
 		
-		super.clickOnButton("Create Pimpam");
+		super.clickOnButton("Create Delor");
 		super.checkFormExists();
 		super.fillInputBoxIn("itemCode", itemCode);
 		super.fillInputBoxIn("title", title);
@@ -26,7 +26,7 @@ public class ChefPimpamDeleteTest extends TestHarness {
 		super.fillInputBoxIn("budget", budget);
 		super.fillInputBoxIn("periodStart", periodStart);
 		super.fillInputBoxIn("periodEnd", periodEnd);
-		super.clickOnSubmit("Create Pimpam");
+		super.clickOnSubmit("Create Delor");
 		
 		super.checkListingExists();
 		super.sortListing(0, "asc");
@@ -34,8 +34,8 @@ public class ChefPimpamDeleteTest extends TestHarness {
 		
 		super.clickOnListingRecord(testIndex);
 		super.checkFormExists();
-		super.checkSubmitExists("Delete Pimpam");
-		super.clickOnSubmit("Delete Pimpam");
+		super.checkSubmitExists("Delete Delor");
+		super.clickOnSubmit("Delete Delor");
 		
 		super.checkNotErrorsExist();
 		super.signOut();
@@ -47,13 +47,13 @@ public class ChefPimpamDeleteTest extends TestHarness {
 	public void chefPimpamDeleteTestNegative(final int testIndex) {
 		super.signIn("chef1", "chef1");
 		
-		super.clickOnMenu("Chef", "List of pimpamps associated with my items");
+		super.clickOnMenu("Chef", "List of delors associated with my items");
 		super.checkListingExists();
 		super.sortListing(0, "asc");
 		
 		super.clickOnListingRecord(testIndex);
 		super.checkFormExists();
-		super.checkNotSubmitExists("Delete Pimpam");
+		super.checkNotSubmitExists("Delete Delor");
 		
 		super.signOut();
 	}

@@ -14,11 +14,11 @@ public class ChefPimpamCreateTest extends TestHarness {
 	public void chefPimpamCreateTestPositive(final int testIndex, final String itemCode, final String title, final String description, final String link, final String budget, final String periodStart, final String periodEnd) {
 		super.signIn("chef1", "chef1");
 		
-		super.clickOnMenu("Chef", "List of pimpamps associated with my items");
+		super.clickOnMenu("Chef", "List of delors associated with my items");
 		super.checkListingExists();
 		super.sortListing(0, "asc");
 		
-		super.clickOnButton("Create Pimpam");
+		super.clickOnButton("Create Delor");
 		super.checkFormExists();
 		super.fillInputBoxIn("itemCode", itemCode);
 		super.fillInputBoxIn("title", title);
@@ -27,7 +27,7 @@ public class ChefPimpamCreateTest extends TestHarness {
 		super.fillInputBoxIn("budget", budget);
 		super.fillInputBoxIn("periodStart", periodStart);
 		super.fillInputBoxIn("periodEnd", periodEnd);
-		super.clickOnSubmit("Create Pimpam");
+		super.clickOnSubmit("Create Delor");
 		
 		super.checkListingExists();
 		super.sortListing(0, "asc");
@@ -35,15 +35,15 @@ public class ChefPimpamCreateTest extends TestHarness {
 		super.checkFormExists();
 		
 		super.checkInputBoxHasValue("itemCode", itemCode);
-		super.checkInputBoxHasValue("title", title);
-		super.checkInputBoxHasValue("description", description);
-		super.checkInputBoxHasValue("link", link);
-		super.checkInputBoxHasValue("budget", budget);
+		super.checkInputBoxHasValue("subject", title);
+		super.checkInputBoxHasValue("explanation", description);
+		super.checkInputBoxHasValue("moreInfo", link);
+		super.checkInputBoxHasValue("income", budget);
 		super.checkInputBoxHasValue("periodStart", periodStart);
 		super.checkInputBoxHasValue("periodEnd", periodEnd);
 		
-		super.checkSubmitExists("Delete Pimpam");
-		super.clickOnSubmit("Delete Pimpam");
+		super.checkSubmitExists("Delete Delor");
+		super.clickOnSubmit("Delete Delor");
 		
 		super.signOut();
 	}
@@ -54,20 +54,20 @@ public class ChefPimpamCreateTest extends TestHarness {
 	public void chefPimpamCreateTestNegative(final int testIndex, final String itemCode, final String title, final String description, final String link, final String budget, final String periodStart, final String periodEnd, final String errorField) {
 		super.signIn("chef1", "chef1");
 		
-		super.clickOnMenu("Chef", "List of pimpamps associated with my items");
+		super.clickOnMenu("Chef", "List of delors associated with my items");
 		super.checkListingExists();
 		super.sortListing(0, "asc");
 		
-		super.clickOnButton("Create Pimpam");
+		super.clickOnButton("Create Delor");
 		super.checkFormExists();
 		super.fillInputBoxIn("itemCode", itemCode);
-		super.fillInputBoxIn("title", title);
-		super.fillInputBoxIn("description", description);
-		super.fillInputBoxIn("link", link);
-		super.fillInputBoxIn("budget", budget);
+		super.fillInputBoxIn("subject", title);
+		super.fillInputBoxIn("explanation", description);
+		super.fillInputBoxIn("moreInfo", link);
+		super.fillInputBoxIn("income", budget);
 		super.fillInputBoxIn("periodStart", periodStart);
 		super.fillInputBoxIn("periodEnd", periodEnd);
-		super.clickOnSubmit("Create Pimpam");
+		super.clickOnSubmit("Create Delor");
 		
 		super.checkErrorsExist(errorField);
 		

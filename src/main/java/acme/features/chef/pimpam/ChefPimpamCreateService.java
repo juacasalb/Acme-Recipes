@@ -68,15 +68,26 @@ public class ChefPimpamCreateService implements AbstractCreateService<Chef, Pimp
 		
 		final String[] componentesCode = this.getDateComponents(instantiationMoment);
 		final List<String> codigosDelor = (List<String>) this.repository.getPimpamCodes();
+		
 		final Integer nuevoCodigo = codigosDelor.stream().map(x->Integer.valueOf(x.split(":")[0])).max(Comparator.naturalOrder()).get()+1;
+		final Integer numeroDeCeros = 6-nuevoCodigo.toString().length();
+		
+		final StringBuilder nuevaSecuencia = new StringBuilder();
+		if(numeroDeCeros>0) {
+			for(int i = 0; i<numeroDeCeros; i++) {
+				nuevaSecuencia.append("0");
+			}
+		}
+		nuevaSecuencia.append(nuevoCodigo.toString());
+		
 		String dd, mm, yy;
 		dd = componentesCode[0];
 		mm = componentesCode[1];
 		yy = componentesCode[2];
 		
-		final String code = nuevoCodigo.toString() + ":" + yy + mm + dd;
+		final String keylet = nuevaSecuencia.toString() + ":" + yy + mm + dd;
 		
-		result.setCode(code);
+		result.setCode(keylet);
 		
 		return result;
 	}

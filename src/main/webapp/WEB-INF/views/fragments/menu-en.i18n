@@ -17,8 +17,7 @@ master.menu.sign-out = Sign out
 
 # examen ###########################################################
 
-master.menu.examen.chef.pimpam.list = List of pimpamps associated with my items
-master.menu.examen.epicure.pimpam.list = List of pimpamps associated with my items
+master.menu.examen.chef.pimpam.list = List of delors associated with my items
 
 # master.menu.any #############################################################
 
